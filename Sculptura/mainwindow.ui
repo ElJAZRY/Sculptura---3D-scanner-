@@ -1,0 +1,547 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1084</width>
+    <height>627</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Sculptura</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QMainWindow
+{
+    background-color: #ecf0f5;
+}</string>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <property name="styleSheet">
+    <string notr="true">QMainWindow
+{
+    background-color: #ecf0f5;
+}</string>
+   </property>
+   <widget class="QLabel" name="label_brightness">
+    <property name="geometry">
+     <rect>
+      <x>21</x>
+      <y>391</y>
+      <width>80</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Open Sans</family>
+      <pointsize>9</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text">
+     <string>Brightness</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_contrast">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>420</y>
+      <width>66</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Open Sans</family>
+      <pointsize>9</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text">
+     <string>Contrast</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="advanced_scanning">
+    <property name="enabled">
+     <bool>true</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>520</y>
+      <width>341</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+    background-color: #c0cbd3;
+    border-style: outset;
+    border-width: 2px;
+    border-radius: 10px;
+    border-color: #748896;
+    font: bold 14px;
+    padding: 6px;
+}
+QPushButton:pressed {
+    background-color: #748896;
+    border-style: inset;
+}</string>
+    </property>
+    <property name="text">
+     <string>Advanced scanning</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="get_3D_model">
+    <property name="enabled">
+     <bool>true</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>410</x>
+      <y>390</y>
+      <width>341</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+    background-color: #c0cbd3;
+    border-style: outset;
+    border-width: 2px;
+    border-radius: 10px;
+    border-color: #748896;
+    font: bold 14px;
+    padding: 6px;
+}
+QPushButton:pressed {
+    background-color: #748896;
+    border-style: inset;
+}</string>
+    </property>
+    <property name="text">
+     <string>Get 3D model</string>
+    </property>
+   </widget>
+   <widget class="QGroupBox" name="Box_pointclouds">
+    <property name="geometry">
+     <rect>
+      <x>790</x>
+      <y>10</y>
+      <width>211</width>
+      <height>361</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string/>
+    </property>
+    <widget class="QLabel" name="list_pc">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>10</y>
+       <width>171</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Open Sans</family>
+       <pointsize>9</pointsize>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="text">
+      <string>List of Point Clouds</string>
+     </property>
+    </widget>
+    <widget class="QListView" name="listView_2">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>40</y>
+       <width>191</width>
+       <height>261</height>
+      </rect>
+     </property>
+     <property name="isWrapping" stdset="0">
+      <bool>false</bool>
+     </property>
+     <property name="uniformItemSizes">
+      <bool>false</bool>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="selectall">
+     <property name="enabled">
+      <bool>true</bool>
+     </property>
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>310</y>
+       <width>81</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="cursor">
+      <cursorShape>PointingHandCursor</cursorShape>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton {
+    background-color: #c0cbd3;
+    border-style: outset;
+    border-width: 2px;
+    border-radius: 10px;
+    border-color: #748896;
+    font: bold 14px;
+    padding: 6px;
+}
+QPushButton:pressed {
+    background-color: #748896;
+    border-style: inset;
+}</string>
+     </property>
+     <property name="text">
+      <string>Select all</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="deleteall">
+     <property name="enabled">
+      <bool>true</bool>
+     </property>
+     <property name="geometry">
+      <rect>
+       <x>110</x>
+       <y>310</y>
+       <width>81</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="cursor">
+      <cursorShape>PointingHandCursor</cursorShape>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton {
+    background-color: #c0cbd3;
+    border-style: outset;
+    border-width: 2px;
+    border-radius: 10px;
+    border-color: #748896;
+    font: bold 14px;
+    padding: 6px;
+}
+QPushButton:pressed {
+    background-color: #748896;
+    border-style: inset;
+}</string>
+     </property>
+     <property name="text">
+      <string>Delete all</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="layoutWidget">
+    <property name="geometry">
+     <rect>
+      <x>400</x>
+      <y>10</y>
+      <width>381</width>
+      <height>361</height>
+     </rect>
+    </property>
+    <layout class="QHBoxLayout" name="horizontalLayout_2">
+     <item>
+      <widget class="QWidget" name="vtk" native="true">
+       <property name="styleSheet">
+        <string notr="true">QWidget {
+    border: 2px solid lightgray;
+    background-color: white;
+}</string>
+       </property>
+       <widget class="QProgressBar" name="progressBar">
+        <property name="geometry">
+         <rect>
+          <x>157</x>
+          <y>332</y>
+          <width>131</width>
+          <height>21</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>Open Sans</family>
+          <weight>75</weight>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QProgressBar::chunk {
+    background-color: #05B8CC;
+    width: 20px;
+}</string>
+        </property>
+        <property name="value">
+         <number>24</number>
+        </property>
+       </widget>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QWidget" name="layoutWidget">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>470</y>
+      <width>341</width>
+      <height>35</height>
+     </rect>
+    </property>
+    <layout class="QHBoxLayout" name="horizontalLayout">
+     <item>
+      <widget class="QLabel" name="label_simple_scanning">
+       <property name="font">
+        <font>
+         <family>Open Sans</family>
+         <pointsize>9</pointsize>
+         <weight>75</weight>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="text">
+        <string>Simple scanning</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="start_scanning">
+       <property name="enabled">
+        <bool>true</bool>
+       </property>
+       <property name="cursor">
+        <cursorShape>PointingHandCursor</cursorShape>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton {
+    background-color: #c0cbd3;
+    border-style: outset;
+    border-width: 2px;
+    border-radius: 10px;
+    border-color: #748896;
+    font: bold 14px;
+    padding: 6px;
+}
+QPushButton:pressed {
+    background-color: #748896;
+    border-style: inset;
+}</string>
+       </property>
+       <property name="text">
+        <string>Start</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="stop_scanning">
+       <property name="enabled">
+        <bool>true</bool>
+       </property>
+       <property name="cursor">
+        <cursorShape>PointingHandCursor</cursorShape>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton {
+    background-color: #c0cbd3;
+    border-style: outset;
+    border-width: 2px;
+    border-radius: 10px;
+    border-color: #748896;
+    font: bold 14px;
+    padding: 6px;
+}
+QPushButton:pressed {
+    background-color: #748896;
+    border-style: inset;
+}</string>
+       </property>
+       <property name="text">
+        <string>Stop</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QWidget" name="layoutWidget">
+    <property name="geometry">
+     <rect>
+      <x>108</x>
+      <y>394</y>
+      <width>281</width>
+      <height>53</height>
+     </rect>
+    </property>
+    <layout class="QVBoxLayout" name="verticalLayout">
+     <item>
+      <widget class="QSlider" name="horizontalSlider_brightness">
+       <property name="cursor">
+        <cursorShape>PointingHandCursor</cursorShape>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QSlider::handle:horizontal {
+    background: qlineargradient(x1:0, y1:0, x2:1, y2:1, stop:0 #b4b4b4, stop:1 #8f8f8f);
+    border: 1px solid #5c5c5c;
+    width: 18px;
+    margin: -2px 0; /* handle is placed by default on the contents rect of the groove. Expand outside the groove */
+    border-radius: 5px;
+}</string>
+       </property>
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QSlider" name="horizontalSlider_contrast">
+       <property name="cursor">
+        <cursorShape>PointingHandCursor</cursorShape>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QSlider::handle:horizontal {
+    background: qlineargradient(x1:0, y1:0, x2:1, y2:1, stop:0 #b4b4b4, stop:1 #8f8f8f);
+    border: 1px solid #5c5c5c;
+    width: 18px;
+    margin: -2px 0; /* handle is placed by default on the contents rect of the groove. Expand outside the groove */
+    border-radius: 5px;
+}</string>
+       </property>
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QWidget" name="kinect_window" native="true">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>10</y>
+      <width>361</width>
+      <height>359</height>
+     </rect>
+    </property>
+    <property name="mouseTracking">
+     <bool>false</bool>
+    </property>
+    <property name="autoFillBackground">
+     <bool>true</bool>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QWidget {
+    border: 2px solid lightgray;
+    background-color: white;
+}</string>
+    </property>
+   </widget>
+   <zorder>layoutWidget</zorder>
+   <zorder>layoutWidget</zorder>
+   <zorder>layoutWidget</zorder>
+   <zorder>label_brightness</zorder>
+   <zorder>label_contrast</zorder>
+   <zorder>advanced_scanning</zorder>
+   <zorder>get_3D_model</zorder>
+   <zorder>Box_pointclouds</zorder>
+   <zorder>kinect_window</zorder>
+  </widget>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1084</width>
+     <height>26</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuFile">
+    <property name="title">
+     <string>File</string>
+    </property>
+    <addaction name="actionNew"/>
+    <addaction name="actionOpen"/>
+    <addaction name="actionSave_as"/>
+   </widget>
+   <widget class="QMenu" name="menuPointClouds">
+    <property name="title">
+     <string>PointClouds</string>
+    </property>
+    <addaction name="actionOpen_PointClouds"/>
+   </widget>
+   <addaction name="menuFile"/>
+   <addaction name="menuPointClouds"/>
+  </widget>
+  <widget class="QToolBar" name="mainToolBar">
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+  </widget>
+  <widget class="QStatusBar" name="statusBar"/>
+  <action name="actionNew">
+   <property name="icon">
+    <iconset resource="icons.qrc">
+     <normaloff>:/images/sheet.png</normaloff>:/images/sheet.png</iconset>
+   </property>
+   <property name="text">
+    <string>New</string>
+   </property>
+  </action>
+  <action name="actionOpen">
+   <property name="icon">
+    <iconset resource="icons.qrc">
+     <normaloff>:/images/Folder.png</normaloff>:/images/Folder.png</iconset>
+   </property>
+   <property name="text">
+    <string>Open</string>
+   </property>
+  </action>
+  <action name="actionSave_as">
+   <property name="icon">
+    <iconset resource="icons.qrc">
+     <normaloff>:/images/diskette.png</normaloff>:/images/diskette.png</iconset>
+   </property>
+   <property name="text">
+    <string>Save as</string>
+   </property>
+  </action>
+  <action name="actionOpen_PointClouds">
+   <property name="icon">
+    <iconset resource="icons.qrc">
+     <normaloff>:/images/cloud.png</normaloff>:/images/cloud.png</iconset>
+   </property>
+   <property name="text">
+    <string>Open PointClouds</string>
+   </property>
+  </action>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources>
+  <include location="icons.qrc"/>
+ </resources>
+ <connections/>
+</ui>
