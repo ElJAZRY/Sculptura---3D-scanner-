@@ -169,7 +169,7 @@ QPushButton:pressed {
       <string>List of Point Clouds</string>
      </property>
     </widget>
-    <widget class="QListView" name="listView_2">
+    <widget class="QListView" name="listPointClouds">
      <property name="geometry">
       <rect>
        <x>10</x>
@@ -501,7 +501,7 @@ QPushButton:pressed {
   <widget class="QStatusBar" name="statusBar"/>
   <action name="actionNew">
    <property name="icon">
-    <iconset resource="icons.qrc">
+    <iconset>
      <normaloff>:/images/sheet.png</normaloff>:/images/sheet.png</iconset>
    </property>
    <property name="text">
@@ -510,7 +510,7 @@ QPushButton:pressed {
   </action>
   <action name="actionOpen">
    <property name="icon">
-    <iconset resource="icons.qrc">
+    <iconset>
      <normaloff>:/images/Folder.png</normaloff>:/images/Folder.png</iconset>
    </property>
    <property name="text">
@@ -519,7 +519,7 @@ QPushButton:pressed {
   </action>
   <action name="actionSave_as">
    <property name="icon">
-    <iconset resource="icons.qrc">
+    <iconset>
      <normaloff>:/images/diskette.png</normaloff>:/images/diskette.png</iconset>
    </property>
    <property name="text">
@@ -528,7 +528,7 @@ QPushButton:pressed {
   </action>
   <action name="actionOpen_PointClouds">
    <property name="icon">
-    <iconset resource="icons.qrc">
+    <iconset>
      <normaloff>:/images/cloud.png</normaloff>:/images/cloud.png</iconset>
    </property>
    <property name="text">
@@ -537,8 +537,6 @@ QPushButton:pressed {
   </action>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
- <resources>
-  <include location="icons.qrc"/>
- </resources>
+ <resources/>
  <connections/>
 </ui>

@@ -14,12 +14,13 @@
 #include <opencv/cv.h>
 #include <opencv/highgui.h>
 #include <vector>
-#include<cvimagewidget.h>
-#include<QImage>
-#include<QFileDialog>
-#include<QString>
-
+#include <cvimagewidget.h>
+#include <QImage>
+#include <QFileDialog>
+#include <QString>
 #include <QMessageBox>
+#include <QStandardItem>
+#include <QStandardItemModel>
 
 
 
@@ -41,19 +42,19 @@ public:
     ~MainWindow();
 
 private slots:
-
-
-    void on_advanced_scanning_clicked();
-
-    void on_start_preview_clicked();
-
     void renderFrame(QImage frame);
 
+    void on_advanced_scanning_clicked();
+    void on_start_preview_clicked();
+    void on_actionOpen_PointClouds_triggered();
+
 private:
+    void showPointCloudFiles();
+
     Ui::MainWindow *ui;
     Advanced_scanning *advanced_parameters;
     CameraPreview* preview;
-
+    QStringList* pointCloudFiles;
 
 };
 #endif // MAINWINDOW_H

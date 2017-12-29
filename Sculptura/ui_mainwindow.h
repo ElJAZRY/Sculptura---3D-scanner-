@@ -45,7 +45,7 @@ public:
     QPushButton *get_3D_model;
     QGroupBox *Box_pointclouds;
     QLabel *list_pc;
-    QListView *listView_2;
+    QListView *listPointClouds;
     QPushButton *selectall;
     QPushButton *deleteall;
     QWidget *layoutWidget;
@@ -159,11 +159,11 @@ public:
         list_pc->setObjectName(QStringLiteral("list_pc"));
         list_pc->setGeometry(QRect(10, 10, 171, 20));
         list_pc->setFont(font);
-        listView_2 = new QListView(Box_pointclouds);
-        listView_2->setObjectName(QStringLiteral("listView_2"));
-        listView_2->setGeometry(QRect(10, 40, 191, 261));
-        listView_2->setProperty("isWrapping", QVariant(false));
-        listView_2->setUniformItemSizes(false);
+        listPointClouds = new QListView(Box_pointclouds);
+        listPointClouds->setObjectName(QStringLiteral("listPointClouds"));
+        listPointClouds->setGeometry(QRect(10, 40, 191, 261));
+        listPointClouds->setProperty("isWrapping", QVariant(false));
+        listPointClouds->setUniformItemSizes(false);
         selectall = new QPushButton(Box_pointclouds);
         selectall->setObjectName(QStringLiteral("selectall"));
         selectall->setEnabled(true);
