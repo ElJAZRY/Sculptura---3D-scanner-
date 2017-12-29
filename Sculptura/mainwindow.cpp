@@ -13,6 +13,7 @@ MainWindow::MainWindow(QWidget *parent) :
     preview = new CameraPreview();
     QObject::connect(preview, SIGNAL(frameReady(QImage)), this, SLOT(renderFrame(QImage)));
     ui->setupUi(this);
+    initVisualiser();
 }
 
 MainWindow::~MainWindow()
@@ -72,4 +73,23 @@ void MainWindow::showPointCloudFiles() {
     }
 
     ui->listPointClouds->setModel(listModel);
+}
+
+void MainWindow::initVisualiser() {
+    // Set up the QvtkWindow widget
+    visualiser.reset(new pcl::visualization::PCLVisualizer("visualiser", false));
+    //Set the QvtkWindow to show the graphics rendered by "visualiser"
+    ui->vtkWindow->SetRenderWindow(visualiser->getRenderWindow());
+    //Set "visualiser" to receive the user interactions captured by the WvtkWindow widget
+    visualiser->setupInteractor(ui->vtkWindow->GetInteractor(), ui->vtkWindow->GetRenderWindow());
+    visualiser->addCoordinateSystem(0.3,-0.5,-0.5,-0.5);
+    ui->vtkWindow->update();
+
+    //Link the pointcloud container from the database to the visualization object:
+//    pcl::visualization::PointCloudColorHandlerCustom<PointType> colorPt(pointCloud, 0, 123, 100);
+//    visualiser->addPointCloud(pointCloud, colorPt, "cloud");
+    visualiser->resetCamera();
+    //Set visualization parameters such as size of points:
+    visualiser->setPointCloudRenderingProperties(pcl::visualization::PCL_VISUALIZER_POINT_SIZE, 3, "cloud");
+    ui->vtkWindow->update();
 }

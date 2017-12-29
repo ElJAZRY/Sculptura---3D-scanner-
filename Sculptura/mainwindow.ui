@@ -265,7 +265,7 @@ QPushButton:pressed {
     </property>
     <layout class="QHBoxLayout" name="horizontalLayout_2">
      <item>
-      <widget class="QWidget" name="vtk" native="true">
+      <widget class="QWidget" name="layout_widget" native="true">
        <property name="styleSheet">
         <string notr="true">QWidget {
     border: 2px solid lightgray;
@@ -296,6 +296,16 @@ QPushButton:pressed {
         </property>
         <property name="value">
          <number>24</number>
+        </property>
+       </widget>
+       <widget class="QVTKWidget" name="vtkWindow" native="true">
+        <property name="geometry">
+         <rect>
+          <x>20</x>
+          <y>20</y>
+          <width>341</width>
+          <height>301</height>
+         </rect>
         </property>
        </widget>
       </widget>
@@ -501,7 +511,7 @@ QPushButton:pressed {
   <widget class="QStatusBar" name="statusBar"/>
   <action name="actionNew">
    <property name="icon">
-    <iconset>
+    <iconset resource="icons.qrc">
      <normaloff>:/images/sheet.png</normaloff>:/images/sheet.png</iconset>
    </property>
    <property name="text">
@@ -510,7 +520,7 @@ QPushButton:pressed {
   </action>
   <action name="actionOpen">
    <property name="icon">
-    <iconset>
+    <iconset resource="icons.qrc">
      <normaloff>:/images/Folder.png</normaloff>:/images/Folder.png</iconset>
    </property>
    <property name="text">
@@ -519,7 +529,7 @@ QPushButton:pressed {
   </action>
   <action name="actionSave_as">
    <property name="icon">
-    <iconset>
+    <iconset resource="icons.qrc">
      <normaloff>:/images/diskette.png</normaloff>:/images/diskette.png</iconset>
    </property>
    <property name="text">
@@ -528,7 +538,7 @@ QPushButton:pressed {
   </action>
   <action name="actionOpen_PointClouds">
    <property name="icon">
-    <iconset>
+    <iconset resource="icons.qrc">
      <normaloff>:/images/cloud.png</normaloff>:/images/cloud.png</iconset>
    </property>
    <property name="text">
@@ -537,6 +547,15 @@ QPushButton:pressed {
   </action>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
- <resources/>
+ <customwidgets>
+  <customwidget>
+   <class>QVTKWidget</class>
+   <extends>QWidget</extends>
+   <header>QVTKWidget.h</header>
+  </customwidget>
+ </customwidgets>
+ <resources>
+  <include location="icons.qrc"/>
+ </resources>
  <connections/>
 </ui>

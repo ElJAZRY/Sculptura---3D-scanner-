@@ -28,6 +28,7 @@
 #include <QtWidgets/QToolBar>
 #include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
+#include "QVTKWidget.h"
 
 QT_BEGIN_NAMESPACE
 
@@ -50,8 +51,9 @@ public:
     QPushButton *deleteall;
     QWidget *layoutWidget;
     QHBoxLayout *horizontalLayout_2;
-    QWidget *vtk;
+    QWidget *layout_widget;
     QProgressBar *progressBar;
+    QVTKWidget *vtkWindow;
     QWidget *layoutWidget1;
     QHBoxLayout *horizontalLayout;
     QLabel *label_simple_scanning;
@@ -208,13 +210,13 @@ public:
         horizontalLayout_2->setContentsMargins(11, 11, 11, 11);
         horizontalLayout_2->setObjectName(QStringLiteral("horizontalLayout_2"));
         horizontalLayout_2->setContentsMargins(0, 0, 0, 0);
-        vtk = new QWidget(layoutWidget);
-        vtk->setObjectName(QStringLiteral("vtk"));
-        vtk->setStyleSheet(QLatin1String("QWidget {\n"
+        layout_widget = new QWidget(layoutWidget);
+        layout_widget->setObjectName(QStringLiteral("layout_widget"));
+        layout_widget->setStyleSheet(QLatin1String("QWidget {\n"
 "    border: 2px solid lightgray;\n"
 "    background-color: white;\n"
 "}"));
-        progressBar = new QProgressBar(vtk);
+        progressBar = new QProgressBar(layout_widget);
         progressBar->setObjectName(QStringLiteral("progressBar"));
         progressBar->setGeometry(QRect(157, 332, 131, 21));
         QFont font1;
@@ -227,8 +229,11 @@ public:
 "    width: 20px;\n"
 "}"));
         progressBar->setValue(24);
+        vtkWindow = new QVTKWidget(layout_widget);
+        vtkWindow->setObjectName(QStringLiteral("vtkWindow"));
+        vtkWindow->setGeometry(QRect(20, 20, 341, 301));
 
-        horizontalLayout_2->addWidget(vtk);
+        horizontalLayout_2->addWidget(layout_widget);
 
         layoutWidget1 = new QWidget(centralWidget);
         layoutWidget1->setObjectName(QStringLiteral("layoutWidget1"));
