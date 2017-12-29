@@ -307,7 +307,7 @@ QPushButton:pressed {
      <rect>
       <x>20</x>
       <y>470</y>
-      <width>341</width>
+      <width>363</width>
       <height>35</height>
      </rect>
     </property>
@@ -328,7 +328,7 @@ QPushButton:pressed {
       </widget>
      </item>
      <item>
-      <widget class="QPushButton" name="start_scanning">
+      <widget class="QPushButton" name="start_preview">
        <property name="enabled">
         <bool>true</bool>
        </property>
@@ -351,7 +351,7 @@ QPushButton:pressed {
 }</string>
        </property>
        <property name="text">
-        <string>Start</string>
+        <string>Start preview</string>
        </property>
       </widget>
      </item>
@@ -379,7 +379,7 @@ QPushButton:pressed {
 }</string>
        </property>
        <property name="text">
-        <string>Stop</string>
+        <string>Start scanning</string>
        </property>
       </widget>
      </item>
@@ -435,26 +435,23 @@ QPushButton:pressed {
      </item>
     </layout>
    </widget>
-   <widget class="QWidget" name="kinect_window" native="true">
+   <widget class="QLabel" name="preview_window">
     <property name="geometry">
      <rect>
-      <x>20</x>
+      <x>10</x>
       <y>10</y>
-      <width>361</width>
-      <height>359</height>
+      <width>371</width>
+      <height>361</height>
      </rect>
     </property>
-    <property name="mouseTracking">
-     <bool>false</bool>
-    </property>
-    <property name="autoFillBackground">
-     <bool>true</bool>
-    </property>
     <property name="styleSheet">
-     <string notr="true">QWidget {
+     <string notr="true">QLabel {
     border: 2px solid lightgray;
     background-color: white;
 }</string>
+    </property>
+    <property name="text">
+     <string/>
     </property>
    </widget>
    <zorder>layoutWidget</zorder>
@@ -465,7 +462,7 @@ QPushButton:pressed {
    <zorder>advanced_scanning</zorder>
    <zorder>get_3D_model</zorder>
    <zorder>Box_pointclouds</zorder>
-   <zorder>kinect_window</zorder>
+   <zorder>preview_window</zorder>
   </widget>
   <widget class="QMenuBar" name="menuBar">
    <property name="geometry">

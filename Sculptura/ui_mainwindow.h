@@ -24,7 +24,6 @@
 #include <QtWidgets/QProgressBar>
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QSlider>
-#include <QtWidgets/QSplitter>
 #include <QtWidgets/QStatusBar>
 #include <QtWidgets/QToolBar>
 #include <QtWidgets/QVBoxLayout>
@@ -43,28 +42,26 @@ public:
     QLabel *label_brightness;
     QLabel *label_contrast;
     QPushButton *advanced_scanning;
-    QPushButton *advanced_scanning_2;
+    QPushButton *get_3D_model;
     QGroupBox *Box_pointclouds;
-    QLabel *label_contrast_2;
+    QLabel *list_pc;
     QListView *listView_2;
-    QPushButton *start_scanning_2;
-    QPushButton *start_scanning_3;
+    QPushButton *selectall;
+    QPushButton *deleteall;
     QWidget *layoutWidget;
     QHBoxLayout *horizontalLayout_2;
     QWidget *vtk;
     QProgressBar *progressBar;
-    QSplitter *splitter;
-    QSplitter *splitter_2;
     QWidget *layoutWidget1;
     QHBoxLayout *horizontalLayout;
     QLabel *label_simple_scanning;
-    QPushButton *start_scanning;
-    QPushButton *stop_scanning_2;
+    QPushButton *start_preview;
+    QPushButton *stop_scanning;
     QWidget *layoutWidget2;
     QVBoxLayout *verticalLayout;
     QSlider *horizontalSlider_brightness;
     QSlider *horizontalSlider_contrast;
-    QWidget *kinect_window;
+    QLabel *preview_window;
     QMenuBar *menuBar;
     QMenu *menuFile;
     QMenu *menuPointClouds;
@@ -137,12 +134,12 @@ public:
 "    background-color: #748896;\n"
 "    border-style: inset;\n"
 "}"));
-        advanced_scanning_2 = new QPushButton(centralWidget);
-        advanced_scanning_2->setObjectName(QStringLiteral("advanced_scanning_2"));
-        advanced_scanning_2->setEnabled(true);
-        advanced_scanning_2->setGeometry(QRect(410, 390, 341, 31));
-        advanced_scanning_2->setCursor(QCursor(Qt::PointingHandCursor));
-        advanced_scanning_2->setStyleSheet(QLatin1String("QPushButton {\n"
+        get_3D_model = new QPushButton(centralWidget);
+        get_3D_model->setObjectName(QStringLiteral("get_3D_model"));
+        get_3D_model->setEnabled(true);
+        get_3D_model->setGeometry(QRect(410, 390, 341, 31));
+        get_3D_model->setCursor(QCursor(Qt::PointingHandCursor));
+        get_3D_model->setStyleSheet(QLatin1String("QPushButton {\n"
 "    background-color: #c0cbd3;\n"
 "    border-style: outset;\n"
 "    border-width: 2px;\n"
@@ -158,21 +155,21 @@ public:
         Box_pointclouds = new QGroupBox(centralWidget);
         Box_pointclouds->setObjectName(QStringLiteral("Box_pointclouds"));
         Box_pointclouds->setGeometry(QRect(790, 10, 211, 361));
-        label_contrast_2 = new QLabel(Box_pointclouds);
-        label_contrast_2->setObjectName(QStringLiteral("label_contrast_2"));
-        label_contrast_2->setGeometry(QRect(10, 10, 171, 20));
-        label_contrast_2->setFont(font);
+        list_pc = new QLabel(Box_pointclouds);
+        list_pc->setObjectName(QStringLiteral("list_pc"));
+        list_pc->setGeometry(QRect(10, 10, 171, 20));
+        list_pc->setFont(font);
         listView_2 = new QListView(Box_pointclouds);
         listView_2->setObjectName(QStringLiteral("listView_2"));
         listView_2->setGeometry(QRect(10, 40, 191, 261));
         listView_2->setProperty("isWrapping", QVariant(false));
         listView_2->setUniformItemSizes(false);
-        start_scanning_2 = new QPushButton(Box_pointclouds);
-        start_scanning_2->setObjectName(QStringLiteral("start_scanning_2"));
-        start_scanning_2->setEnabled(true);
-        start_scanning_2->setGeometry(QRect(10, 310, 81, 31));
-        start_scanning_2->setCursor(QCursor(Qt::PointingHandCursor));
-        start_scanning_2->setStyleSheet(QLatin1String("QPushButton {\n"
+        selectall = new QPushButton(Box_pointclouds);
+        selectall->setObjectName(QStringLiteral("selectall"));
+        selectall->setEnabled(true);
+        selectall->setGeometry(QRect(10, 310, 81, 31));
+        selectall->setCursor(QCursor(Qt::PointingHandCursor));
+        selectall->setStyleSheet(QLatin1String("QPushButton {\n"
 "    background-color: #c0cbd3;\n"
 "    border-style: outset;\n"
 "    border-width: 2px;\n"
@@ -185,12 +182,12 @@ public:
 "    background-color: #748896;\n"
 "    border-style: inset;\n"
 "}"));
-        start_scanning_3 = new QPushButton(Box_pointclouds);
-        start_scanning_3->setObjectName(QStringLiteral("start_scanning_3"));
-        start_scanning_3->setEnabled(true);
-        start_scanning_3->setGeometry(QRect(110, 310, 81, 31));
-        start_scanning_3->setCursor(QCursor(Qt::PointingHandCursor));
-        start_scanning_3->setStyleSheet(QLatin1String("QPushButton {\n"
+        deleteall = new QPushButton(Box_pointclouds);
+        deleteall->setObjectName(QStringLiteral("deleteall"));
+        deleteall->setEnabled(true);
+        deleteall->setGeometry(QRect(110, 310, 81, 31));
+        deleteall->setCursor(QCursor(Qt::PointingHandCursor));
+        deleteall->setStyleSheet(QLatin1String("QPushButton {\n"
 "    background-color: #c0cbd3;\n"
 "    border-style: outset;\n"
 "    border-width: 2px;\n"
@@ -233,17 +230,9 @@ public:
 
         horizontalLayout_2->addWidget(vtk);
 
-        splitter = new QSplitter(centralWidget);
-        splitter->setObjectName(QStringLiteral("splitter"));
-        splitter->setGeometry(QRect(428, 391, 0, 16));
-        splitter->setOrientation(Qt::Horizontal);
-        splitter_2 = new QSplitter(splitter);
-        splitter_2->setObjectName(QStringLiteral("splitter_2"));
-        splitter_2->setOrientation(Qt::Horizontal);
-        splitter->addWidget(splitter_2);
         layoutWidget1 = new QWidget(centralWidget);
         layoutWidget1->setObjectName(QStringLiteral("layoutWidget1"));
-        layoutWidget1->setGeometry(QRect(20, 470, 341, 35));
+        layoutWidget1->setGeometry(QRect(20, 470, 363, 35));
         horizontalLayout = new QHBoxLayout(layoutWidget1);
         horizontalLayout->setSpacing(6);
         horizontalLayout->setContentsMargins(11, 11, 11, 11);
@@ -255,11 +244,11 @@ public:
 
         horizontalLayout->addWidget(label_simple_scanning);
 
-        start_scanning = new QPushButton(layoutWidget1);
-        start_scanning->setObjectName(QStringLiteral("start_scanning"));
-        start_scanning->setEnabled(true);
-        start_scanning->setCursor(QCursor(Qt::PointingHandCursor));
-        start_scanning->setStyleSheet(QLatin1String("QPushButton {\n"
+        start_preview = new QPushButton(layoutWidget1);
+        start_preview->setObjectName(QStringLiteral("start_preview"));
+        start_preview->setEnabled(true);
+        start_preview->setCursor(QCursor(Qt::PointingHandCursor));
+        start_preview->setStyleSheet(QLatin1String("QPushButton {\n"
 "    background-color: #c0cbd3;\n"
 "    border-style: outset;\n"
 "    border-width: 2px;\n"
@@ -273,13 +262,13 @@ public:
 "    border-style: inset;\n"
 "}"));
 
-        horizontalLayout->addWidget(start_scanning);
+        horizontalLayout->addWidget(start_preview);
 
-        stop_scanning_2 = new QPushButton(layoutWidget1);
-        stop_scanning_2->setObjectName(QStringLiteral("stop_scanning_2"));
-        stop_scanning_2->setEnabled(true);
-        stop_scanning_2->setCursor(QCursor(Qt::PointingHandCursor));
-        stop_scanning_2->setStyleSheet(QLatin1String("QPushButton {\n"
+        stop_scanning = new QPushButton(layoutWidget1);
+        stop_scanning->setObjectName(QStringLiteral("stop_scanning"));
+        stop_scanning->setEnabled(true);
+        stop_scanning->setCursor(QCursor(Qt::PointingHandCursor));
+        stop_scanning->setStyleSheet(QLatin1String("QPushButton {\n"
 "    background-color: #c0cbd3;\n"
 "    border-style: outset;\n"
 "    border-width: 2px;\n"
@@ -293,7 +282,7 @@ public:
 "    border-style: inset;\n"
 "}"));
 
-        horizontalLayout->addWidget(stop_scanning_2);
+        horizontalLayout->addWidget(stop_scanning);
 
         layoutWidget2 = new QWidget(centralWidget);
         layoutWidget2->setObjectName(QStringLiteral("layoutWidget2"));
@@ -331,26 +320,23 @@ public:
 
         verticalLayout->addWidget(horizontalSlider_contrast);
 
-        kinect_window = new QWidget(centralWidget);
-        kinect_window->setObjectName(QStringLiteral("kinect_window"));
-        kinect_window->setGeometry(QRect(20, 10, 361, 359));
-        kinect_window->setMouseTracking(false);
-        kinect_window->setAutoFillBackground(true);
-        kinect_window->setStyleSheet(QLatin1String("QWidget {\n"
+        preview_window = new QLabel(centralWidget);
+        preview_window->setObjectName(QStringLiteral("preview_window"));
+        preview_window->setGeometry(QRect(10, 10, 371, 361));
+        preview_window->setStyleSheet(QLatin1String("QLabel {\n"
 "    border: 2px solid lightgray;\n"
 "    background-color: white;\n"
 "}"));
         MainWindow->setCentralWidget(centralWidget);
         layoutWidget->raise();
-        splitter->raise();
         layoutWidget->raise();
         layoutWidget->raise();
         label_brightness->raise();
         label_contrast->raise();
         advanced_scanning->raise();
-        advanced_scanning_2->raise();
+        get_3D_model->raise();
         Box_pointclouds->raise();
-        kinect_window->raise();
+        preview_window->raise();
         menuBar = new QMenuBar(MainWindow);
         menuBar->setObjectName(QStringLiteral("menuBar"));
         menuBar->setGeometry(QRect(0, 0, 1084, 26));
@@ -388,14 +374,15 @@ public:
         label_brightness->setText(QApplication::translate("MainWindow", "Brightness", 0));
         label_contrast->setText(QApplication::translate("MainWindow", "Contrast", 0));
         advanced_scanning->setText(QApplication::translate("MainWindow", "Advanced scanning", 0));
-        advanced_scanning_2->setText(QApplication::translate("MainWindow", "Get 3D model", 0));
+        get_3D_model->setText(QApplication::translate("MainWindow", "Get 3D model", 0));
         Box_pointclouds->setTitle(QString());
-        label_contrast_2->setText(QApplication::translate("MainWindow", "List of Point Clouds", 0));
-        start_scanning_2->setText(QApplication::translate("MainWindow", "Select all", 0));
-        start_scanning_3->setText(QApplication::translate("MainWindow", "Delete all", 0));
+        list_pc->setText(QApplication::translate("MainWindow", "List of Point Clouds", 0));
+        selectall->setText(QApplication::translate("MainWindow", "Select all", 0));
+        deleteall->setText(QApplication::translate("MainWindow", "Delete all", 0));
         label_simple_scanning->setText(QApplication::translate("MainWindow", "Simple scanning", 0));
-        start_scanning->setText(QApplication::translate("MainWindow", "Start", 0));
-        stop_scanning_2->setText(QApplication::translate("MainWindow", "Stop", 0));
+        start_preview->setText(QApplication::translate("MainWindow", "Start preview", 0));
+        stop_scanning->setText(QApplication::translate("MainWindow", "Start scanning", 0));
+        preview_window->setText(QString());
         menuFile->setTitle(QApplication::translate("MainWindow", "File", 0));
         menuPointClouds->setTitle(QApplication::translate("MainWindow", "PointClouds", 0));
     } // retranslateUi

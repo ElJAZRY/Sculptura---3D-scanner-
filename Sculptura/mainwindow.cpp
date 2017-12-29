@@ -1,17 +1,4 @@
 #include "mainwindow.h"
-//#include "ui_mainwindow.h"
-//#include "opencv2/core/core.hpp"
-//#include "opencv2/highgui/highgui.hpp"
-//#include "opencv2/imgproc/imgproc.hpp"
-//#include <iostream>
-//#include <OpenNI.h>
-//#include <opencv/cv.h>
-//#include <opencv/highgui.h>
-//#include <vector>
-//#include<cvimagewidget.h>
-//#include<QImage>
-//#include<QFileDialog>
-//#include<QString>
 
 using namespace openni;
 using namespace cv;
@@ -22,6 +9,8 @@ MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
 {
+    preview = new CameraPreview();
+    QObject::connect(preview, SIGNAL(frameReady(QImage)), this, SLOT(renderFrame(QImage)));
     ui->setupUi(this);
 }
 
@@ -38,34 +27,24 @@ void MainWindow::on_advanced_scanning_clicked()
 
 
 
-void MainWindow::on_start_scanning_clicked()
+void MainWindow::on_start_preview_clicked()
 {
-    VideoCapture camera(0);
-
-    if( !camera.isOpened() )
-    {
-        cout << "Can not open a laptop camera." << endl;
-
+    if (preview->isStopped()){
+        preview->startPreview(ui->preview_window->size());
+        ui->start_preview->setText(tr("Stop preview"));
+    } else {
+        preview->stopPreview();
+        ui->start_preview->setText(tr("Start preview"));
     }
-    for(;;){
-        Mat depth;
-
-        if( !camera.grab() ){
-            cout << "Sensor1 can not grab images." << endl;
-
-        }else if( camera.retrieve( depth, CV_CAP_OPENNI_DEPTH_MAP ) )
-
-             imshow("Camera",depth);
-
-
-        if( waitKey( 30 ) == 27 )   break;// 27 is a number of ESC button
-
-   }
 }
 
-
-
-void MainWindow::on_kinect_window_destroyed()
+void MainWindow::renderFrame(QImage frame)
 {
-
+    if (!frame.isNull())
+    {
+        ui->preview_window->setAlignment(Qt::AlignCenter);
+        //frame = frame.scaled(ui->preview_window->size(), Qt::KeepAspectRatio);
+        ui->preview_window->setPixmap(QPixmap::fromImage(frame));
+    }
 }
+

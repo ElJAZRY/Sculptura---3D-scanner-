@@ -19,8 +19,8 @@
 
 QT_BEGIN_MOC_NAMESPACE
 struct qt_meta_stringdata_MainWindow_t {
-    QByteArrayData data[5];
-    char stringdata0[94];
+    QByteArrayData data[6];
+    char stringdata0[84];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -32,13 +32,14 @@ static const qt_meta_stringdata_MainWindow_t qt_meta_stringdata_MainWindow = {
 QT_MOC_LITERAL(0, 0, 10), // "MainWindow"
 QT_MOC_LITERAL(1, 11, 28), // "on_advanced_scanning_clicked"
 QT_MOC_LITERAL(2, 40, 0), // ""
-QT_MOC_LITERAL(3, 41, 25), // "on_start_scanning_clicked"
-QT_MOC_LITERAL(4, 67, 26) // "on_kinect_window_destroyed"
+QT_MOC_LITERAL(3, 41, 24), // "on_start_preview_clicked"
+QT_MOC_LITERAL(4, 66, 11), // "renderFrame"
+QT_MOC_LITERAL(5, 78, 5) // "frame"
 
     },
     "MainWindow\0on_advanced_scanning_clicked\0"
-    "\0on_start_scanning_clicked\0"
-    "on_kinect_window_destroyed"
+    "\0on_start_preview_clicked\0renderFrame\0"
+    "frame"
 };
 #undef QT_MOC_LITERAL
 
@@ -58,12 +59,12 @@ static const uint qt_meta_data_MainWindow[] = {
  // slots: name, argc, parameters, tag, flags
        1,    0,   29,    2, 0x08 /* Private */,
        3,    0,   30,    2, 0x08 /* Private */,
-       4,    0,   31,    2, 0x08 /* Private */,
+       4,    1,   31,    2, 0x08 /* Private */,
 
  // slots: parameters
     QMetaType::Void,
     QMetaType::Void,
-    QMetaType::Void,
+    QMetaType::Void, QMetaType::QImage,    5,
 
        0        // eod
 };
@@ -75,12 +76,11 @@ void MainWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
         Q_UNUSED(_t)
         switch (_id) {
         case 0: _t->on_advanced_scanning_clicked(); break;
-        case 1: _t->on_start_scanning_clicked(); break;
-        case 2: _t->on_kinect_window_destroyed(); break;
+        case 1: _t->on_start_preview_clicked(); break;
+        case 2: _t->renderFrame((*reinterpret_cast< QImage(*)>(_a[1]))); break;
         default: ;
         }
     }
-    Q_UNUSED(_a);
 }
 
 const QMetaObject MainWindow::staticMetaObject = {

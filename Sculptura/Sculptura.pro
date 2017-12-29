@@ -26,10 +26,12 @@ LIBS += "C:\opencv\build\x64\vc14\lib\*.lib"
 
 SOURCES += main.cpp\
         mainwindow.cpp \
-    advanced_scanning.cpp
+    advanced_scanning.cpp \
+    camerapreview.cpp
 
 HEADERS  += mainwindow.h \
     advanced_scanning.h \
+    camerapreview.h
 
 
 FORMS    += mainwindow.ui \

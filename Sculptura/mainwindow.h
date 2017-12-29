@@ -3,6 +3,7 @@
 
 #include <QMainWindow>
 #include "advanced_scanning.h"
+#include "camerapreview.h"
 
 #include "ui_mainwindow.h"
 #include "opencv2/core/core.hpp"
@@ -17,6 +18,10 @@
 #include<QImage>
 #include<QFileDialog>
 #include<QString>
+
+#include <QMessageBox>
+
+
 
 using namespace openni;
 using namespace cv;
@@ -40,14 +45,14 @@ private slots:
 
     void on_advanced_scanning_clicked();
 
-    void on_start_scanning_clicked();
+    void on_start_preview_clicked();
 
-
-    void on_kinect_window_destroyed();
+    void renderFrame(QImage frame);
 
 private:
     Ui::MainWindow *ui;
     Advanced_scanning *advanced_parameters;
+    CameraPreview* preview;
 
 
 };
