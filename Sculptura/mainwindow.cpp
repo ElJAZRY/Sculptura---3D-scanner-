@@ -62,7 +62,18 @@ void MainWindow::on_actionOpen_PointClouds_triggered()
     }
 }
 
-void MainWindow::showPointCloudFiles() {
+void MainWindow::on_deletePointCloud_clicked()
+{
+    QModelIndexList selection = ui->listPointClouds->selectionModel()->selectedIndexes();
+    if (!selection.isEmpty()) {
+        QModelIndex index = selection.at(0);
+        pointCloudFiles->removeAt(index.row());
+        showPointCloudFiles();
+    } //TODO else show warning message
+}
+
+void MainWindow::showPointCloudFiles()
+{
     QStandardItemModel* listModel = new QStandardItemModel();
 
     QStringList filenameParts;
@@ -75,7 +86,8 @@ void MainWindow::showPointCloudFiles() {
     ui->listPointClouds->setModel(listModel);
 }
 
-void MainWindow::initVisualiser() {
+void MainWindow::initVisualiser()
+{
     // Set up the QvtkWindow widget
     visualiser.reset(new pcl::visualization::PCLVisualizer("visualiser", false));
     //Set the QvtkWindow to show the graphics rendered by "visualiser"
@@ -93,3 +105,5 @@ void MainWindow::initVisualiser() {
     visualiser->setPointCloudRenderingProperties(pcl::visualization::PCL_VISUALIZER_POINT_SIZE, 3, "cloud");
     ui->vtkWindow->update();
 }
+
+

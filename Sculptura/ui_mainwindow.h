@@ -9,6 +9,7 @@
 #ifndef UI_MAINWINDOW_H
 #define UI_MAINWINDOW_H
 
+#include <QVTKWidget.h>
 #include <QtCore/QVariant>
 #include <QtWidgets/QAction>
 #include <QtWidgets/QApplication>
@@ -28,7 +29,6 @@
 #include <QtWidgets/QToolBar>
 #include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
-#include "QVTKWidget.h"
 
 QT_BEGIN_NAMESPACE
 
@@ -48,7 +48,7 @@ public:
     QLabel *list_pc;
     QListView *listPointClouds;
     QPushButton *selectall;
-    QPushButton *deleteall;
+    QPushButton *deletePointCloud;
     QWidget *layoutWidget;
     QHBoxLayout *horizontalLayout_2;
     QWidget *layout_widget;
@@ -184,12 +184,12 @@ public:
 "    background-color: #748896;\n"
 "    border-style: inset;\n"
 "}"));
-        deleteall = new QPushButton(Box_pointclouds);
-        deleteall->setObjectName(QStringLiteral("deleteall"));
-        deleteall->setEnabled(true);
-        deleteall->setGeometry(QRect(110, 310, 81, 31));
-        deleteall->setCursor(QCursor(Qt::PointingHandCursor));
-        deleteall->setStyleSheet(QLatin1String("QPushButton {\n"
+        deletePointCloud = new QPushButton(Box_pointclouds);
+        deletePointCloud->setObjectName(QStringLiteral("deletePointCloud"));
+        deletePointCloud->setEnabled(true);
+        deletePointCloud->setGeometry(QRect(110, 310, 81, 31));
+        deletePointCloud->setCursor(QCursor(Qt::PointingHandCursor));
+        deletePointCloud->setStyleSheet(QLatin1String("QPushButton {\n"
 "    background-color: #c0cbd3;\n"
 "    border-style: outset;\n"
 "    border-width: 2px;\n"
@@ -383,7 +383,7 @@ public:
         Box_pointclouds->setTitle(QString());
         list_pc->setText(QApplication::translate("MainWindow", "List of Point Clouds", 0));
         selectall->setText(QApplication::translate("MainWindow", "Select all", 0));
-        deleteall->setText(QApplication::translate("MainWindow", "Delete all", 0));
+        deletePointCloud->setText(QApplication::translate("MainWindow", "Delete", 0));
         label_simple_scanning->setText(QApplication::translate("MainWindow", "Simple scanning", 0));
         start_preview->setText(QApplication::translate("MainWindow", "Start preview", 0));
         stop_scanning->setText(QApplication::translate("MainWindow", "Start scanning", 0));

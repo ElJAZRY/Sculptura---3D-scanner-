@@ -53,6 +53,8 @@ private slots:
     void on_start_preview_clicked();
     void on_actionOpen_PointClouds_triggered();
 
+    void on_deletePointCloud_clicked();
+
 private:
     void showPointCloudFiles();
     void initVisualiser();
