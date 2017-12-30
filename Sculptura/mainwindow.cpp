@@ -9,11 +9,19 @@ MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
 {
-    pointCloudFiles = new QStringList();
+    ui->setupUi(this);
+
     preview = new CameraPreview();
     QObject::connect(preview, SIGNAL(frameReady(QImage)), this, SLOT(renderFrame(QImage)));
-    ui->setupUi(this);
+
+    pointCloudFiles = new QStringList();
+    pointCloud.reset(new PointCloudT);
+
     initVisualiser();
+
+    qRegisterMetaType<PointCloudT::Ptr>("PointCloudT::Ptr");
+    readPointClouds = new ReadPointClouds();
+    QObject::connect(readPointClouds, SIGNAL(pointCloudsReady(PointCloudT::Ptr)), this, SLOT(savePointClouds(PointCloudT::Ptr)));
 }
 
 MainWindow::~MainWindow()
@@ -57,8 +65,9 @@ void MainWindow::on_actionOpen_PointClouds_triggered()
 
     if( !filenames.isEmpty() )
     {
+        //TODO remove duplicates first
         pointCloudFiles->append(filenames);
-        showPointCloudFiles();
+        readPointClouds->read(filenames); //TODO what if thread is already running?
     }
 }
 
@@ -98,12 +107,20 @@ void MainWindow::initVisualiser()
     ui->vtkWindow->update();
 
     //Link the pointcloud container from the database to the visualization object:
-//    pcl::visualization::PointCloudColorHandlerCustom<PointType> colorPt(pointCloud, 0, 123, 100);
-//    visualiser->addPointCloud(pointCloud, colorPt, "cloud");
+    pcl::visualization::PointCloudColorHandlerCustom<PointType> colorPt(pointCloud, 0, 123, 100);
+    visualiser->addPointCloud(pointCloud, colorPt, "cloud");
     visualiser->resetCamera();
     //Set visualization parameters such as size of points:
     visualiser->setPointCloudRenderingProperties(pcl::visualization::PCL_VISUALIZER_POINT_SIZE, 3, "cloud");
     ui->vtkWindow->update();
 }
 
+void MainWindow::savePointClouds(PointCloudT::Ptr cloud) {
+    pointCloud = cloud;
+    showPointCloudFiles();
+
+    visualiser->updatePointCloud(pointCloud, "cloud");
+    //TODO should reset camera?
+    ui->vtkWindow->update();
+}
 

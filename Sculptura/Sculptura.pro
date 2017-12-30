@@ -217,11 +217,13 @@ LIBS += -lkinect20
 SOURCES += main.cpp\
         mainwindow.cpp \
     advanced_scanning.cpp \
-    camerapreview.cpp
+    camerapreview.cpp \
+    read_point_clouds.cpp
 
 HEADERS  += mainwindow.h \
     advanced_scanning.h \
-    camerapreview.h
+    camerapreview.h \
+    read_point_clouds.h
 
 
 FORMS    += mainwindow.ui \

@@ -5,6 +5,7 @@
 
 #include "advanced_scanning.h"
 #include "camerapreview.h"
+#include "read_point_clouds.h"
 #include "ui_mainwindow.h"
 
 #include "opencv2/core/core.hpp"
@@ -42,17 +43,20 @@ class MainWindow : public QMainWindow
 {
     Q_OBJECT
 
+    typedef pcl::PointXYZ PointType;
+    typedef pcl::PointCloud<PointType> PointCloudT;
+
 public:
     explicit MainWindow(QWidget *parent = 0);
     ~MainWindow();
 
 private slots:
     void renderFrame(QImage frame);
+    void savePointClouds(PointCloudT::Ptr pointCloud); //TODO grab all!!!
 
     void on_advanced_scanning_clicked();
     void on_start_preview_clicked();
     void on_actionOpen_PointClouds_triggered();
-
     void on_deletePointCloud_clicked();
 
 private:
@@ -67,11 +71,10 @@ private:
     //Object in charge of visualizing pointclouds and meshes:
     boost::shared_ptr<pcl::visualization::PCLVisualizer> visualiser;
 
-//    typedef pcl::PointXYZ PointType;
-//    typedef pcl::PointCloud<PointType> PointCloudT;
+    PointCloudT::Ptr pointCloud;
+    std::vector<PointCloudT::Ptr> pointCloudSet;
 
-//    PointCloudT::Ptr pointCloud;
-//    std::vector<PointCloudT::Ptr> pointCloudSet;
+    ReadPointClouds* readPointClouds;
 
 };
 #endif // MAINWINDOW_H
