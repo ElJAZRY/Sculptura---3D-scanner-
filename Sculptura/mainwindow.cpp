@@ -62,7 +62,11 @@ void MainWindow::renderFrame(QImage frame)
 void MainWindow::on_actionOpen_PointClouds_triggered()
 {
     //TODO configure QFileDialog to block other file extensions than specified
-    QStringList filenames = QFileDialog::getOpenFileNames(this, tr("Open PCD or PLY files..."),"", tr(""));
+    QStringList filenames = QFileDialog::getOpenFileNames(
+                this,
+                tr("Choose Point Clouds"),
+                "C://",
+                tr("Point Clouds(*.ply *.pcd)"));
 
     if( !filenames.isEmpty() )
     {
@@ -79,7 +83,9 @@ void MainWindow::on_deletePointCloud_clicked()
         QModelIndex index = selection.at(0);
         pointCloudFiles->removeAt(index.row());
         showPointCloudFiles();
+        showSelectedPointCloud(0);
     } //TODO else show warning message
+
 }
 
 void MainWindow::showPointCloudFiles()
@@ -127,3 +133,16 @@ void MainWindow::savePointClouds(std::vector<PointCloudT::Ptr> pointClouds)
     ui->vtkWindow->update();
 }
 
+void MainWindow::showSelectedPointCloud(int indexPointcloud)
+{
+    pointCloud = pointCloudSet[indexPointcloud];
+    visualiser->updatePointCloud(pointCloud, "cloud");
+    //if( ui->checkBox->isChecked() ) viewer->resetCamera ();
+    ui->vtkWindow->update ();
+}
+
+
+void MainWindow::on_listPointClouds_doubleClicked(const QModelIndex &index)
+{
+    showSelectedPointCloud(index.row());
+}

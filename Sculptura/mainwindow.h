@@ -59,8 +59,11 @@ private slots:
     void on_actionOpen_PointClouds_triggered();
     void on_deletePointCloud_clicked();
 
+    void on_listPointClouds_doubleClicked(const QModelIndex &index);
+
 private:
     void showPointCloudFiles();
+    void showSelectedPointCloud(int);
     void initVisualiser();
 
     Ui::MainWindow *ui;

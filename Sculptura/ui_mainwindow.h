@@ -9,7 +9,6 @@
 #ifndef UI_MAINWINDOW_H
 #define UI_MAINWINDOW_H
 
-#include <QVTKWidget.h>
 #include <QtCore/QVariant>
 #include <QtWidgets/QAction>
 #include <QtWidgets/QApplication>
@@ -29,6 +28,7 @@
 #include <QtWidgets/QToolBar>
 #include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
+#include "QVTKWidget.h"
 
 QT_BEGIN_NAMESPACE
 
@@ -164,8 +164,10 @@ public:
         listPointClouds = new QListView(Box_pointclouds);
         listPointClouds->setObjectName(QStringLiteral("listPointClouds"));
         listPointClouds->setGeometry(QRect(10, 40, 191, 261));
+        listPointClouds->setEditTriggers(QAbstractItemView::NoEditTriggers);
         listPointClouds->setProperty("isWrapping", QVariant(false));
         listPointClouds->setUniformItemSizes(false);
+        listPointClouds->setWordWrap(false);
         selectall = new QPushButton(Box_pointclouds);
         selectall->setObjectName(QStringLiteral("selectall"));
         selectall->setEnabled(true);

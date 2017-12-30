@@ -178,10 +178,16 @@ QPushButton:pressed {
        <height>261</height>
       </rect>
      </property>
+     <property name="editTriggers">
+      <set>QAbstractItemView::NoEditTriggers</set>
+     </property>
      <property name="isWrapping" stdset="0">
       <bool>false</bool>
      </property>
      <property name="uniformItemSizes">
+      <bool>false</bool>
+     </property>
+     <property name="wordWrap">
       <bool>false</bool>
      </property>
     </widget>
@@ -551,7 +557,7 @@ QPushButton:pressed {
   <customwidget>
    <class>QVTKWidget</class>
    <extends>QWidget</extends>
-   <header location="global">QVTKWidget.h</header>
+   <header>QVTKWidget.h</header>
   </customwidget>
  </customwidgets>
  <resources>
