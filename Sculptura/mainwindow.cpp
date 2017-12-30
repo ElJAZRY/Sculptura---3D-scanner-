@@ -19,9 +19,10 @@ MainWindow::MainWindow(QWidget *parent) :
 
     initVisualiser();
 
-    qRegisterMetaType<PointCloudT::Ptr>("PointCloudT::Ptr");
+    qRegisterMetaType<std::vector<PointCloudT::Ptr>>("std::vector<PointCloudT::Ptr>");
     readPointClouds = new ReadPointClouds();
-    QObject::connect(readPointClouds, SIGNAL(pointCloudsReady(PointCloudT::Ptr)), this, SLOT(savePointClouds(PointCloudT::Ptr)));
+    QObject::connect(readPointClouds, SIGNAL(pointCloudsReady(std::vector<PointCloudT::Ptr>)),
+                     this, SLOT(savePointClouds(std::vector<PointCloudT::Ptr>)));
 }
 
 MainWindow::~MainWindow()
@@ -115,8 +116,10 @@ void MainWindow::initVisualiser()
     ui->vtkWindow->update();
 }
 
-void MainWindow::savePointClouds(PointCloudT::Ptr cloud) {
-    pointCloud = cloud;
+void MainWindow::savePointClouds(std::vector<PointCloudT::Ptr> pointClouds)
+{
+    pointCloudSet.insert(std::end(pointCloudSet), std::begin(pointClouds), std::end(pointClouds));
+    pointCloud = pointCloudSet.at(0); //TODO if not empty
     showPointCloudFiles();
 
     visualiser->updatePointCloud(pointCloud, "cloud");

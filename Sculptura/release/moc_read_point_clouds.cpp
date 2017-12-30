@@ -20,7 +20,7 @@
 QT_BEGIN_MOC_NAMESPACE
 struct qt_meta_stringdata_ReadPointClouds_t {
     QByteArrayData data[5];
-    char stringdata0[57];
+    char stringdata0[76];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -32,12 +32,12 @@ static const qt_meta_stringdata_ReadPointClouds_t qt_meta_stringdata_ReadPointCl
 QT_MOC_LITERAL(0, 0, 15), // "ReadPointClouds"
 QT_MOC_LITERAL(1, 16, 16), // "pointCloudsReady"
 QT_MOC_LITERAL(2, 33, 0), // ""
-QT_MOC_LITERAL(3, 34, 16), // "PointCloudT::Ptr"
-QT_MOC_LITERAL(4, 51, 5) // "cloud"
+QT_MOC_LITERAL(3, 34, 29), // "std::vector<PointCloudT::Ptr>"
+QT_MOC_LITERAL(4, 64, 11) // "pointClouds"
 
     },
     "ReadPointClouds\0pointCloudsReady\0\0"
-    "PointCloudT::Ptr\0cloud"
+    "std::vector<PointCloudT::Ptr>\0pointClouds"
 };
 #undef QT_MOC_LITERAL
 
@@ -69,14 +69,14 @@ void ReadPointClouds::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int 
         ReadPointClouds *_t = static_cast<ReadPointClouds *>(_o);
         Q_UNUSED(_t)
         switch (_id) {
-        case 0: _t->pointCloudsReady((*reinterpret_cast< const PointCloudT::Ptr(*)>(_a[1]))); break;
+        case 0: _t->pointCloudsReady((*reinterpret_cast< std::vector<PointCloudT::Ptr>(*)>(_a[1]))); break;
         default: ;
         }
     } else if (_c == QMetaObject::IndexOfMethod) {
         int *result = reinterpret_cast<int *>(_a[0]);
         void **func = reinterpret_cast<void **>(_a[1]);
         {
-            typedef void (ReadPointClouds::*_t)(const PointCloudT::Ptr );
+            typedef void (ReadPointClouds::*_t)(std::vector<PointCloudT::Ptr> );
             if (*reinterpret_cast<_t *>(func) == static_cast<_t>(&ReadPointClouds::pointCloudsReady)) {
                 *result = 0;
                 return;
@@ -122,7 +122,7 @@ int ReadPointClouds::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
 }
 
 // SIGNAL 0
-void ReadPointClouds::pointCloudsReady(const PointCloudT::Ptr _t1)
+void ReadPointClouds::pointCloudsReady(std::vector<PointCloudT::Ptr> _t1)
 {
     void *_a[] = { Q_NULLPTR, const_cast<void*>(reinterpret_cast<const void*>(&_t1)) };
     QMetaObject::activate(this, &staticMetaObject, 0, _a);

@@ -28,14 +28,14 @@ public:
     bool isStopped() const;
 
 signals:
-    void pointCloudsReady(const PointCloudT::Ptr cloud);
+    void pointCloudsReady(std::vector<PointCloudT::Ptr> pointClouds);
 
 protected:
     void run();
 
 private:
     QStringList filenames;
-    PointCloudT::Ptr pointCloud;
+    std::vector<PointCloudT::Ptr> pointClouds;
 
     //Object for loading a PLY file
     pcl::PLYReader plyReader;

@@ -24,7 +24,7 @@ ReadPointClouds::~ReadPointClouds()
 void ReadPointClouds::read(QStringList files)
 {
     filenames = files;
-    pointCloud.reset(new PointCloudT);
+    pointClouds.clear();
 
     if (!isRunning()) {
         if (isStopped()){
@@ -59,12 +59,10 @@ void ReadPointClouds::run()
         //std::vector<int> indices;
         //pcl::removeNaNFromPointCloud(*tmpCloud, *tmpCloud, indices); //TODO!!!!!!!
 
-        //Append pointcloud into the vector of pointclouds
-        //Database->m_pointcloud_data.push_back(tmpCloud); //TODO !!!!!!!!!!!!!
-        pointCloud = tmpCloud;
+        pointClouds.push_back(tmpCloud);
     }
 
-    emit pointCloudsReady(pointCloud);
+    emit pointCloudsReady(pointClouds);
     stopped = true;
 }
 

@@ -52,7 +52,7 @@ public:
 
 private slots:
     void renderFrame(QImage frame);
-    void savePointClouds(PointCloudT::Ptr pointCloud); //TODO grab all!!!
+    void savePointClouds(std::vector<PointCloudT::Ptr> pointClouds);
 
     void on_advanced_scanning_clicked();
     void on_start_preview_clicked();
@@ -71,8 +71,8 @@ private:
     //Object in charge of visualizing pointclouds and meshes:
     boost::shared_ptr<pcl::visualization::PCLVisualizer> visualiser;
 
-    PointCloudT::Ptr pointCloud;
-    std::vector<PointCloudT::Ptr> pointCloudSet;
+    PointCloudT::Ptr pointCloud; //currently selected point cloud
+    std::vector<PointCloudT::Ptr> pointCloudSet; //list of all loaded point clouds
 
     ReadPointClouds* readPointClouds;
 

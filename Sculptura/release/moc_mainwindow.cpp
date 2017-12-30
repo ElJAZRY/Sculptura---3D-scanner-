@@ -20,7 +20,7 @@
 QT_BEGIN_MOC_NAMESPACE
 struct qt_meta_stringdata_MainWindow_t {
     QByteArrayData data[11];
-    char stringdata0[192];
+    char stringdata0[206];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -34,17 +34,17 @@ QT_MOC_LITERAL(1, 11, 11), // "renderFrame"
 QT_MOC_LITERAL(2, 23, 0), // ""
 QT_MOC_LITERAL(3, 24, 5), // "frame"
 QT_MOC_LITERAL(4, 30, 15), // "savePointClouds"
-QT_MOC_LITERAL(5, 46, 16), // "PointCloudT::Ptr"
-QT_MOC_LITERAL(6, 63, 10), // "pointCloud"
-QT_MOC_LITERAL(7, 74, 28), // "on_advanced_scanning_clicked"
-QT_MOC_LITERAL(8, 103, 24), // "on_start_preview_clicked"
-QT_MOC_LITERAL(9, 128, 35), // "on_actionOpen_PointClouds_tri..."
-QT_MOC_LITERAL(10, 164, 27) // "on_deletePointCloud_clicked"
+QT_MOC_LITERAL(5, 46, 29), // "std::vector<PointCloudT::Ptr>"
+QT_MOC_LITERAL(6, 76, 11), // "pointClouds"
+QT_MOC_LITERAL(7, 88, 28), // "on_advanced_scanning_clicked"
+QT_MOC_LITERAL(8, 117, 24), // "on_start_preview_clicked"
+QT_MOC_LITERAL(9, 142, 35), // "on_actionOpen_PointClouds_tri..."
+QT_MOC_LITERAL(10, 178, 27) // "on_deletePointCloud_clicked"
 
     },
     "MainWindow\0renderFrame\0\0frame\0"
-    "savePointClouds\0PointCloudT::Ptr\0"
-    "pointCloud\0on_advanced_scanning_clicked\0"
+    "savePointClouds\0std::vector<PointCloudT::Ptr>\0"
+    "pointClouds\0on_advanced_scanning_clicked\0"
     "on_start_preview_clicked\0"
     "on_actionOpen_PointClouds_triggered\0"
     "on_deletePointCloud_clicked"
@@ -90,7 +90,7 @@ void MainWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
         Q_UNUSED(_t)
         switch (_id) {
         case 0: _t->renderFrame((*reinterpret_cast< QImage(*)>(_a[1]))); break;
-        case 1: _t->savePointClouds((*reinterpret_cast< PointCloudT::Ptr(*)>(_a[1]))); break;
+        case 1: _t->savePointClouds((*reinterpret_cast< std::vector<PointCloudT::Ptr>(*)>(_a[1]))); break;
         case 2: _t->on_advanced_scanning_clicked(); break;
         case 3: _t->on_start_preview_clicked(); break;
         case 4: _t->on_actionOpen_PointClouds_triggered(); break;
