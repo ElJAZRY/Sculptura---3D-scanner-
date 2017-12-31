@@ -83,8 +83,17 @@ void MainWindow::on_deletePointCloud_clicked()
         QModelIndex index = selection.at(0);
         pointCloudFiles->removeAt(index.row());
         showPointCloudFiles();
-        showSelectedPointCloud(0);
+        if (!pointCloudFiles->isEmpty()) {
+            showSelectedPointCloud(0);
+        }
+        else {
+            pointCloud.reset(new PointCloudT);
+            visualiser->updatePointCloud(pointCloud, "cloud");
+            ui->vtkWindow->update ();
+        }
+
     } //TODO else show warning message
+    //!!!!!TODO check why if deleted 1st point cloud - it rewrite the list (4th PC saves its name, but content changes)
 
 }
 
