@@ -80,7 +80,6 @@ void MainWindow::on_deletePointCloud_clicked()
     QModelIndexList selection = ui->listPointClouds->selectionModel()->selectedIndexes();
     if (!selection.isEmpty()) {
         QModelIndex index = selection.at(0);
-        ui->showIndex->setText(QString::number(index.row()));
         pointCloudFiles->removeAt(index.row());
         pointCloudSet.erase(pointCloudSet.begin()+index.row());
         showPointCloudFiles();

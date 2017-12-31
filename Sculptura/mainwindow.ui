@@ -284,13 +284,6 @@ QPushButton:pressed {
             </property>
            </widget>
           </item>
-          <item row="1" column="0">
-           <widget class="QLabel" name="showIndex">
-            <property name="text">
-             <string>TextLabel</string>
-            </property>
-           </widget>
-          </item>
          </layout>
         </widget>
        </item>
@@ -533,9 +526,6 @@ QPushButton:pressed {
      </widget>
     </item>
    </layout>
-   <zorder>layoutWidget</zorder>
-   <zorder>label_brightness</zorder>
-   <zorder>label_contrast</zorder>
    <zorder>ListGroupBox</zorder>
    <zorder>scanningGroupBox</zorder>
    <zorder>reconstructionGroupBox</zorder>
