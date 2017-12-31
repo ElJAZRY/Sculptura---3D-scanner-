@@ -14,6 +14,10 @@ MainWindow::MainWindow(QWidget *parent) :
     preview = new CameraPreview();
     QObject::connect(preview, SIGNAL(frameReady(QImage)), this, SLOT(renderFrame(QImage)));
 
+    kinectPreview = new KinectPreview();
+    QObject::connect(kinectPreview, SIGNAL(frameReady(QImage)), this, SLOT(renderFrame(QImage)));
+    QObject::connect(kinectPreview, SIGNAL(stopPreview()), this, SLOT(saveDepthAndColorMat(std::vector<cv::Mat>, std::vector<cv::Mat>)));
+
     pointCloudFiles = new QStringList();
     pointCloud.reset(new PointCloudT);
 
@@ -29,6 +33,8 @@ MainWindow::~MainWindow()
 {
     pointCloudFiles->clear();
     delete pointCloudFiles;
+    depth.clear();
+    colors.clear();
     delete ui;
 }
 
@@ -40,11 +46,19 @@ void MainWindow::on_advanced_scanning_clicked()
 
 void MainWindow::on_start_preview_clicked()
 {
-    if (preview->isStopped()){
-        preview->startPreview(ui->preview_window->size());
+//    if (preview->isStopped()){
+//        preview->startPreview(ui->preview_window->size());
+//        ui->start_preview->setText(tr("Stop preview"));
+//    } else {
+//        preview->stopPreview();
+//        ui->start_preview->setText(tr("Start preview"));
+//    }
+
+    if (kinectPreview->isStopped()){
+        kinectPreview->startPreview(ui->preview_window->size());
         ui->start_preview->setText(tr("Stop preview"));
     } else {
-        preview->stopPreview();
+        kinectPreview->stopPreview();
         ui->start_preview->setText(tr("Start preview"));
     }
 }
@@ -57,6 +71,12 @@ void MainWindow::renderFrame(QImage frame)
         //frame = frame.scaled(ui->preview_window->size(), Qt::KeepAspectRatio);
         ui->preview_window->setPixmap(QPixmap::fromImage(frame));
     }
+}
+
+void MainWindow::saveDepthAndColorMat(std::vector<cv::Mat> depth, std::vector<cv::Mat> colors)
+{
+    this->depth = depth;
+    this->colors = colors;
 }
 
 void MainWindow::on_actionOpen_PointClouds_triggered()
@@ -93,7 +113,6 @@ void MainWindow::on_deletePointCloud_clicked()
         }
 
     } //TODO else show warning message
-    //!!!!!TODO check why it delets last point cloud
 }
 
 void MainWindow::showPointCloudFiles()

@@ -63,7 +63,6 @@ public:
     QWidget *widget;
     QGridLayout *gridLayout;
     QVTKWidget *vtkWindow;
-    QLabel *showIndex;
     QHBoxLayout *horizontalLayout_4;
     QSpacerItem *horizontalSpacer;
     QProgressBar *progressBar;
@@ -304,11 +303,6 @@ public:
 
         gridLayout->addWidget(vtkWindow, 0, 0, 1, 1);
 
-        showIndex = new QLabel(widget);
-        showIndex->setObjectName(QStringLiteral("showIndex"));
-
-        gridLayout->addWidget(showIndex, 1, 0, 1, 1);
-
 
         verticalLayout_4->addWidget(widget);
 
@@ -454,8 +448,6 @@ public:
         horizontalLayout_5->addWidget(ListGroupBox);
 
         MainWindow->setCentralWidget(centralWidget);
-        label_brightness->raise();
-        label_contrast->raise();
         ListGroupBox->raise();
         scanningGroupBox->raise();
         reconstructionGroupBox->raise();
@@ -502,7 +494,6 @@ public:
         stop_scanning->setText(QApplication::translate("MainWindow", "Start scanning", 0));
         advanced_scanning->setText(QApplication::translate("MainWindow", "Advanced scanning", 0));
         reconstructionGroupBox->setTitle(QString());
-        showIndex->setText(QApplication::translate("MainWindow", "TextLabel", 0));
         get_3D_model->setText(QApplication::translate("MainWindow", "Get 3D model", 0));
         ListGroupBox->setTitle(QString());
         list_pc->setText(QApplication::translate("MainWindow", "List of Point Clouds", 0));

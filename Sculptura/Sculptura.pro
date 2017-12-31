@@ -33,6 +33,8 @@ INCLUDEPATH += "C:\Program Files\OpenNI2\Include"
 INCLUDEPATH += "C:\Program Files (x86)\Windows Kits\10\Include\10.0.10240.0\um"
 INCLUDEPATH += "C:\Program Files (x86)\Windows Kits\10\Include\10.0.10240.0\shared"
 INCLUDEPATH += "C:/Program Files (x86)/Windows Kits/10/Include/10.0.10240.0/ucrt"
+INCLUDEPATH += "C:\Program Files (x86)\Intel\RSSDK\include"
+INCLUDEPATH += "C:\Program Files (x86)\Intel\RSSDK\src\libpxc"
 
 LIBS += opengl32.lib advapi32.lib Ws2_32.lib user32.lib shell32.lib gdi32.lib kernel32.lib
 
@@ -45,6 +47,8 @@ LIBS += "-LC:\Program Files\Microsoft SDKs\Kinect\v2.0_1409\Lib\x64"
 LIBS += "-LC:\Program Files\OpenNI2\Lib"
 LIBS += "-LC:\Program Files (x86)\Windows Kits\10\Lib\10.0.10240.0\um\x64"
 LIBS += "-LC:\Program Files (x86)\Windows Kits\10\Lib\10.0.10240.0\ucrt\x64"
+LIBS += "C:/Program Files (x86)/Intel/RSSDK/lib/x64/*.lib"
+LIBS += "C:/Program Files (x86)/Intel/RSSDK/sample/core/common/lib/x64/v140/*.lib"
 
 LIBS += -lvtkGUISupportQt-7.0
 
@@ -218,12 +222,14 @@ SOURCES += main.cpp\
         mainwindow.cpp \
     advanced_scanning.cpp \
     camerapreview.cpp \
-    read_point_clouds.cpp
+    read_point_clouds.cpp \
+    kinect_preview.cpp
 
 HEADERS  += mainwindow.h \
     advanced_scanning.h \
     camerapreview.h \
-    read_point_clouds.h
+    read_point_clouds.h \
+    kinect_preview.h
 
 
 FORMS    += mainwindow.ui \

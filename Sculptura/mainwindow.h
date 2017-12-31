@@ -5,6 +5,7 @@
 
 #include "advanced_scanning.h"
 #include "camerapreview.h"
+#include "kinect_preview.h"
 #include "read_point_clouds.h"
 #include "ui_mainwindow.h"
 
@@ -53,6 +54,7 @@ public:
 private slots:
     void renderFrame(QImage frame);
     void savePointClouds(std::vector<PointCloudT::Ptr> pointClouds);
+    void saveDepthAndColorMat(std::vector<cv::Mat> depth, std::vector<cv::Mat> colors);
 
     void on_advanced_scanning_clicked();
     void on_start_preview_clicked();
@@ -69,6 +71,11 @@ private:
     Ui::MainWindow *ui;
     Advanced_scanning *advanced_parameters;
     CameraPreview* preview;
+    KinectPreview* kinectPreview;
+
+    std::vector<cv::Mat> depth;
+    std::vector<cv::Mat> colors;
+
     QStringList* pointCloudFiles;
 
     //Object in charge of visualizing pointclouds and meshes:
