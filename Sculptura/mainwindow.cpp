@@ -61,7 +61,6 @@ void MainWindow::renderFrame(QImage frame)
 
 void MainWindow::on_actionOpen_PointClouds_triggered()
 {
-    //TODO configure QFileDialog to block other file extensions than specified
     QStringList filenames = QFileDialog::getOpenFileNames(
                 this,
                 tr("Choose Point Clouds"),
@@ -81,7 +80,9 @@ void MainWindow::on_deletePointCloud_clicked()
     QModelIndexList selection = ui->listPointClouds->selectionModel()->selectedIndexes();
     if (!selection.isEmpty()) {
         QModelIndex index = selection.at(0);
+        ui->showIndex->setText(QString::number(index.row()));
         pointCloudFiles->removeAt(index.row());
+        pointCloudSet.erase(pointCloudSet.begin()+index.row());
         showPointCloudFiles();
         if (!pointCloudFiles->isEmpty()) {
             showSelectedPointCloud(0);
@@ -93,8 +94,7 @@ void MainWindow::on_deletePointCloud_clicked()
         }
 
     } //TODO else show warning message
-    //!!!!!TODO check why if deleted 1st point cloud - it rewrite the list (4th PC saves its name, but content changes)
-
+    //!!!!!TODO check why it delets last point cloud
 }
 
 void MainWindow::showPointCloudFiles()
