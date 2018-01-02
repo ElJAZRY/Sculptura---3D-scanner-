@@ -58,9 +58,9 @@ private slots:
 
     void on_advanced_scanning_clicked();
     void on_start_preview_clicked();
+    void on_start_scanning_clicked();
     void on_actionOpen_PointClouds_triggered();
     void on_deletePointCloud_clicked();
-
     void on_listPointClouds_doubleClicked(const QModelIndex &index);
 
 private:

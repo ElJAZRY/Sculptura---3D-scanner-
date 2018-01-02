@@ -49,21 +49,40 @@ void MainWindow::on_advanced_scanning_clicked()
 
 void MainWindow::on_start_preview_clicked()
 {   
-    if (preview->isStopped()){
-        preview->startPreview(ui->preview_window->size());
-        ui->start_preview->setText(tr("Stop preview"));
-    } else {
-        preview->stopPreview();
-        ui->start_preview->setText(tr("Start preview"));
-    }
-
-//    if (kinectPreview->isStopped()){
-//        kinectPreview->startPreview(ui->preview_window->size());
+//    if (preview->isStopped()){
+//        preview->startPreview(ui->preview_window->size());
 //        ui->start_preview->setText(tr("Stop preview"));
 //    } else {
-//        kinectPreview->stopPreview();
+//        preview->stopPreview();
 //        ui->start_preview->setText(tr("Start preview"));
 //    }
+
+    if (kinectPreview->isStopped()){
+        kinectPreview->startPreview(ui->preview_window->size());
+        ui->start_preview->setText(tr("Stop preview"));
+    } else {
+        kinectPreview->stopPreview();
+        ui->start_preview->setText(tr("Start preview"));
+    }
+}
+
+void MainWindow::on_start_scanning_clicked()
+{
+//    if (preview->isRecording()){
+//        preview->stopRecording();
+//        ui->start_scanning->setText(tr("Start scanning"));
+//    } else {
+//        preview->startRecording();
+//        ui->start_scanning->setText(tr("Stop scanning"));
+//    }
+
+    if (kinectPreview->isRecording()){
+        kinectPreview->stopRecording();
+        ui->start_scanning->setText(tr("Start scanning"));
+    } else {
+        kinectPreview->startRecording();
+        ui->start_scanning->setText(tr("Stop scanning"));
+    }
 }
 
 void MainWindow::renderFrame(QImage frame)

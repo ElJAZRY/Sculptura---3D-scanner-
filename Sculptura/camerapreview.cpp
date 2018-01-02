@@ -7,12 +7,14 @@ using namespace cv;
 
 CameraPreview::CameraPreview(QObject *parent): QThread(parent)
 {
+    recording = false;
     stopped = true;
 }
 
 CameraPreview::~CameraPreview()
 {
     mutex.lock();
+    recording = false;
     stopped = true;
     if (capture.isOpened()) {
         capture.release();
@@ -41,7 +43,6 @@ void CameraPreview::stopPreview()
 {
     stopped = true;
     capture.release();
-    emit depthAndColorsReady(colors, colors);
 }
 
 void CameraPreview::run()
@@ -54,7 +55,9 @@ void CameraPreview::run()
             frameImage = QImage((uchar*) frame.data, frame.cols, frame.rows, frame.step, QImage::Format_RGB32);
             frameImage = frameImage.scaled(frameImageSize, Qt::KeepAspectRatio);
             cv::cvtColor(frame, frame, CV_RGBA2RGB);
-            colors.push_back(frame);
+            if (recording) {
+                colors.push_back(frame);
+            }
             emit frameReady(frameImage);
         }
     }
@@ -67,4 +70,21 @@ void CameraPreview::run()
 bool CameraPreview::isStopped() const
 {
     return this->stopped;
+}
+
+void CameraPreview::startRecording()
+{
+    colors.clear();
+    recording = true;
+}
+
+void CameraPreview::stopRecording()
+{
+    recording = false;
+    emit depthAndColorsReady(colors, colors);
+}
+
+bool CameraPreview::isRecording() const
+{
+    return this->recording;
 }

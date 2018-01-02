@@ -56,7 +56,7 @@ public:
     QHBoxLayout *horizontalLayout;
     QLabel *label_simple_scanning;
     QPushButton *start_preview;
-    QPushButton *stop_scanning;
+    QPushButton *start_scanning;
     QPushButton *advanced_scanning;
     QGroupBox *reconstructionGroupBox;
     QVBoxLayout *verticalLayout_4;
@@ -233,11 +233,11 @@ public:
 
         horizontalLayout->addWidget(start_preview);
 
-        stop_scanning = new QPushButton(scanningGroupBox);
-        stop_scanning->setObjectName(QStringLiteral("stop_scanning"));
-        stop_scanning->setEnabled(true);
-        stop_scanning->setCursor(QCursor(Qt::PointingHandCursor));
-        stop_scanning->setStyleSheet(QLatin1String("QPushButton {\n"
+        start_scanning = new QPushButton(scanningGroupBox);
+        start_scanning->setObjectName(QStringLiteral("start_scanning"));
+        start_scanning->setEnabled(true);
+        start_scanning->setCursor(QCursor(Qt::PointingHandCursor));
+        start_scanning->setStyleSheet(QLatin1String("QPushButton {\n"
 "    background-color: #c0cbd3;\n"
 "    border-style: outset;\n"
 "    border-width: 2px;\n"
@@ -251,7 +251,7 @@ public:
 "    border-style: inset;\n"
 "}"));
 
-        horizontalLayout->addWidget(stop_scanning);
+        horizontalLayout->addWidget(start_scanning);
 
 
         verticalLayout_3->addLayout(horizontalLayout);
@@ -491,7 +491,7 @@ public:
         label_contrast->setText(QApplication::translate("MainWindow", "Contrast", 0));
         label_simple_scanning->setText(QApplication::translate("MainWindow", "Simple scanning", 0));
         start_preview->setText(QApplication::translate("MainWindow", "Start preview", 0));
-        stop_scanning->setText(QApplication::translate("MainWindow", "Start scanning", 0));
+        start_scanning->setText(QApplication::translate("MainWindow", "Start scanning", 0));
         advanced_scanning->setText(QApplication::translate("MainWindow", "Advanced scanning", 0));
         reconstructionGroupBox->setTitle(QString());
         get_3D_model->setText(QApplication::translate("MainWindow", "Get 3D model", 0));

@@ -5,12 +5,14 @@ using namespace cv;
 
 KinectPreview::KinectPreview(QObject *parent): QThread(parent)
 {
-    stopped = true;
+   recording = false;
+   stopped = true;
 }
 
 KinectPreview::~KinectPreview()
 {
     mutex.lock();
+    recording = false;
     stopped = true;
     depth.clear();
     colors.clear();
@@ -97,7 +99,7 @@ void KinectPreview::initColorSource()
 void KinectPreview::stopPreview()
 {
     stopped = true;
-    emit depthAndColorsReady(depth, colors);
+    //TODO maybe add sensor->Close() if camera still active
 }
 
 void KinectPreview::run()
@@ -142,7 +144,9 @@ void KinectPreview::convertAndSaveDepthMat(IDepthFrame* frame)
     //cv::Mat disp_mat = ModDepthForDisplay(depth_mat);
     //cv::imshow("Depth", disp_mat);
 
-    depth.push_back(depthMat);
+    if (recording) {
+        depth.push_back(depthMat);
+    }
 }
 
 void KinectPreview::convertAndSaveColorMat(IColorFrame* frame)
@@ -154,7 +158,9 @@ void KinectPreview::convertAndSaveColorMat(IColorFrame* frame)
     const int buf_size = color_h_ * color_w_ * sizeof(uint8_t) * 4;
     hr = frame->CopyConvertedFrameDataToArray(buf_size, colorMat.data, ColorImageFormat_Bgra);
 
-    colors.push_back(colorMat);
+    if (recording) {
+        colors.push_back(colorMat);
+    }
 
     //send for preview
 
@@ -168,4 +174,22 @@ void KinectPreview::convertAndSaveColorMat(IColorFrame* frame)
 bool KinectPreview::isStopped() const
 {
     return this->stopped;
+}
+
+void KinectPreview::startRecording()
+{
+    depth.clear();
+    colors.clear();
+    recording = true;
+}
+
+void KinectPreview::stopRecording()
+{
+    recording = false;
+    emit depthAndColorsReady(depth, colors);
+}
+
+bool KinectPreview::isRecording() const
+{
+    return this->recording;
 }

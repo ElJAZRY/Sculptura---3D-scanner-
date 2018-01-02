@@ -22,13 +22,15 @@ private:
     cv::Mat frame;
     QImage frameImage;
     QSize frameImageSize;
+    bool recording;
     bool stopped;
     QMutex mutex;
     QWaitCondition condition;
 
 signals:
       void frameReady(const QImage &frame);
-      void depthAndColorsReady(std::vector<cv::Mat> depth, std::vector<cv::Mat> colors);
+      void
+      depthAndColorsReady(std::vector<cv::Mat> depth, std::vector<cv::Mat> colors);
 
 protected:
      void run();
@@ -39,8 +41,11 @@ public:
 
     void startPreview(QSize previewSize);
     void stopPreview();
-
     bool isStopped() const;
+
+    void startRecording();
+    void stopRecording();
+    bool isRecording() const;
 };
 
 #endif // CAMERAPREVIEW_H

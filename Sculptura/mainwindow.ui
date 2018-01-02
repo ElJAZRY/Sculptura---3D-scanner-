@@ -190,7 +190,7 @@ QPushButton:pressed {
           </widget>
          </item>
          <item>
-          <widget class="QPushButton" name="stop_scanning">
+          <widget class="QPushButton" name="start_scanning">
            <property name="enabled">
             <bool>true</bool>
            </property>

@@ -33,6 +33,7 @@ private:
     QImage frameImage;
     QSize frameImageSize;
 
+    bool recording;
     bool stopped;
     QMutex mutex;
     QWaitCondition condition;
@@ -56,8 +57,11 @@ public:
 
     void startPreview(QSize previewSize);
     void stopPreview();
-
     bool isStopped() const;
+
+    void startRecording();
+    void stopRecording();
+    bool isRecording() const;
 };
 
 #endif // KINECT_PREVIEW_H
