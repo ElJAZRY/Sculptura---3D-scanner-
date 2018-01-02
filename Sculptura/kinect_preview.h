@@ -45,6 +45,7 @@ private:
 
 signals:
       void frameReady(const QImage &frame);
+      void depthAndColorsReady(std::vector<cv::Mat> depth, std::vector<cv::Mat> colors);
 
 protected:
      void run();

@@ -14,7 +14,10 @@ CameraPreview::~CameraPreview()
 {
     mutex.lock();
     stopped = true;
-    capture.release();
+    if (capture.isOpened()) {
+        capture.release();
+    }
+    colors.clear();
     condition.wakeOne();
     mutex.unlock();
     wait();
@@ -23,6 +26,7 @@ CameraPreview::~CameraPreview()
 void CameraPreview::startPreview(QSize previewSize)
 {
     frameImageSize = previewSize;
+    colors.clear();
     capture.open(0); //TODO display if error
 
     if (!isRunning()) {
@@ -36,6 +40,8 @@ void CameraPreview::startPreview(QSize previewSize)
 void CameraPreview::stopPreview()
 {
     stopped = true;
+    capture.release();
+    emit depthAndColorsReady(colors, colors);
 }
 
 void CameraPreview::run()
@@ -48,6 +54,7 @@ void CameraPreview::run()
             frameImage = QImage((uchar*) frame.data, frame.cols, frame.rows, frame.step, QImage::Format_RGB32);
             frameImage = frameImage.scaled(frameImageSize, Qt::KeepAspectRatio);
             cv::cvtColor(frame, frame, CV_RGBA2RGB);
+            colors.push_back(frame);
             emit frameReady(frameImage);
         }
     }

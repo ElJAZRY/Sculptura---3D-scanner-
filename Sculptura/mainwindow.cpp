@@ -13,10 +13,13 @@ MainWindow::MainWindow(QWidget *parent) :
 
     preview = new CameraPreview();
     QObject::connect(preview, SIGNAL(frameReady(QImage)), this, SLOT(renderFrame(QImage)));
+    QObject::connect(preview, SIGNAL(depthAndColorsReady(std::vector<cv::Mat>, std::vector<cv::Mat>)),
+                     this, SLOT(saveDepthAndColorMat(std::vector<cv::Mat>, std::vector<cv::Mat>)));
 
     kinectPreview = new KinectPreview();
     QObject::connect(kinectPreview, SIGNAL(frameReady(QImage)), this, SLOT(renderFrame(QImage)));
-    QObject::connect(kinectPreview, SIGNAL(stopPreview()), this, SLOT(saveDepthAndColorMat(std::vector<cv::Mat>, std::vector<cv::Mat>)));
+    QObject::connect(kinectPreview, SIGNAL(depthAndColorsReady(std::vector<cv::Mat>, std::vector<cv::Mat>)),
+                     this, SLOT(saveDepthAndColorMat(std::vector<cv::Mat>, std::vector<cv::Mat>)));
 
     pointCloudFiles = new QStringList();
     pointCloud.reset(new PointCloudT);
@@ -45,22 +48,22 @@ void MainWindow::on_advanced_scanning_clicked()
 }
 
 void MainWindow::on_start_preview_clicked()
-{
-//    if (preview->isStopped()){
-//        preview->startPreview(ui->preview_window->size());
-//        ui->start_preview->setText(tr("Stop preview"));
-//    } else {
-//        preview->stopPreview();
-//        ui->start_preview->setText(tr("Start preview"));
-//    }
-
-    if (kinectPreview->isStopped()){
-        kinectPreview->startPreview(ui->preview_window->size());
+{   
+    if (preview->isStopped()){
+        preview->startPreview(ui->preview_window->size());
         ui->start_preview->setText(tr("Stop preview"));
     } else {
-        kinectPreview->stopPreview();
+        preview->stopPreview();
         ui->start_preview->setText(tr("Start preview"));
     }
+
+//    if (kinectPreview->isStopped()){
+//        kinectPreview->startPreview(ui->preview_window->size());
+//        ui->start_preview->setText(tr("Stop preview"));
+//    } else {
+//        kinectPreview->stopPreview();
+//        ui->start_preview->setText(tr("Start preview"));
+//    }
 }
 
 void MainWindow::renderFrame(QImage frame)

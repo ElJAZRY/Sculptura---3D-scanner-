@@ -18,6 +18,7 @@ class CameraPreview : public QThread
 
 private:
     cv::VideoCapture capture;
+    std::vector<cv::Mat> colors;
     cv::Mat frame;
     QImage frameImage;
     QSize frameImageSize;
@@ -27,6 +28,7 @@ private:
 
 signals:
       void frameReady(const QImage &frame);
+      void depthAndColorsReady(std::vector<cv::Mat> depth, std::vector<cv::Mat> colors);
 
 protected:
      void run();

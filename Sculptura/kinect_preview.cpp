@@ -29,6 +29,8 @@ KinectPreview::~KinectPreview()
 void KinectPreview::startPreview(QSize previewSize)
 {
     frameImageSize = previewSize;
+    depth.clear();
+    colors.clear();
 
     HRESULT hr = GetDefaultKinectSensor(&sensor);
     if (FAILED(hr)){
@@ -95,6 +97,7 @@ void KinectPreview::initColorSource()
 void KinectPreview::stopPreview()
 {
     stopped = true;
+    emit depthAndColorsReady(depth, colors);
 }
 
 void KinectPreview::run()
