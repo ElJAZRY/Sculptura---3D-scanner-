@@ -1,10 +1,13 @@
-#ifndef READ_POINT_CLOUDS_H
-#define READ_POINT_CLOUDS_H
+#ifndef READ_MESH_H
+#define READ_MESH_H
+
 
 #include <pcl/point_cloud.h>
 #include <pcl/point_types.h>
 #include <pcl/io/pcd_io.h>
 #include <pcl/io/ply_io.h>
+#include <pcl/PolygonMesh.h>
+#include <pcl/io/vtk_lib_io.h>
 #include <boost/make_shared.hpp>
 #include <QThread>
 #include <QMutex>
@@ -12,37 +15,34 @@
 #include <vector>
 #include <QString>
 
-class ReadPointClouds : public QThread
+class ReadMesh : public QThread
 {
     Q_OBJECT
 
-    typedef pcl::PointXYZRGB PointType;
-    typedef pcl::PointCloud<PointType> PointCloudT;
-
 public:
-    ReadPointClouds(QObject *parent = 0);
-    ~ReadPointClouds();
+    ReadMesh(QObject *parent = 0);
+    ~ReadMesh();
 
     void read(QStringList files);
 
     bool isStopped() const;
 
 signals:
-    void pointCloudsReady(std::vector<PointCloudT::Ptr> pointClouds);
+    void meshReady(std::vector<pcl::PolygonMesh::Ptr> meshes);
 
 protected:
     void run();
 
 private:
-    QStringList filenames;
-    std::vector<PointCloudT::Ptr> pointClouds;
+    QStringList meshfilenames;
+    std::vector<pcl::PolygonMesh::Ptr> meshes;
 
     //Object for loading a PLY file
-    pcl::PLYReader plyReader;
+    //pcl::PLYReader plyReader;
 
     bool stopped;
     QMutex mutex;
     QWaitCondition condition;
 };
 
-#endif // READ_POINT_CLOUDS_H
+#endif // READ_MESH_H

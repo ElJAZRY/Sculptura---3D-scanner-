@@ -24,18 +24,28 @@ MainWindow::MainWindow(QWidget *parent) :
     pointCloudFiles = new QStringList();
     pointCloud.reset(new PointCloudT);
 
+    meshFiles = new QStringList();
+    selectedMesh.reset(new pcl::PolygonMesh);
+
     initVisualiser();
 
     qRegisterMetaType<std::vector<PointCloudT::Ptr>>("std::vector<PointCloudT::Ptr>");
     readPointClouds = new ReadPointClouds();
     QObject::connect(readPointClouds, SIGNAL(pointCloudsReady(std::vector<PointCloudT::Ptr>)),
                      this, SLOT(savePointClouds(std::vector<PointCloudT::Ptr>)));
+
+    qRegisterMetaType<std::vector<pcl::PolygonMesh::Ptr>>("std::vector<pcl::PolygonMesh::Ptr>");
+    readMeshes = new ReadMesh();
+    QObject::connect(readMeshes, SIGNAL(meshReady(std::vector<pcl::PolygonMesh::Ptr>)),
+                     this, SLOT(saveMeshes(std::vector<pcl::PolygonMesh::Ptr>)));
 }
 
 MainWindow::~MainWindow()
 {
     pointCloudFiles->clear();
     delete pointCloudFiles;
+    meshFiles->clear();
+    delete meshFiles;
     depth.clear();
     colors.clear();
     delete ui;
@@ -113,7 +123,23 @@ void MainWindow::on_actionOpen_PointClouds_triggered()
     {
         //TODO remove duplicates first
         pointCloudFiles->append(filenames);
-        readPointClouds->read(filenames); //TODO what if thread is already running?
+        readPointClouds->read(filenames);; //TODO what if thread is already running?
+    }
+}
+
+void MainWindow::on_actionOpen_Mesh_triggered()
+{
+   QStringList filenames = QFileDialog::getOpenFileNames(
+                this,
+                tr("Choose Mesh"),
+                "C://",
+                tr("Mesh(*.vtk *.stl)"));
+
+
+    if( !filenames.isEmpty() )
+    {
+        meshFiles->append(filenames);
+        readMeshes->read(filenames);
     }
 }
 
@@ -134,8 +160,27 @@ void MainWindow::on_deletePointCloud_clicked()
             ui->vtkWindow->update ();
         }
 
-    } //TODO else show warning message
+    }
 }
+
+void MainWindow::on_deleteMesh_clicked()
+{
+    QModelIndexList selection = ui->listMeshes->selectionModel()->selectedIndexes();
+    if (!selection.isEmpty()) {
+        QModelIndex index = selection.at(0);
+        meshFiles->removeAt(index.row());
+        meshSet.erase(meshSet.begin()+index.row());
+        showMeshFiles();
+        if (!meshFiles->isEmpty()) {
+            showSelectedMesh(0);
+        }
+        else {
+            initVisualiser();
+        }
+
+    }
+}
+
 
 void MainWindow::showPointCloudFiles()
 {
@@ -151,23 +196,27 @@ void MainWindow::showPointCloudFiles()
     ui->listPointClouds->setModel(listModel);
 }
 
+void MainWindow::showMeshFiles()
+{
+    QStandardItemModel* listModel = new QStandardItemModel();
+
+    QStringList filenameParts;
+    foreach (const QString &filename, *meshFiles) {
+        filenameParts = filename.split("/");
+        QStandardItem* item = new QStandardItem(filenameParts.last());
+        listModel->appendRow(item);
+    }
+
+    ui->listMeshes->setModel(listModel);
+}
+
 void MainWindow::initVisualiser()
 {
     // Set up the QvtkWindow widget
     visualiser.reset(new pcl::visualization::PCLVisualizer("visualiser", false));
-    //Set the QvtkWindow to show the graphics rendered by "visualiser"
     ui->vtkWindow->SetRenderWindow(visualiser->getRenderWindow());
-    //Set "visualiser" to receive the user interactions captured by the WvtkWindow widget
     visualiser->setupInteractor(ui->vtkWindow->GetInteractor(), ui->vtkWindow->GetRenderWindow());
     visualiser->addCoordinateSystem(0.3,-0.5,-0.5,-0.5);
-    ui->vtkWindow->update();
-
-    //Link the pointcloud container from the database to the visualization object:
-    pcl::visualization::PointCloudColorHandlerCustom<PointType> colorPt(pointCloud, 0, 123, 100);
-    visualiser->addPointCloud(pointCloud, colorPt, "cloud");
-    visualiser->resetCamera();
-    //Set visualization parameters such as size of points:
-    visualiser->setPointCloudRenderingProperties(pcl::visualization::PCL_VISUALIZER_POINT_SIZE, 3, "cloud");
     ui->vtkWindow->update();
 }
 
@@ -176,22 +225,50 @@ void MainWindow::savePointClouds(std::vector<PointCloudT::Ptr> pointClouds)
     pointCloudSet.insert(std::end(pointCloudSet), std::begin(pointClouds), std::end(pointClouds));
     pointCloud = pointCloudSet.at(0); //TODO if not empty
     showPointCloudFiles();
+    showSelectedPointCloud(0);
+}
 
-    visualiser->updatePointCloud(pointCloud, "cloud");
-    //TODO should reset camera?
-    ui->vtkWindow->update();
+void MainWindow::saveMeshes(std::vector<pcl::PolygonMesh::Ptr> meshes)
+{
+    meshSet.insert(std::end(meshSet), std::begin(meshes), std::end(meshes));
+    selectedMesh = meshSet.at(0); //TODO if not empty
+    showMeshFiles();
+    showSelectedMesh(0);
 }
 
 void MainWindow::showSelectedPointCloud(int indexPointcloud)
 {
+    initVisualiser();
     pointCloud = pointCloudSet[indexPointcloud];
+    pcl::visualization::PointCloudColorHandlerRGBField<PointType> colorPt(pointCloud);
+    visualiser->addPointCloud(pointCloud, colorPt, "cloud");
+    visualiser->setPointCloudRenderingProperties(pcl::visualization::PCL_VISUALIZER_POINT_SIZE, 3, "cloud");
     visualiser->updatePointCloud(pointCloud, "cloud");
-    //if( ui->checkBox->isChecked() ) viewer->resetCamera ();
     ui->vtkWindow->update ();
 }
-
 
 void MainWindow::on_listPointClouds_doubleClicked(const QModelIndex &index)
 {
     showSelectedPointCloud(index.row());
 }
+
+
+void MainWindow::showSelectedMesh(int indexMesh)
+{
+    initVisualiser();
+    selectedMesh = meshSet[indexMesh];
+    visualiser->addPolygonMesh(*selectedMesh, "polygon");
+    visualiser->setPointCloudRenderingProperties(pcl::visualization::PCL_VISUALIZER_POINT_SIZE, 3, "polygon");
+    //visualiser->setShapeRenderingProperties(pcl::visualization::PCL_VISUALIZER_SHADING,
+                                            //pcl::visualization::PCL_VISUALIZER_SHADING_PHONG, "polygon");
+    visualiser->updatePolygonMesh(*selectedMesh, "polygon");
+    ui->vtkWindow->update ();
+}
+
+
+void MainWindow::on_listMeshes_doubleClicked(const QModelIndex &index)
+{
+    showSelectedMesh(index.row());
+}
+
+

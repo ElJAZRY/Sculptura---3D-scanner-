@@ -7,6 +7,7 @@
 #include "camerapreview.h"
 #include "kinect_preview.h"
 #include "read_point_clouds.h"
+#include "read_mesh.h"
 #include "ui_mainwindow.h"
 
 #include "opencv2/core/core.hpp"
@@ -18,6 +19,7 @@
 
 #include <pcl/visualization/pcl_visualizer.h>
 #include <vtkRenderWindow.h>
+#include <pcl/io/vtk_lib_io.h>
 
 #include <iostream>
 #include <vector>
@@ -44,7 +46,7 @@ class MainWindow : public QMainWindow
 {
     Q_OBJECT
 
-    typedef pcl::PointXYZ PointType;
+    typedef pcl::PointXYZRGB PointType;
     typedef pcl::PointCloud<PointType> PointCloudT;
 
 public:
@@ -54,6 +56,7 @@ public:
 private slots:
     void renderFrame(QImage frame);
     void savePointClouds(std::vector<PointCloudT::Ptr> pointClouds);
+    void saveMeshes(std::vector<pcl::PolygonMesh::Ptr> meshes);
     void saveDepthAndColorMat(std::vector<cv::Mat> depth, std::vector<cv::Mat> colors);
 
     void on_advanced_scanning_clicked();
@@ -62,10 +65,16 @@ private slots:
     void on_actionOpen_PointClouds_triggered();
     void on_deletePointCloud_clicked();
     void on_listPointClouds_doubleClicked(const QModelIndex &index);
+    void on_listMeshes_doubleClicked(const QModelIndex &index);
+    void on_actionOpen_Mesh_triggered();
+
+    void on_deleteMesh_clicked();
 
 private:
     void showPointCloudFiles();
     void showSelectedPointCloud(int);
+    void showMeshFiles();
+    void showSelectedMesh(int);
     void initVisualiser();
 
     Ui::MainWindow *ui;
@@ -77,6 +86,7 @@ private:
     std::vector<cv::Mat> colors;
 
     QStringList* pointCloudFiles;
+    QStringList* meshFiles;
 
     //Object in charge of visualizing pointclouds and meshes:
     boost::shared_ptr<pcl::visualization::PCLVisualizer> visualiser;
@@ -84,7 +94,11 @@ private:
     PointCloudT::Ptr pointCloud; //currently selected point cloud
     std::vector<PointCloudT::Ptr> pointCloudSet; //list of all loaded point clouds
 
+    pcl::PolygonMesh::Ptr selectedMesh;
+    std::vector<pcl::PolygonMesh::Ptr> meshSet;
+
     ReadPointClouds* readPointClouds;
+    ReadMesh* readMeshes;
 
 };
 #endif // MAINWINDOW_H

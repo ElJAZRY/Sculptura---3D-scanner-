@@ -410,7 +410,7 @@ QPushButton:pressed {
        </size>
       </property>
       <property name="currentIndex">
-       <number>0</number>
+       <number>1</number>
       </property>
       <widget class="QWidget" name="tabPointClouds">
        <attribute name="title">
@@ -716,6 +716,7 @@ QPushButton:pressed {
      <string>PointClouds</string>
     </property>
     <addaction name="actionOpen_PointClouds"/>
+    <addaction name="actionOpen_Mesh"/>
    </widget>
    <addaction name="menuFile"/>
    <addaction name="menuPointClouds"/>
@@ -763,6 +764,11 @@ QPushButton:pressed {
    </property>
    <property name="text">
     <string>Open PointClouds</string>
+   </property>
+  </action>
+  <action name="actionOpen_Mesh">
+   <property name="text">
+    <string>Open Mesh</string>
    </property>
   </action>
  </widget>

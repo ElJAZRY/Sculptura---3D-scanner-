@@ -223,13 +223,15 @@ SOURCES += main.cpp\
     advanced_scanning.cpp \
     camerapreview.cpp \
     read_point_clouds.cpp \
-    kinect_preview.cpp
+    kinect_preview.cpp \
+    read_mesh.cpp
 
 HEADERS  += mainwindow.h \
     advanced_scanning.h \
     camerapreview.h \
     read_point_clouds.h \
-    kinect_preview.h
+    kinect_preview.h \
+    read_mesh.h
 
 
 FORMS    += mainwindow.ui \

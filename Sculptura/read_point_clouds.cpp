@@ -49,7 +49,7 @@ void ReadPointClouds::run()
               PCL_ERROR ("Couldn't read ply file \n"); //TODO don't show filename on screen
             }
         }else if(filename.contains(".pcd")){
-            if (pcl::io::loadPCDFile<pcl::PointXYZ>(filename.toStdString(), *tmpCloud) == -1)
+            if (pcl::io::loadPCDFile<pcl::PointXYZRGB>(filename.toStdString(), *tmpCloud) == -1)
             {
               PCL_ERROR ("Couldn't read pcd file \n"); //TODO don't show filename on screen
             }
