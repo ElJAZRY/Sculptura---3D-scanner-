@@ -24,7 +24,6 @@
 #include <QtWidgets/QMenuBar>
 #include <QtWidgets/QProgressBar>
 #include <QtWidgets/QPushButton>
-#include <QtWidgets/QSlider>
 #include <QtWidgets/QSpacerItem>
 #include <QtWidgets/QStatusBar>
 #include <QtWidgets/QTabWidget>
@@ -44,24 +43,18 @@ public:
     QAction *actionOpen_PointClouds;
     QAction *actionOpen_Mesh;
     QWidget *centralWidget;
-    QHBoxLayout *horizontalLayout_7;
-    QGroupBox *scanningGroupBox;
-    QVBoxLayout *verticalLayout_3;
-    QLabel *preview_window;
     QHBoxLayout *horizontalLayout_3;
-    QVBoxLayout *verticalLayout_2;
-    QLabel *label_brightness;
-    QLabel *label_contrast;
+    QGroupBox *scanningGroupBox;
     QVBoxLayout *verticalLayout;
-    QSlider *horizontalSlider_brightness;
-    QSlider *horizontalSlider_contrast;
-    QHBoxLayout *horizontalLayout;
+    QLabel *preview_window;
     QLabel *label_simple_scanning;
+    QHBoxLayout *horizontalLayout;
     QPushButton *start_preview;
     QPushButton *start_scanning;
     QPushButton *advanced_scanning;
+    QSpacerItem *verticalSpacer;
     QGroupBox *reconstructionGroupBox;
-    QVBoxLayout *verticalLayout_4;
+    QVBoxLayout *verticalLayout_2;
     QWidget *widget;
     QGridLayout *gridLayout;
     QVTKWidget *vtkWindow;
@@ -76,22 +69,22 @@ public:
     QTabWidget *tabWidget;
     QWidget *tabPointClouds;
     QGroupBox *ListGroupBox;
-    QVBoxLayout *verticalLayout_6;
-    QVBoxLayout *verticalLayout_5;
+    QVBoxLayout *verticalLayout_4;
     QLabel *list_pc;
     QListView *listPointClouds;
     QHBoxLayout *horizontalLayout_2;
     QPushButton *selectAllPointClouds;
     QPushButton *deletePointCloud;
+    QSpacerItem *verticalSpacer_2;
     QWidget *tabMeshes;
     QGroupBox *ListGroupBox_2;
-    QVBoxLayout *verticalLayout_7;
-    QVBoxLayout *verticalLayout_8;
+    QVBoxLayout *verticalLayout_3;
     QLabel *list_mesh;
     QListView *listMeshes;
     QHBoxLayout *horizontalLayout_5;
     QPushButton *selectAllMeshes;
     QPushButton *deleteMesh;
+    QSpacerItem *verticalSpacer_3;
     QMenuBar *menuBar;
     QMenu *menuFile;
     QMenu *menuPointClouds;
@@ -102,7 +95,7 @@ public:
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QStringLiteral("MainWindow"));
-        MainWindow->resize(1038, 611);
+        MainWindow->resize(1022, 703);
         MainWindow->setStyleSheet(QLatin1String("QMainWindow\n"
 "{\n"
 "    background-color: #ecf0f5;\n"
@@ -135,100 +128,43 @@ public:
 "{\n"
 "    background-color: #ecf0f5;\n"
 "}"));
-        horizontalLayout_7 = new QHBoxLayout(centralWidget);
-        horizontalLayout_7->setSpacing(6);
-        horizontalLayout_7->setContentsMargins(11, 11, 11, 11);
-        horizontalLayout_7->setObjectName(QStringLiteral("horizontalLayout_7"));
+        horizontalLayout_3 = new QHBoxLayout(centralWidget);
+        horizontalLayout_3->setSpacing(6);
+        horizontalLayout_3->setContentsMargins(11, 11, 11, 11);
+        horizontalLayout_3->setObjectName(QStringLiteral("horizontalLayout_3"));
         scanningGroupBox = new QGroupBox(centralWidget);
         scanningGroupBox->setObjectName(QStringLiteral("scanningGroupBox"));
-        scanningGroupBox->setMaximumSize(QSize(640, 16777215));
-        verticalLayout_3 = new QVBoxLayout(scanningGroupBox);
-        verticalLayout_3->setSpacing(6);
-        verticalLayout_3->setContentsMargins(11, 11, 11, 11);
-        verticalLayout_3->setObjectName(QStringLiteral("verticalLayout_3"));
+        scanningGroupBox->setMinimumSize(QSize(330, 0));
+        scanningGroupBox->setMaximumSize(QSize(350, 16777215));
+        verticalLayout = new QVBoxLayout(scanningGroupBox);
+        verticalLayout->setSpacing(6);
+        verticalLayout->setContentsMargins(11, 11, 11, 11);
+        verticalLayout->setObjectName(QStringLiteral("verticalLayout"));
         preview_window = new QLabel(scanningGroupBox);
         preview_window->setObjectName(QStringLiteral("preview_window"));
         preview_window->setMinimumSize(QSize(320, 240));
-        preview_window->setMaximumSize(QSize(640, 480));
+        preview_window->setMaximumSize(QSize(320, 240));
         preview_window->setStyleSheet(QLatin1String("QLabel {\n"
 "    border: 2px solid lightgray;\n"
 "    background-color: white;\n"
 "}"));
 
-        verticalLayout_3->addWidget(preview_window);
+        verticalLayout->addWidget(preview_window);
 
-        horizontalLayout_3 = new QHBoxLayout();
-        horizontalLayout_3->setSpacing(6);
-        horizontalLayout_3->setObjectName(QStringLiteral("horizontalLayout_3"));
-        verticalLayout_2 = new QVBoxLayout();
-        verticalLayout_2->setSpacing(6);
-        verticalLayout_2->setObjectName(QStringLiteral("verticalLayout_2"));
-        label_brightness = new QLabel(scanningGroupBox);
-        label_brightness->setObjectName(QStringLiteral("label_brightness"));
+        label_simple_scanning = new QLabel(scanningGroupBox);
+        label_simple_scanning->setObjectName(QStringLiteral("label_simple_scanning"));
         QFont font;
         font.setFamily(QStringLiteral("Open Sans"));
         font.setPointSize(9);
         font.setBold(true);
         font.setWeight(75);
-        label_brightness->setFont(font);
+        label_simple_scanning->setFont(font);
 
-        verticalLayout_2->addWidget(label_brightness);
-
-        label_contrast = new QLabel(scanningGroupBox);
-        label_contrast->setObjectName(QStringLiteral("label_contrast"));
-        label_contrast->setFont(font);
-
-        verticalLayout_2->addWidget(label_contrast);
-
-
-        horizontalLayout_3->addLayout(verticalLayout_2);
-
-        verticalLayout = new QVBoxLayout();
-        verticalLayout->setSpacing(6);
-        verticalLayout->setObjectName(QStringLiteral("verticalLayout"));
-        horizontalSlider_brightness = new QSlider(scanningGroupBox);
-        horizontalSlider_brightness->setObjectName(QStringLiteral("horizontalSlider_brightness"));
-        horizontalSlider_brightness->setCursor(QCursor(Qt::PointingHandCursor));
-        horizontalSlider_brightness->setStyleSheet(QLatin1String("QSlider::handle:horizontal {\n"
-"    background: qlineargradient(x1:0, y1:0, x2:1, y2:1, stop:0 #b4b4b4, stop:1 #8f8f8f);\n"
-"    border: 1px solid #5c5c5c;\n"
-"    width: 18px;\n"
-"    margin: -2px 0; /* handle is placed by default on the contents rect of the groove. Expand outside the groove */\n"
-"    border-radius: 5px;\n"
-"}"));
-        horizontalSlider_brightness->setOrientation(Qt::Horizontal);
-
-        verticalLayout->addWidget(horizontalSlider_brightness);
-
-        horizontalSlider_contrast = new QSlider(scanningGroupBox);
-        horizontalSlider_contrast->setObjectName(QStringLiteral("horizontalSlider_contrast"));
-        horizontalSlider_contrast->setCursor(QCursor(Qt::PointingHandCursor));
-        horizontalSlider_contrast->setStyleSheet(QLatin1String("QSlider::handle:horizontal {\n"
-"    background: qlineargradient(x1:0, y1:0, x2:1, y2:1, stop:0 #b4b4b4, stop:1 #8f8f8f);\n"
-"    border: 1px solid #5c5c5c;\n"
-"    width: 18px;\n"
-"    margin: -2px 0; /* handle is placed by default on the contents rect of the groove. Expand outside the groove */\n"
-"    border-radius: 5px;\n"
-"}"));
-        horizontalSlider_contrast->setOrientation(Qt::Horizontal);
-
-        verticalLayout->addWidget(horizontalSlider_contrast);
-
-
-        horizontalLayout_3->addLayout(verticalLayout);
-
-
-        verticalLayout_3->addLayout(horizontalLayout_3);
+        verticalLayout->addWidget(label_simple_scanning);
 
         horizontalLayout = new QHBoxLayout();
         horizontalLayout->setSpacing(6);
         horizontalLayout->setObjectName(QStringLiteral("horizontalLayout"));
-        label_simple_scanning = new QLabel(scanningGroupBox);
-        label_simple_scanning->setObjectName(QStringLiteral("label_simple_scanning"));
-        label_simple_scanning->setFont(font);
-
-        horizontalLayout->addWidget(label_simple_scanning);
-
         start_preview = new QPushButton(scanningGroupBox);
         start_preview->setObjectName(QStringLiteral("start_preview"));
         start_preview->setEnabled(true);
@@ -270,7 +206,7 @@ public:
         horizontalLayout->addWidget(start_scanning);
 
 
-        verticalLayout_3->addLayout(horizontalLayout);
+        verticalLayout->addLayout(horizontalLayout);
 
         advanced_scanning = new QPushButton(scanningGroupBox);
         advanced_scanning->setObjectName(QStringLiteral("advanced_scanning"));
@@ -290,20 +226,24 @@ public:
 "    border-style: inset;\n"
 "}"));
 
-        verticalLayout_3->addWidget(advanced_scanning);
+        verticalLayout->addWidget(advanced_scanning);
+
+        verticalSpacer = new QSpacerItem(20, 233, QSizePolicy::Minimum, QSizePolicy::Expanding);
+
+        verticalLayout->addItem(verticalSpacer);
 
 
-        horizontalLayout_7->addWidget(scanningGroupBox);
+        horizontalLayout_3->addWidget(scanningGroupBox);
 
         reconstructionGroupBox = new QGroupBox(centralWidget);
         reconstructionGroupBox->setObjectName(QStringLiteral("reconstructionGroupBox"));
-        verticalLayout_4 = new QVBoxLayout(reconstructionGroupBox);
-        verticalLayout_4->setSpacing(6);
-        verticalLayout_4->setContentsMargins(11, 11, 11, 11);
-        verticalLayout_4->setObjectName(QStringLiteral("verticalLayout_4"));
+        verticalLayout_2 = new QVBoxLayout(reconstructionGroupBox);
+        verticalLayout_2->setSpacing(6);
+        verticalLayout_2->setContentsMargins(11, 11, 11, 11);
+        verticalLayout_2->setObjectName(QStringLiteral("verticalLayout_2"));
         widget = new QWidget(reconstructionGroupBox);
         widget->setObjectName(QStringLiteral("widget"));
-        widget->setMinimumSize(QSize(320, 320));
+        widget->setMinimumSize(QSize(430, 430));
         widget->setStyleSheet(QLatin1String("QWidget {\n"
 "    border: 2px solid lightgray;\n"
 "    background-color: white;\n"
@@ -320,7 +260,7 @@ public:
         gridLayout->addWidget(vtkWindow, 0, 0, 1, 1);
 
 
-        verticalLayout_4->addWidget(widget);
+        verticalLayout_2->addWidget(widget);
 
         horizontalLayout_4 = new QHBoxLayout();
         horizontalLayout_4->setSpacing(6);
@@ -350,7 +290,7 @@ public:
         horizontalLayout_4->addItem(horizontalSpacer_2);
 
 
-        verticalLayout_4->addLayout(horizontalLayout_4);
+        verticalLayout_2->addLayout(horizontalLayout_4);
 
         horizontalLayout_6 = new QHBoxLayout();
         horizontalLayout_6->setSpacing(6);
@@ -384,47 +324,44 @@ public:
         horizontalLayout_6->addItem(horizontalSpacer_3);
 
 
-        verticalLayout_4->addLayout(horizontalLayout_6);
+        verticalLayout_2->addLayout(horizontalLayout_6);
 
 
-        horizontalLayout_7->addWidget(reconstructionGroupBox);
+        horizontalLayout_3->addWidget(reconstructionGroupBox);
 
         tabWidget = new QTabWidget(centralWidget);
         tabWidget->setObjectName(QStringLiteral("tabWidget"));
         tabWidget->setMaximumSize(QSize(180, 16777215));
         tabPointClouds = new QWidget();
         tabPointClouds->setObjectName(QStringLiteral("tabPointClouds"));
+        tabPointClouds->setStyleSheet(QLatin1String("QWidget {\n"
+"background-color: white;\n"
+"}"));
         ListGroupBox = new QGroupBox(tabPointClouds);
         ListGroupBox->setObjectName(QStringLiteral("ListGroupBox"));
-        ListGroupBox->setGeometry(QRect(0, 0, 180, 511));
-        ListGroupBox->setMinimumSize(QSize(150, 0));
+        ListGroupBox->setGeometry(QRect(0, 0, 180, 551));
+        ListGroupBox->setMinimumSize(QSize(150, 400));
         ListGroupBox->setMaximumSize(QSize(180, 16777215));
-        verticalLayout_6 = new QVBoxLayout(ListGroupBox);
-        verticalLayout_6->setSpacing(6);
-        verticalLayout_6->setContentsMargins(11, 11, 11, 11);
-        verticalLayout_6->setObjectName(QStringLiteral("verticalLayout_6"));
-        verticalLayout_5 = new QVBoxLayout();
-        verticalLayout_5->setSpacing(6);
-        verticalLayout_5->setObjectName(QStringLiteral("verticalLayout_5"));
+        verticalLayout_4 = new QVBoxLayout(ListGroupBox);
+        verticalLayout_4->setSpacing(6);
+        verticalLayout_4->setContentsMargins(11, 11, 11, 11);
+        verticalLayout_4->setObjectName(QStringLiteral("verticalLayout_4"));
         list_pc = new QLabel(ListGroupBox);
         list_pc->setObjectName(QStringLiteral("list_pc"));
         list_pc->setFont(font);
 
-        verticalLayout_5->addWidget(list_pc);
+        verticalLayout_4->addWidget(list_pc);
 
         listPointClouds = new QListView(ListGroupBox);
         listPointClouds->setObjectName(QStringLiteral("listPointClouds"));
-        listPointClouds->setMinimumSize(QSize(150, 250));
+        listPointClouds->setMinimumSize(QSize(150, 350));
         listPointClouds->setMaximumSize(QSize(170, 16777215));
         listPointClouds->setEditTriggers(QAbstractItemView::NoEditTriggers);
         listPointClouds->setProperty("isWrapping", QVariant(false));
         listPointClouds->setUniformItemSizes(false);
         listPointClouds->setWordWrap(false);
 
-        verticalLayout_5->addWidget(listPointClouds);
-
-
-        verticalLayout_6->addLayout(verticalLayout_5);
+        verticalLayout_4->addWidget(listPointClouds);
 
         horizontalLayout_2 = new QHBoxLayout();
         horizontalLayout_2->setSpacing(6);
@@ -470,7 +407,11 @@ public:
         horizontalLayout_2->addWidget(deletePointCloud);
 
 
-        verticalLayout_6->addLayout(horizontalLayout_2);
+        verticalLayout_4->addLayout(horizontalLayout_2);
+
+        verticalSpacer_2 = new QSpacerItem(20, 98, QSizePolicy::Minimum, QSizePolicy::Expanding);
+
+        verticalLayout_4->addItem(verticalSpacer_2);
 
         tabWidget->addTab(tabPointClouds, QString());
         tabMeshes = new QWidget();
@@ -480,32 +421,26 @@ public:
         ListGroupBox_2->setGeometry(QRect(0, 0, 180, 511));
         ListGroupBox_2->setMinimumSize(QSize(150, 0));
         ListGroupBox_2->setMaximumSize(QSize(180, 16777215));
-        verticalLayout_7 = new QVBoxLayout(ListGroupBox_2);
-        verticalLayout_7->setSpacing(6);
-        verticalLayout_7->setContentsMargins(11, 11, 11, 11);
-        verticalLayout_7->setObjectName(QStringLiteral("verticalLayout_7"));
-        verticalLayout_8 = new QVBoxLayout();
-        verticalLayout_8->setSpacing(6);
-        verticalLayout_8->setObjectName(QStringLiteral("verticalLayout_8"));
+        verticalLayout_3 = new QVBoxLayout(ListGroupBox_2);
+        verticalLayout_3->setSpacing(6);
+        verticalLayout_3->setContentsMargins(11, 11, 11, 11);
+        verticalLayout_3->setObjectName(QStringLiteral("verticalLayout_3"));
         list_mesh = new QLabel(ListGroupBox_2);
         list_mesh->setObjectName(QStringLiteral("list_mesh"));
         list_mesh->setFont(font);
 
-        verticalLayout_8->addWidget(list_mesh);
+        verticalLayout_3->addWidget(list_mesh);
 
         listMeshes = new QListView(ListGroupBox_2);
         listMeshes->setObjectName(QStringLiteral("listMeshes"));
-        listMeshes->setMinimumSize(QSize(150, 250));
+        listMeshes->setMinimumSize(QSize(150, 350));
         listMeshes->setMaximumSize(QSize(170, 16777215));
         listMeshes->setEditTriggers(QAbstractItemView::NoEditTriggers);
         listMeshes->setProperty("isWrapping", QVariant(false));
         listMeshes->setUniformItemSizes(false);
         listMeshes->setWordWrap(false);
 
-        verticalLayout_8->addWidget(listMeshes);
-
-
-        verticalLayout_7->addLayout(verticalLayout_8);
+        verticalLayout_3->addWidget(listMeshes);
 
         horizontalLayout_5 = new QHBoxLayout();
         horizontalLayout_5->setSpacing(6);
@@ -551,16 +486,20 @@ public:
         horizontalLayout_5->addWidget(deleteMesh);
 
 
-        verticalLayout_7->addLayout(horizontalLayout_5);
+        verticalLayout_3->addLayout(horizontalLayout_5);
+
+        verticalSpacer_3 = new QSpacerItem(20, 58, QSizePolicy::Minimum, QSizePolicy::Expanding);
+
+        verticalLayout_3->addItem(verticalSpacer_3);
 
         tabWidget->addTab(tabMeshes, QString());
 
-        horizontalLayout_7->addWidget(tabWidget);
+        horizontalLayout_3->addWidget(tabWidget);
 
         MainWindow->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(MainWindow);
         menuBar->setObjectName(QStringLiteral("menuBar"));
-        menuBar->setGeometry(QRect(0, 0, 1038, 26));
+        menuBar->setGeometry(QRect(0, 0, 1022, 26));
         menuFile = new QMenu(menuBar);
         menuFile->setObjectName(QStringLiteral("menuFile"));
         menuPointClouds = new QMenu(menuBar);
@@ -583,7 +522,7 @@ public:
 
         retranslateUi(MainWindow);
 
-        tabWidget->setCurrentIndex(1);
+        tabWidget->setCurrentIndex(0);
 
 
         QMetaObject::connectSlotsByName(MainWindow);
@@ -599,8 +538,6 @@ public:
         actionOpen_Mesh->setText(QApplication::translate("MainWindow", "Open Mesh", 0));
         scanningGroupBox->setTitle(QString());
         preview_window->setText(QString());
-        label_brightness->setText(QApplication::translate("MainWindow", "Brightness", 0));
-        label_contrast->setText(QApplication::translate("MainWindow", "Contrast", 0));
         label_simple_scanning->setText(QApplication::translate("MainWindow", "Simple scanning", 0));
         start_preview->setText(QApplication::translate("MainWindow", "Start preview", 0));
         start_scanning->setText(QApplication::translate("MainWindow", "Start scanning", 0));

@@ -259,8 +259,6 @@ void MainWindow::showSelectedMesh(int indexMesh)
     selectedMesh = meshSet[indexMesh];
     visualiser->addPolygonMesh(*selectedMesh, "polygon");
     visualiser->setPointCloudRenderingProperties(pcl::visualization::PCL_VISUALIZER_POINT_SIZE, 3, "polygon");
-    //visualiser->setShapeRenderingProperties(pcl::visualization::PCL_VISUALIZER_SHADING,
-                                            //pcl::visualization::PCL_VISUALIZER_SHADING_PHONG, "polygon");
     visualiser->updatePolygonMesh(*selectedMesh, "polygon");
     ui->vtkWindow->update ();
 }

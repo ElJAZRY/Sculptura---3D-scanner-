@@ -1,4 +1,6 @@
 #include "kinect_preview.h"
+#include <sstream>
+#include <QMessageBox>
 
 using namespace std;
 using namespace cv;
@@ -72,7 +74,7 @@ void KinectPreview::initDepthSource()
         hr = depth_frame_source->OpenReader(&depthReader);
     }
 
-    depth_frame_source->Release();
+    SafeRelease(depth_frame_source);
     depth_frame_source = nullptr;
 }
 
@@ -92,7 +94,7 @@ void KinectPreview::initColorSource()
         hr = color_frame_source->OpenReader(&colorReader);
     }
 
-    color_frame_source->Release();
+    SafeRelease(color_frame_source);
     color_frame_source = nullptr;
 }
 
@@ -112,7 +114,7 @@ void KinectPreview::run()
         if (SUCCEEDED(depthHr)){
             convertAndSaveDepthMat(depthFrame);
         }
-        depthFrame->Release();
+        SafeRelease(depthFrame);
         depthFrame = nullptr;
 
         IColorFrame* colorFrame = nullptr;
@@ -120,7 +122,7 @@ void KinectPreview::run()
         if (SUCCEEDED(colorHr)){
             convertAndSaveColorMat(colorFrame);
         }
-        colorFrame->Release();
+        SafeRelease(colorFrame);
         colorFrame = nullptr;
     }
 
@@ -187,6 +189,18 @@ void KinectPreview::stopRecording()
 {
     recording = false;
     emit depthAndColorsReady(depth, colors);
+
+    std::stringstream sb;
+    sb << "depth = ";
+    sb << depth.size();
+    sb << ", colors = ";
+    sb << colors.size();
+
+    QMessageBox box;
+    box.setText(QString::fromStdString(sb.str()));
+    box.exec();
+
+    cv::imshow("color frame", colors[0]);
 }
 
 bool KinectPreview::isRecording() const

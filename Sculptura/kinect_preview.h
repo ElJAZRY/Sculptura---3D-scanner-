@@ -12,6 +12,16 @@
 
 #include <Kinect.h>
 
+template<class Interface>
+inline void SafeRelease(Interface*& ptr_int)
+{
+    if (ptr_int)
+    {
+        ptr_int->Release();
+        ptr_int = nullptr;
+    }
+}
+
 class KinectPreview : public QThread
 {
     Q_OBJECT

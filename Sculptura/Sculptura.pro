@@ -1,8 +1,10 @@
-#-------------------------------------------------
-#
-# Project created by QtCreator 2017-12-13T20:24:46
-#
-#-------------------------------------------------
+#//***********************************************************************
+#//** © Copyright 2018, Karim Botros,Daria Zotova,Elizaveta Genke       **
+#//** and Mohamed Ali All rights reserved.                              **
+#//** you can modify and reuse only if you mention Authors              **
+#//***********************************************************************
+
+
 
 QT       += core gui
 
