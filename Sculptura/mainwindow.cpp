@@ -163,6 +163,16 @@ void MainWindow::on_deletePointCloud_clicked()
     }
 }
 
+void MainWindow::on_deleteAllPointClouds_clicked()
+{
+    if(!pointCloudFiles->isEmpty()) {
+        pointCloudFiles->clear();
+        showPointCloudFiles();
+        pointCloudSet.clear();
+        initVisualiser();
+    }
+}
+
 void MainWindow::on_deleteMesh_clicked()
 {
     QModelIndexList selection = ui->listMeshes->selectionModel()->selectedIndexes();
@@ -178,6 +188,16 @@ void MainWindow::on_deleteMesh_clicked()
             initVisualiser();
         }
 
+    }
+}
+
+void MainWindow::on_deleteAllMeshes_clicked()
+{
+    if(!meshFiles->isEmpty()) {
+        meshFiles->clear();
+        showMeshFiles();
+        meshSet.clear();
+        initVisualiser();
     }
 }
 
@@ -270,3 +290,19 @@ void MainWindow::on_listMeshes_doubleClicked(const QModelIndex &index)
 }
 
 
+
+
+
+void MainWindow::on_actionSave_as_triggered()
+{
+    QString directoryName = QFileDialog::getExistingDirectory(this, QString("Export mesh"),QString(""), QFileDialog::ShowDirsOnly);
+    if(directoryName != ""){
+        QString filePath;
+        //QListWidgetItem* item;
+
+            filePath = directoryName + "/" + "newmesh" ".vtk";
+
+            pcl::io::savePolygonFileVTK(filePath.toStdString(), *(meshSet[0]));
+
+    }
+}

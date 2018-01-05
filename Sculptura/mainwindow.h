@@ -39,6 +39,7 @@
 #include <QMessageBox>
 #include <QStandardItem>
 #include <QStandardItemModel>
+#include <QListWidgetItem>
 
 using namespace openni;
 using namespace cv;
@@ -75,6 +76,12 @@ private slots:
     void on_actionOpen_Mesh_triggered();
 
     void on_deleteMesh_clicked();
+
+    void on_deleteAllPointClouds_clicked();
+
+    void on_deleteAllMeshes_clicked();
+
+    void on_actionSave_as_triggered();
 
 private:
     void showPointCloudFiles();

@@ -19,8 +19,8 @@
 
 QT_BEGIN_MOC_NAMESPACE
 struct qt_meta_stringdata_MainWindow_t {
-    QByteArrayData data[24];
-    char stringdata0[458];
+    QByteArrayData data[27];
+    char stringdata0[544];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -52,7 +52,10 @@ QT_MOC_LITERAL(19, 340, 32), // "on_listPointClouds_doubleClicked"
 QT_MOC_LITERAL(20, 373, 5), // "index"
 QT_MOC_LITERAL(21, 379, 27), // "on_listMeshes_doubleClicked"
 QT_MOC_LITERAL(22, 407, 28), // "on_actionOpen_Mesh_triggered"
-QT_MOC_LITERAL(23, 436, 21) // "on_deleteMesh_clicked"
+QT_MOC_LITERAL(23, 436, 21), // "on_deleteMesh_clicked"
+QT_MOC_LITERAL(24, 458, 31), // "on_deleteAllPointClouds_clicked"
+QT_MOC_LITERAL(25, 490, 26), // "on_deleteAllMeshes_clicked"
+QT_MOC_LITERAL(26, 517, 26) // "on_actionSave_as_triggered"
 
     },
     "MainWindow\0renderFrame\0\0frame\0"
@@ -69,7 +72,10 @@ QT_MOC_LITERAL(23, 436, 21) // "on_deleteMesh_clicked"
     "on_listPointClouds_doubleClicked\0index\0"
     "on_listMeshes_doubleClicked\0"
     "on_actionOpen_Mesh_triggered\0"
-    "on_deleteMesh_clicked"
+    "on_deleteMesh_clicked\0"
+    "on_deleteAllPointClouds_clicked\0"
+    "on_deleteAllMeshes_clicked\0"
+    "on_actionSave_as_triggered"
 };
 #undef QT_MOC_LITERAL
 
@@ -79,7 +85,7 @@ static const uint qt_meta_data_MainWindow[] = {
        7,       // revision
        0,       // classname
        0,    0, // classinfo
-      13,   14, // methods
+      16,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -87,19 +93,22 @@ static const uint qt_meta_data_MainWindow[] = {
        0,       // signalCount
 
  // slots: name, argc, parameters, tag, flags
-       1,    1,   79,    2, 0x08 /* Private */,
-       4,    1,   82,    2, 0x08 /* Private */,
-       7,    1,   85,    2, 0x08 /* Private */,
-      10,    2,   88,    2, 0x08 /* Private */,
-      14,    0,   93,    2, 0x08 /* Private */,
-      15,    0,   94,    2, 0x08 /* Private */,
-      16,    0,   95,    2, 0x08 /* Private */,
-      17,    0,   96,    2, 0x08 /* Private */,
-      18,    0,   97,    2, 0x08 /* Private */,
-      19,    1,   98,    2, 0x08 /* Private */,
-      21,    1,  101,    2, 0x08 /* Private */,
-      22,    0,  104,    2, 0x08 /* Private */,
-      23,    0,  105,    2, 0x08 /* Private */,
+       1,    1,   94,    2, 0x08 /* Private */,
+       4,    1,   97,    2, 0x08 /* Private */,
+       7,    1,  100,    2, 0x08 /* Private */,
+      10,    2,  103,    2, 0x08 /* Private */,
+      14,    0,  108,    2, 0x08 /* Private */,
+      15,    0,  109,    2, 0x08 /* Private */,
+      16,    0,  110,    2, 0x08 /* Private */,
+      17,    0,  111,    2, 0x08 /* Private */,
+      18,    0,  112,    2, 0x08 /* Private */,
+      19,    1,  113,    2, 0x08 /* Private */,
+      21,    1,  116,    2, 0x08 /* Private */,
+      22,    0,  119,    2, 0x08 /* Private */,
+      23,    0,  120,    2, 0x08 /* Private */,
+      24,    0,  121,    2, 0x08 /* Private */,
+      25,    0,  122,    2, 0x08 /* Private */,
+      26,    0,  123,    2, 0x08 /* Private */,
 
  // slots: parameters
     QMetaType::Void, QMetaType::QImage,    3,
@@ -113,6 +122,9 @@ static const uint qt_meta_data_MainWindow[] = {
     QMetaType::Void,
     QMetaType::Void, QMetaType::QModelIndex,   20,
     QMetaType::Void, QMetaType::QModelIndex,   20,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
 
@@ -138,6 +150,9 @@ void MainWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
         case 10: _t->on_listMeshes_doubleClicked((*reinterpret_cast< const QModelIndex(*)>(_a[1]))); break;
         case 11: _t->on_actionOpen_Mesh_triggered(); break;
         case 12: _t->on_deleteMesh_clicked(); break;
+        case 13: _t->on_deleteAllPointClouds_clicked(); break;
+        case 14: _t->on_deleteAllMeshes_clicked(); break;
+        case 15: _t->on_actionSave_as_triggered(); break;
         default: ;
         }
     }
@@ -168,13 +183,13 @@ int MainWindow::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 13)
+        if (_id < 16)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 13;
+        _id -= 16;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 13)
+        if (_id < 16)
             *reinterpret_cast<int*>(_a[0]) = -1;
-        _id -= 13;
+        _id -= 16;
     }
     return _id;
 }

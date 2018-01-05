@@ -73,7 +73,7 @@ public:
     QLabel *list_pc;
     QListView *listPointClouds;
     QHBoxLayout *horizontalLayout_2;
-    QPushButton *selectAllPointClouds;
+    QPushButton *deleteAllPointClouds;
     QPushButton *deletePointCloud;
     QSpacerItem *verticalSpacer_2;
     QWidget *tabMeshes;
@@ -82,12 +82,11 @@ public:
     QLabel *list_mesh;
     QListView *listMeshes;
     QHBoxLayout *horizontalLayout_5;
-    QPushButton *selectAllMeshes;
+    QPushButton *deleteAllMeshes;
     QPushButton *deleteMesh;
     QSpacerItem *verticalSpacer_3;
     QMenuBar *menuBar;
     QMenu *menuFile;
-    QMenu *menuPointClouds;
     QToolBar *mainToolBar;
     QStatusBar *statusBar;
 
@@ -95,7 +94,7 @@ public:
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QStringLiteral("MainWindow"));
-        MainWindow->resize(1022, 703);
+        MainWindow->resize(1043, 713);
         MainWindow->setStyleSheet(QLatin1String("QMainWindow\n"
 "{\n"
 "    background-color: #ecf0f5;\n"
@@ -122,6 +121,7 @@ public:
         actionOpen_PointClouds->setIcon(icon3);
         actionOpen_Mesh = new QAction(MainWindow);
         actionOpen_Mesh->setObjectName(QStringLiteral("actionOpen_Mesh"));
+        actionOpen_Mesh->setIcon(icon1);
         centralWidget = new QWidget(MainWindow);
         centralWidget->setObjectName(QStringLiteral("centralWidget"));
         centralWidget->setStyleSheet(QLatin1String("QMainWindow\n"
@@ -228,7 +228,7 @@ public:
 
         verticalLayout->addWidget(advanced_scanning);
 
-        verticalSpacer = new QSpacerItem(20, 233, QSizePolicy::Minimum, QSizePolicy::Expanding);
+        verticalSpacer = new QSpacerItem(20, 243, QSizePolicy::Minimum, QSizePolicy::Expanding);
 
         verticalLayout->addItem(verticalSpacer);
 
@@ -366,11 +366,11 @@ public:
         horizontalLayout_2 = new QHBoxLayout();
         horizontalLayout_2->setSpacing(6);
         horizontalLayout_2->setObjectName(QStringLiteral("horizontalLayout_2"));
-        selectAllPointClouds = new QPushButton(ListGroupBox);
-        selectAllPointClouds->setObjectName(QStringLiteral("selectAllPointClouds"));
-        selectAllPointClouds->setEnabled(true);
-        selectAllPointClouds->setCursor(QCursor(Qt::PointingHandCursor));
-        selectAllPointClouds->setStyleSheet(QLatin1String("QPushButton {\n"
+        deleteAllPointClouds = new QPushButton(ListGroupBox);
+        deleteAllPointClouds->setObjectName(QStringLiteral("deleteAllPointClouds"));
+        deleteAllPointClouds->setEnabled(true);
+        deleteAllPointClouds->setCursor(QCursor(Qt::PointingHandCursor));
+        deleteAllPointClouds->setStyleSheet(QLatin1String("QPushButton {\n"
 "    background-color: #c0cbd3;\n"
 "    border-style: outset;\n"
 "    border-width: 2px;\n"
@@ -384,7 +384,7 @@ public:
 "    border-style: inset;\n"
 "}"));
 
-        horizontalLayout_2->addWidget(selectAllPointClouds);
+        horizontalLayout_2->addWidget(deleteAllPointClouds);
 
         deletePointCloud = new QPushButton(ListGroupBox);
         deletePointCloud->setObjectName(QStringLiteral("deletePointCloud"));
@@ -445,11 +445,11 @@ public:
         horizontalLayout_5 = new QHBoxLayout();
         horizontalLayout_5->setSpacing(6);
         horizontalLayout_5->setObjectName(QStringLiteral("horizontalLayout_5"));
-        selectAllMeshes = new QPushButton(ListGroupBox_2);
-        selectAllMeshes->setObjectName(QStringLiteral("selectAllMeshes"));
-        selectAllMeshes->setEnabled(true);
-        selectAllMeshes->setCursor(QCursor(Qt::PointingHandCursor));
-        selectAllMeshes->setStyleSheet(QLatin1String("QPushButton {\n"
+        deleteAllMeshes = new QPushButton(ListGroupBox_2);
+        deleteAllMeshes->setObjectName(QStringLiteral("deleteAllMeshes"));
+        deleteAllMeshes->setEnabled(true);
+        deleteAllMeshes->setCursor(QCursor(Qt::PointingHandCursor));
+        deleteAllMeshes->setStyleSheet(QLatin1String("QPushButton {\n"
 "    background-color: #c0cbd3;\n"
 "    border-style: outset;\n"
 "    border-width: 2px;\n"
@@ -463,7 +463,7 @@ public:
 "    border-style: inset;\n"
 "}"));
 
-        horizontalLayout_5->addWidget(selectAllMeshes);
+        horizontalLayout_5->addWidget(deleteAllMeshes);
 
         deleteMesh = new QPushButton(ListGroupBox_2);
         deleteMesh->setObjectName(QStringLiteral("deleteMesh"));
@@ -499,11 +499,9 @@ public:
         MainWindow->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(MainWindow);
         menuBar->setObjectName(QStringLiteral("menuBar"));
-        menuBar->setGeometry(QRect(0, 0, 1022, 26));
+        menuBar->setGeometry(QRect(0, 0, 1043, 26));
         menuFile = new QMenu(menuBar);
         menuFile->setObjectName(QStringLiteral("menuFile"));
-        menuPointClouds = new QMenu(menuBar);
-        menuPointClouds->setObjectName(QStringLiteral("menuPointClouds"));
         MainWindow->setMenuBar(menuBar);
         mainToolBar = new QToolBar(MainWindow);
         mainToolBar->setObjectName(QStringLiteral("mainToolBar"));
@@ -513,16 +511,14 @@ public:
         MainWindow->setStatusBar(statusBar);
 
         menuBar->addAction(menuFile->menuAction());
-        menuBar->addAction(menuPointClouds->menuAction());
         menuFile->addAction(actionNew);
-        menuFile->addAction(actionOpen);
+        menuFile->addAction(actionOpen_PointClouds);
+        menuFile->addAction(actionOpen_Mesh);
         menuFile->addAction(actionSave_as);
-        menuPointClouds->addAction(actionOpen_PointClouds);
-        menuPointClouds->addAction(actionOpen_Mesh);
 
         retranslateUi(MainWindow);
 
-        tabWidget->setCurrentIndex(0);
+        tabWidget->setCurrentIndex(1);
 
 
         QMetaObject::connectSlotsByName(MainWindow);
@@ -533,7 +529,7 @@ public:
         MainWindow->setWindowTitle(QApplication::translate("MainWindow", "Sculptura", 0));
         actionNew->setText(QApplication::translate("MainWindow", "New", 0));
         actionOpen->setText(QApplication::translate("MainWindow", "Open", 0));
-        actionSave_as->setText(QApplication::translate("MainWindow", "Save as", 0));
+        actionSave_as->setText(QApplication::translate("MainWindow", "Save Mesh as", 0));
         actionOpen_PointClouds->setText(QApplication::translate("MainWindow", "Open PointClouds", 0));
         actionOpen_Mesh->setText(QApplication::translate("MainWindow", "Open Mesh", 0));
         scanningGroupBox->setTitle(QString());
@@ -546,16 +542,15 @@ public:
         get_3D_model->setText(QApplication::translate("MainWindow", "Get 3D model", 0));
         ListGroupBox->setTitle(QString());
         list_pc->setText(QApplication::translate("MainWindow", "List of Point Clouds", 0));
-        selectAllPointClouds->setText(QApplication::translate("MainWindow", "Select all", 0));
+        deleteAllPointClouds->setText(QApplication::translate("MainWindow", "Delete all", 0));
         deletePointCloud->setText(QApplication::translate("MainWindow", "Delete", 0));
         tabWidget->setTabText(tabWidget->indexOf(tabPointClouds), QApplication::translate("MainWindow", "PC", 0));
         ListGroupBox_2->setTitle(QString());
         list_mesh->setText(QApplication::translate("MainWindow", "List of Meshes", 0));
-        selectAllMeshes->setText(QApplication::translate("MainWindow", "Select all", 0));
+        deleteAllMeshes->setText(QApplication::translate("MainWindow", "Delete all", 0));
         deleteMesh->setText(QApplication::translate("MainWindow", "Delete", 0));
         tabWidget->setTabText(tabWidget->indexOf(tabMeshes), QApplication::translate("MainWindow", "MESH", 0));
         menuFile->setTitle(QApplication::translate("MainWindow", "File", 0));
-        menuPointClouds->setTitle(QApplication::translate("MainWindow", "PointClouds", 0));
     } // retranslateUi
 
 };

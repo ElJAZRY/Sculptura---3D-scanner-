@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1022</width>
-    <height>703</height>
+    <width>1043</width>
+    <height>713</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -181,7 +181,7 @@ QPushButton:pressed {
          <property name="sizeHint" stdset="0">
           <size>
            <width>20</width>
-           <height>233</height>
+           <height>243</height>
           </size>
          </property>
         </spacer>
@@ -349,7 +349,7 @@ QPushButton:pressed {
        </size>
       </property>
       <property name="currentIndex">
-       <number>0</number>
+       <number>1</number>
       </property>
       <widget class="QWidget" name="tabPointClouds">
        <property name="styleSheet">
@@ -431,7 +431,7 @@ background-color: white;
          <item>
           <layout class="QHBoxLayout" name="horizontalLayout_2">
            <item>
-            <widget class="QPushButton" name="selectAllPointClouds">
+            <widget class="QPushButton" name="deleteAllPointClouds">
              <property name="enabled">
               <bool>true</bool>
              </property>
@@ -454,7 +454,7 @@ QPushButton:pressed {
 }</string>
              </property>
              <property name="text">
-              <string>Select all</string>
+              <string>Delete all</string>
              </property>
             </widget>
            </item>
@@ -579,7 +579,7 @@ QPushButton:pressed {
          <item>
           <layout class="QHBoxLayout" name="horizontalLayout_5">
            <item>
-            <widget class="QPushButton" name="selectAllMeshes">
+            <widget class="QPushButton" name="deleteAllMeshes">
              <property name="enabled">
               <bool>true</bool>
              </property>
@@ -602,7 +602,7 @@ QPushButton:pressed {
 }</string>
              </property>
              <property name="text">
-              <string>Select all</string>
+              <string>Delete all</string>
              </property>
             </widget>
            </item>
@@ -661,7 +661,7 @@ QPushButton:pressed {
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1022</width>
+     <width>1043</width>
      <height>26</height>
     </rect>
    </property>
@@ -670,18 +670,11 @@ QPushButton:pressed {
      <string>File</string>
     </property>
     <addaction name="actionNew"/>
-    <addaction name="actionOpen"/>
-    <addaction name="actionSave_as"/>
-   </widget>
-   <widget class="QMenu" name="menuPointClouds">
-    <property name="title">
-     <string>PointClouds</string>
-    </property>
     <addaction name="actionOpen_PointClouds"/>
     <addaction name="actionOpen_Mesh"/>
+    <addaction name="actionSave_as"/>
    </widget>
    <addaction name="menuFile"/>
-   <addaction name="menuPointClouds"/>
   </widget>
   <widget class="QToolBar" name="mainToolBar">
    <attribute name="toolBarArea">
@@ -716,7 +709,7 @@ QPushButton:pressed {
      <normaloff>:/images/diskette.png</normaloff>:/images/diskette.png</iconset>
    </property>
    <property name="text">
-    <string>Save as</string>
+    <string>Save Mesh as</string>
    </property>
   </action>
   <action name="actionOpen_PointClouds">
@@ -729,6 +722,10 @@ QPushButton:pressed {
    </property>
   </action>
   <action name="actionOpen_Mesh">
+   <property name="icon">
+    <iconset resource="icons.qrc">
+     <normaloff>:/images/Folder.png</normaloff>:/images/Folder.png</iconset>
+   </property>
    <property name="text">
     <string>Open Mesh</string>
    </property>

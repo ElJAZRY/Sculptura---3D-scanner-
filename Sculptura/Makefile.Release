@@ -2317,6 +2317,82 @@ release\moc_mainwindow.cpp: advanced_scanning.h \
 		"..\..\..\Program Files\PCL 1.8.0\3rdParty\VTK\include\vtk-7.0\vtkVertexGlyphFilter.h" \
 		"..\..\..\Program Files\PCL 1.8.0\3rdParty\VTK\include\vtk-7.0\vtkFiltersGeneralModule.h" \
 		ui_mainwindow.h \
+		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtCore\QVariant \
+		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtWidgets\QAction \
+		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtWidgets\qaction.h \
+		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtGui\qicon.h \
+		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtWidgets\qactiongroup.h \
+		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtWidgets\QApplication \
+		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtWidgets\qapplication.h \
+		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtCore\qcoreapplication.h \
+		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtCore\qeventloop.h \
+		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtWidgets\qdesktopwidget.h \
+		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtGui\qguiapplication.h \
+		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtGui\qinputmethod.h \
+		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtWidgets\QButtonGroup \
+		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtWidgets\qbuttongroup.h \
+		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtWidgets\QGridLayout \
+		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtWidgets\qgridlayout.h \
+		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtWidgets\qlayout.h \
+		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtWidgets\qlayoutitem.h \
+		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtWidgets\qboxlayout.h \
+		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtWidgets\QGroupBox \
+		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtWidgets\qgroupbox.h \
+		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtWidgets\qframe.h \
+		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtWidgets\QHBoxLayout \
+		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtWidgets\QHeaderView \
+		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtWidgets\qheaderview.h \
+		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtWidgets\qabstractitemview.h \
+		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtWidgets\qabstractscrollarea.h \
+		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtCore\qabstractitemmodel.h \
+		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtCore\qitemselectionmodel.h \
+		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtWidgets\qabstractitemdelegate.h \
+		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtWidgets\qstyleoption.h \
+		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtWidgets\qabstractspinbox.h \
+		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtGui\qvalidator.h \
+		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtCore\qregularexpression.h \
+		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtWidgets\qslider.h \
+		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtWidgets\qabstractslider.h \
+		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtWidgets\qstyle.h \
+		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtWidgets\qtabbar.h \
+		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtWidgets\qtabwidget.h \
+		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtWidgets\qrubberband.h \
+		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtWidgets\QLabel \
+		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtWidgets\qlabel.h \
+		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtWidgets\QListView \
+		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtWidgets\qlistview.h \
+		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtWidgets\QMainWindow \
+		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtWidgets\qmainwindow.h \
+		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtWidgets\QMenu \
+		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtWidgets\qmenu.h \
+		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtWidgets\QMenuBar \
+		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtWidgets\qmenubar.h \
+		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtWidgets\QProgressBar \
+		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtWidgets\qprogressbar.h \
+		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtWidgets\QPushButton \
+		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtWidgets\qpushbutton.h \
+		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtWidgets\qabstractbutton.h \
+		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtWidgets\QSpacerItem \
+		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtWidgets\QStatusBar \
+		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtWidgets\qstatusbar.h \
+		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtWidgets\QTabWidget \
+		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtWidgets\QToolBar \
+		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtWidgets\qtoolbar.h \
+		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtWidgets\QVBoxLayout \
+		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtWidgets\QWidget \
+		"..\..\..\Program Files\PCL 1.8.0\3rdParty\VTK\include\vtk-7.0\QVTKWidget.h" \
+		"..\..\..\Program Files\PCL 1.8.0\3rdParty\VTK\include\vtk-7.0\vtkGUISupportQtModule.h" \
+		"..\..\..\Program Files\PCL 1.8.0\3rdParty\VTK\include\vtk-7.0\vtkInteractionStyleModule.h" \
+		"..\..\..\Program Files\PCL 1.8.0\3rdParty\VTK\include\vtk-7.0\vtkRenderingCoreModule.h" \
+		"..\..\..\Program Files\PCL 1.8.0\3rdParty\VTK\include\vtk-7.0\vtkRenderingOpenGL2Module.h" \
+		"..\..\..\Program Files\PCL 1.8.0\3rdParty\VTK\include\vtk-7.0\vtkRenderingOpenGLConfigure.h" \
+		"..\..\..\Program Files\PCL 1.8.0\3rdParty\VTK\include\vtk-7.0\QVTKInteractor.h" \
+		"..\..\..\Program Files\PCL 1.8.0\3rdParty\VTK\include\vtk-7.0\QVTKWin32Header.h" \
+		"..\..\..\Program Files\PCL 1.8.0\3rdParty\VTK\include\vtk-7.0\vtkRenderWindowInteractor.h" \
+		"..\..\..\Program Files\PCL 1.8.0\3rdParty\VTK\include\vtk-7.0\vtkCommand.h" \
+		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtCore\QObject \
+		"..\..\..\Program Files\PCL 1.8.0\3rdParty\VTK\include\vtk-7.0\vtkTDxConfigure.h" \
+		"..\..\..\Program Files\PCL 1.8.0\3rdParty\VTK\include\vtk-7.0\vtkToolkits.h" \
 		"..\..\..\Program Files\OpenNI2\Include\OpenNI.h" \
 		"..\..\..\Program Files\OpenNI2\Include\OniPlatform.h" \
 		"..\..\..\Program Files\OpenNI2\Include\Win32\OniPlatformWin32.h" \
@@ -2370,20 +2446,17 @@ release\moc_mainwindow.cpp: advanced_scanning.h \
 		"..\..\..\Program Files\PCL 1.8.0\3rdParty\VTK\include\vtk-7.0\vtkRenderingLODModule.h" \
 		"..\..\..\Program Files\PCL 1.8.0\3rdParty\VTK\include\vtk-7.0\vtkFiltersModelingModule.h" \
 		"..\..\..\Program Files\PCL 1.8.0\3rdParty\VTK\include\vtk-7.0\vtkFiltersSourcesModule.h" \
-		"..\..\..\Program Files\PCL 1.8.0\3rdParty\VTK\include\vtk-7.0\vtkRenderingCoreModule.h" \
 		"..\..\..\Program Files\PCL 1.8.0\3rdParty\VTK\include\vtk-7.0\vtkActor.h" \
 		"..\..\..\Program Files\PCL 1.8.0\3rdParty\VTK\include\vtk-7.0\vtkProp3D.h" \
 		"..\..\..\Program Files\PCL 1.8.0\3rdParty\VTK\include\vtk-7.0\vtkProp.h" \
 		"..\..\..\Program Files\PCL 1.8.0\include\pcl-1.8\pcl\visualization\boost.h" \
 		"..\..\..\Program Files\PCL 1.8.0\include\pcl-1.8\pcl\visualization\point_picking_event.h" \
-		"..\..\..\Program Files\PCL 1.8.0\3rdParty\VTK\include\vtk-7.0\vtkCommand.h" \
 		"..\..\..\Program Files\PCL 1.8.0\include\pcl-1.8\pcl\visualization\area_picking_event.h" \
 		"..\..\..\Program Files\PCL 1.8.0\include\pcl-1.8\pcl\visualization\interactor_style.h" \
 		"..\..\..\Program Files\PCL 1.8.0\include\pcl-1.8\pcl\visualization\common\ren_win_interact_map.h" \
 		"..\..\..\Program Files\PCL 1.8.0\include\pcl-1.8\pcl\visualization\keyboard_event.h" \
 		"..\..\..\Program Files\PCL 1.8.0\include\pcl-1.8\pcl\visualization\mouse_event.h" \
 		"..\..\..\Program Files\PCL 1.8.0\3rdParty\VTK\include\vtk-7.0\vtkInteractorStyleRubberBandPick.h" \
-		"..\..\..\Program Files\PCL 1.8.0\3rdParty\VTK\include\vtk-7.0\vtkInteractionStyleModule.h" \
 		"..\..\..\Program Files\PCL 1.8.0\3rdParty\VTK\include\vtk-7.0\vtkInteractorStyleTrackballCamera.h" \
 		"..\..\..\Program Files\PCL 1.8.0\3rdParty\VTK\include\vtk-7.0\vtkInteractorStyle.h" \
 		"..\..\..\Program Files\PCL 1.8.0\3rdParty\VTK\include\vtk-7.0\vtkInteractorObserver.h" \
@@ -2430,7 +2503,6 @@ release\moc_mainwindow.cpp: advanced_scanning.h \
 		"..\..\..\Program Files\PCL 1.8.0\3rdParty\VTK\include\vtk-7.0\vtkRenderWindow.h" \
 		"..\..\..\Program Files\PCL 1.8.0\3rdParty\VTK\include\vtk-7.0\vtkWindow.h" \
 		cvimagewidget.h \
-		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtWidgets\QWidget \
 		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtGui\QPainter \
 		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtGui\qpainter.h \
 		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtGui\qtextoption.h \
@@ -2525,10 +2597,6 @@ release\moc_mainwindow.cpp: advanced_scanning.h \
 		..\..\..\opencv\build\include\opencv2\videostab\deblurring.hpp \
 		..\..\..\opencv\build\include\opencv2\videostab\wobble_suppression.hpp \
 		..\..\..\opencv\build\include\opencv2\videostab\ring_buffer.hpp \
-		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtWidgets\QMainWindow \
-		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtWidgets\qmainwindow.h \
-		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtWidgets\qtabwidget.h \
-		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtGui\qicon.h \
 		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtWidgets\QFileDialog \
 		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtWidgets\qfiledialog.h \
 		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtCore\qdir.h \
@@ -2537,8 +2605,9 @@ release\moc_mainwindow.cpp: advanced_scanning.h \
 		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtWidgets\qmessagebox.h \
 		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtGui\QStandardItem \
 		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtGui\qstandarditemmodel.h \
-		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtCore\qabstractitemmodel.h \
 		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtGui\QStandardItemModel \
+		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtWidgets\QListWidgetItem \
+		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtWidgets\qlistwidget.h \
 		mainwindow.h
 	C:\Qt\Qt5.6.2\5.6\msvc2015_64\bin\moc.exe $(DEFINES) -D_MSC_VER=1900 -D_WIN32 -D_WIN64 -IC:/Qt/Qt5.6.2/5.6/msvc2015_64/mkspecs/win32-msvc2015 -IC:/SCULPTURA/Sculptura_3D-scanner/Sculptura -IC:/opencv/build/include -I"C:/Program Files/OpenNI2/Include" -I"C:/Program Files/OpenNI2/Tools" -I"C:/Program Files/PCL 1.8.0/include/pcl-1.8" -I"C:/Program Files/PCL 1.8.0/3rdParty/VTK/include/vtk-7.0" -I"C:/Program Files/PCL 1.8.0/3rdParty/Boost/include/boost-1_61" -I"C:/Program Files/PCL 1.8.0/3rdParty/Qhull/include" -I"C:/Program Files/PCL 1.8.0/3rdParty/FLANN/include" -I"C:/Program Files/PCL 1.8.0/3rdParty/Eigen/eigen3" -I"C:/Program Files/Microsoft SDKs/Kinect/v2.0_1409/inc" -I"C:/Program Files/OpenNI2/Include" -I"C:/Program Files (x86)/Windows Kits/10/Include/10.0.10240.0/um" -I"C:/Program Files (x86)/Windows Kits/10/Include/10.0.10240.0/shared" -I"C:/Program Files (x86)/Windows Kits/10/Include/10.0.10240.0/ucrt" -I"C:/Program Files (x86)/Intel/RSSDK/include" -I"C:/Program Files (x86)/Intel/RSSDK/src/libpxc" -IC:/Qt/Qt5.6.2/5.6/msvc2015_64/include -IC:/Qt/Qt5.6.2/5.6/msvc2015_64/include/QtWidgets -IC:/Qt/Qt5.6.2/5.6/msvc2015_64/include/QtGui -IC:/Qt/Qt5.6.2/5.6/msvc2015_64/include/QtANGLE -IC:/Qt/Qt5.6.2/5.6/msvc2015_64/include/QtCore mainwindow.h -o release\moc_mainwindow.cpp
 
@@ -9219,6 +9288,82 @@ release\main.obj: main.cpp mainwindow.h \
 		"..\..\..\Program Files\PCL 1.8.0\3rdParty\VTK\include\vtk-7.0\vtkVertexGlyphFilter.h" \
 		"..\..\..\Program Files\PCL 1.8.0\3rdParty\VTK\include\vtk-7.0\vtkFiltersGeneralModule.h" \
 		ui_mainwindow.h \
+		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtCore\QVariant \
+		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtWidgets\QAction \
+		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtWidgets\qaction.h \
+		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtGui\qicon.h \
+		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtWidgets\qactiongroup.h \
+		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtWidgets\QApplication \
+		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtWidgets\qapplication.h \
+		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtCore\qcoreapplication.h \
+		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtCore\qeventloop.h \
+		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtWidgets\qdesktopwidget.h \
+		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtGui\qguiapplication.h \
+		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtGui\qinputmethod.h \
+		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtWidgets\QButtonGroup \
+		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtWidgets\qbuttongroup.h \
+		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtWidgets\QGridLayout \
+		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtWidgets\qgridlayout.h \
+		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtWidgets\qlayout.h \
+		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtWidgets\qlayoutitem.h \
+		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtWidgets\qboxlayout.h \
+		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtWidgets\QGroupBox \
+		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtWidgets\qgroupbox.h \
+		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtWidgets\qframe.h \
+		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtWidgets\QHBoxLayout \
+		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtWidgets\QHeaderView \
+		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtWidgets\qheaderview.h \
+		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtWidgets\qabstractitemview.h \
+		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtWidgets\qabstractscrollarea.h \
+		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtCore\qabstractitemmodel.h \
+		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtCore\qitemselectionmodel.h \
+		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtWidgets\qabstractitemdelegate.h \
+		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtWidgets\qstyleoption.h \
+		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtWidgets\qabstractspinbox.h \
+		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtGui\qvalidator.h \
+		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtCore\qregularexpression.h \
+		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtWidgets\qslider.h \
+		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtWidgets\qabstractslider.h \
+		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtWidgets\qstyle.h \
+		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtWidgets\qtabbar.h \
+		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtWidgets\qtabwidget.h \
+		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtWidgets\qrubberband.h \
+		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtWidgets\QLabel \
+		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtWidgets\qlabel.h \
+		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtWidgets\QListView \
+		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtWidgets\qlistview.h \
+		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtWidgets\QMainWindow \
+		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtWidgets\qmainwindow.h \
+		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtWidgets\QMenu \
+		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtWidgets\qmenu.h \
+		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtWidgets\QMenuBar \
+		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtWidgets\qmenubar.h \
+		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtWidgets\QProgressBar \
+		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtWidgets\qprogressbar.h \
+		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtWidgets\QPushButton \
+		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtWidgets\qpushbutton.h \
+		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtWidgets\qabstractbutton.h \
+		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtWidgets\QSpacerItem \
+		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtWidgets\QStatusBar \
+		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtWidgets\qstatusbar.h \
+		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtWidgets\QTabWidget \
+		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtWidgets\QToolBar \
+		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtWidgets\qtoolbar.h \
+		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtWidgets\QVBoxLayout \
+		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtWidgets\QWidget \
+		"..\..\..\Program Files\PCL 1.8.0\3rdParty\VTK\include\vtk-7.0\QVTKWidget.h" \
+		"..\..\..\Program Files\PCL 1.8.0\3rdParty\VTK\include\vtk-7.0\vtkGUISupportQtModule.h" \
+		"..\..\..\Program Files\PCL 1.8.0\3rdParty\VTK\include\vtk-7.0\vtkInteractionStyleModule.h" \
+		"..\..\..\Program Files\PCL 1.8.0\3rdParty\VTK\include\vtk-7.0\vtkRenderingCoreModule.h" \
+		"..\..\..\Program Files\PCL 1.8.0\3rdParty\VTK\include\vtk-7.0\vtkRenderingOpenGL2Module.h" \
+		"..\..\..\Program Files\PCL 1.8.0\3rdParty\VTK\include\vtk-7.0\vtkRenderingOpenGLConfigure.h" \
+		"..\..\..\Program Files\PCL 1.8.0\3rdParty\VTK\include\vtk-7.0\QVTKInteractor.h" \
+		"..\..\..\Program Files\PCL 1.8.0\3rdParty\VTK\include\vtk-7.0\QVTKWin32Header.h" \
+		"..\..\..\Program Files\PCL 1.8.0\3rdParty\VTK\include\vtk-7.0\vtkRenderWindowInteractor.h" \
+		"..\..\..\Program Files\PCL 1.8.0\3rdParty\VTK\include\vtk-7.0\vtkCommand.h" \
+		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtCore\QObject \
+		"..\..\..\Program Files\PCL 1.8.0\3rdParty\VTK\include\vtk-7.0\vtkTDxConfigure.h" \
+		"..\..\..\Program Files\PCL 1.8.0\3rdParty\VTK\include\vtk-7.0\vtkToolkits.h" \
 		"..\..\..\Program Files\OpenNI2\Include\OpenNI.h" \
 		"..\..\..\Program Files\OpenNI2\Include\OniPlatform.h" \
 		"..\..\..\Program Files\OpenNI2\Include\Win32\OniPlatformWin32.h" \
@@ -9272,20 +9417,17 @@ release\main.obj: main.cpp mainwindow.h \
 		"..\..\..\Program Files\PCL 1.8.0\3rdParty\VTK\include\vtk-7.0\vtkRenderingLODModule.h" \
 		"..\..\..\Program Files\PCL 1.8.0\3rdParty\VTK\include\vtk-7.0\vtkFiltersModelingModule.h" \
 		"..\..\..\Program Files\PCL 1.8.0\3rdParty\VTK\include\vtk-7.0\vtkFiltersSourcesModule.h" \
-		"..\..\..\Program Files\PCL 1.8.0\3rdParty\VTK\include\vtk-7.0\vtkRenderingCoreModule.h" \
 		"..\..\..\Program Files\PCL 1.8.0\3rdParty\VTK\include\vtk-7.0\vtkActor.h" \
 		"..\..\..\Program Files\PCL 1.8.0\3rdParty\VTK\include\vtk-7.0\vtkProp3D.h" \
 		"..\..\..\Program Files\PCL 1.8.0\3rdParty\VTK\include\vtk-7.0\vtkProp.h" \
 		"..\..\..\Program Files\PCL 1.8.0\include\pcl-1.8\pcl\visualization\boost.h" \
 		"..\..\..\Program Files\PCL 1.8.0\include\pcl-1.8\pcl\visualization\point_picking_event.h" \
-		"..\..\..\Program Files\PCL 1.8.0\3rdParty\VTK\include\vtk-7.0\vtkCommand.h" \
 		"..\..\..\Program Files\PCL 1.8.0\include\pcl-1.8\pcl\visualization\area_picking_event.h" \
 		"..\..\..\Program Files\PCL 1.8.0\include\pcl-1.8\pcl\visualization\interactor_style.h" \
 		"..\..\..\Program Files\PCL 1.8.0\include\pcl-1.8\pcl\visualization\common\ren_win_interact_map.h" \
 		"..\..\..\Program Files\PCL 1.8.0\include\pcl-1.8\pcl\visualization\keyboard_event.h" \
 		"..\..\..\Program Files\PCL 1.8.0\include\pcl-1.8\pcl\visualization\mouse_event.h" \
 		"..\..\..\Program Files\PCL 1.8.0\3rdParty\VTK\include\vtk-7.0\vtkInteractorStyleRubberBandPick.h" \
-		"..\..\..\Program Files\PCL 1.8.0\3rdParty\VTK\include\vtk-7.0\vtkInteractionStyleModule.h" \
 		"..\..\..\Program Files\PCL 1.8.0\3rdParty\VTK\include\vtk-7.0\vtkInteractorStyleTrackballCamera.h" \
 		"..\..\..\Program Files\PCL 1.8.0\3rdParty\VTK\include\vtk-7.0\vtkInteractorStyle.h" \
 		"..\..\..\Program Files\PCL 1.8.0\3rdParty\VTK\include\vtk-7.0\vtkInteractorObserver.h" \
@@ -9332,7 +9474,6 @@ release\main.obj: main.cpp mainwindow.h \
 		"..\..\..\Program Files\PCL 1.8.0\3rdParty\VTK\include\vtk-7.0\vtkRenderWindow.h" \
 		"..\..\..\Program Files\PCL 1.8.0\3rdParty\VTK\include\vtk-7.0\vtkWindow.h" \
 		cvimagewidget.h \
-		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtWidgets\QWidget \
 		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtGui\QPainter \
 		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtGui\qpainter.h \
 		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtGui\qtextoption.h \
@@ -9427,10 +9568,6 @@ release\main.obj: main.cpp mainwindow.h \
 		..\..\..\opencv\build\include\opencv2\videostab\deblurring.hpp \
 		..\..\..\opencv\build\include\opencv2\videostab\wobble_suppression.hpp \
 		..\..\..\opencv\build\include\opencv2\videostab\ring_buffer.hpp \
-		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtWidgets\QMainWindow \
-		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtWidgets\qmainwindow.h \
-		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtWidgets\qtabwidget.h \
-		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtGui\qicon.h \
 		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtWidgets\QFileDialog \
 		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtWidgets\qfiledialog.h \
 		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtCore\qdir.h \
@@ -9439,15 +9576,9 @@ release\main.obj: main.cpp mainwindow.h \
 		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtWidgets\qmessagebox.h \
 		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtGui\QStandardItem \
 		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtGui\qstandarditemmodel.h \
-		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtCore\qabstractitemmodel.h \
 		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtGui\QStandardItemModel \
-		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtWidgets\QApplication \
-		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtWidgets\qapplication.h \
-		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtCore\qcoreapplication.h \
-		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtCore\qeventloop.h \
-		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtWidgets\qdesktopwidget.h \
-		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtGui\qguiapplication.h \
-		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtGui\qinputmethod.h
+		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtWidgets\QListWidgetItem \
+		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtWidgets\qlistwidget.h
 
 release\mainwindow.obj: mainwindow.cpp mainwindow.h \
 		advanced_scanning.h \
@@ -11584,6 +11715,82 @@ release\mainwindow.obj: mainwindow.cpp mainwindow.h \
 		"..\..\..\Program Files\PCL 1.8.0\3rdParty\VTK\include\vtk-7.0\vtkVertexGlyphFilter.h" \
 		"..\..\..\Program Files\PCL 1.8.0\3rdParty\VTK\include\vtk-7.0\vtkFiltersGeneralModule.h" \
 		ui_mainwindow.h \
+		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtCore\QVariant \
+		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtWidgets\QAction \
+		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtWidgets\qaction.h \
+		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtGui\qicon.h \
+		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtWidgets\qactiongroup.h \
+		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtWidgets\QApplication \
+		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtWidgets\qapplication.h \
+		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtCore\qcoreapplication.h \
+		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtCore\qeventloop.h \
+		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtWidgets\qdesktopwidget.h \
+		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtGui\qguiapplication.h \
+		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtGui\qinputmethod.h \
+		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtWidgets\QButtonGroup \
+		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtWidgets\qbuttongroup.h \
+		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtWidgets\QGridLayout \
+		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtWidgets\qgridlayout.h \
+		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtWidgets\qlayout.h \
+		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtWidgets\qlayoutitem.h \
+		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtWidgets\qboxlayout.h \
+		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtWidgets\QGroupBox \
+		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtWidgets\qgroupbox.h \
+		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtWidgets\qframe.h \
+		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtWidgets\QHBoxLayout \
+		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtWidgets\QHeaderView \
+		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtWidgets\qheaderview.h \
+		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtWidgets\qabstractitemview.h \
+		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtWidgets\qabstractscrollarea.h \
+		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtCore\qabstractitemmodel.h \
+		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtCore\qitemselectionmodel.h \
+		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtWidgets\qabstractitemdelegate.h \
+		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtWidgets\qstyleoption.h \
+		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtWidgets\qabstractspinbox.h \
+		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtGui\qvalidator.h \
+		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtCore\qregularexpression.h \
+		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtWidgets\qslider.h \
+		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtWidgets\qabstractslider.h \
+		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtWidgets\qstyle.h \
+		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtWidgets\qtabbar.h \
+		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtWidgets\qtabwidget.h \
+		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtWidgets\qrubberband.h \
+		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtWidgets\QLabel \
+		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtWidgets\qlabel.h \
+		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtWidgets\QListView \
+		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtWidgets\qlistview.h \
+		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtWidgets\QMainWindow \
+		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtWidgets\qmainwindow.h \
+		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtWidgets\QMenu \
+		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtWidgets\qmenu.h \
+		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtWidgets\QMenuBar \
+		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtWidgets\qmenubar.h \
+		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtWidgets\QProgressBar \
+		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtWidgets\qprogressbar.h \
+		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtWidgets\QPushButton \
+		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtWidgets\qpushbutton.h \
+		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtWidgets\qabstractbutton.h \
+		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtWidgets\QSpacerItem \
+		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtWidgets\QStatusBar \
+		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtWidgets\qstatusbar.h \
+		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtWidgets\QTabWidget \
+		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtWidgets\QToolBar \
+		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtWidgets\qtoolbar.h \
+		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtWidgets\QVBoxLayout \
+		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtWidgets\QWidget \
+		"..\..\..\Program Files\PCL 1.8.0\3rdParty\VTK\include\vtk-7.0\QVTKWidget.h" \
+		"..\..\..\Program Files\PCL 1.8.0\3rdParty\VTK\include\vtk-7.0\vtkGUISupportQtModule.h" \
+		"..\..\..\Program Files\PCL 1.8.0\3rdParty\VTK\include\vtk-7.0\vtkInteractionStyleModule.h" \
+		"..\..\..\Program Files\PCL 1.8.0\3rdParty\VTK\include\vtk-7.0\vtkRenderingCoreModule.h" \
+		"..\..\..\Program Files\PCL 1.8.0\3rdParty\VTK\include\vtk-7.0\vtkRenderingOpenGL2Module.h" \
+		"..\..\..\Program Files\PCL 1.8.0\3rdParty\VTK\include\vtk-7.0\vtkRenderingOpenGLConfigure.h" \
+		"..\..\..\Program Files\PCL 1.8.0\3rdParty\VTK\include\vtk-7.0\QVTKInteractor.h" \
+		"..\..\..\Program Files\PCL 1.8.0\3rdParty\VTK\include\vtk-7.0\QVTKWin32Header.h" \
+		"..\..\..\Program Files\PCL 1.8.0\3rdParty\VTK\include\vtk-7.0\vtkRenderWindowInteractor.h" \
+		"..\..\..\Program Files\PCL 1.8.0\3rdParty\VTK\include\vtk-7.0\vtkCommand.h" \
+		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtCore\QObject \
+		"..\..\..\Program Files\PCL 1.8.0\3rdParty\VTK\include\vtk-7.0\vtkTDxConfigure.h" \
+		"..\..\..\Program Files\PCL 1.8.0\3rdParty\VTK\include\vtk-7.0\vtkToolkits.h" \
 		"..\..\..\Program Files\OpenNI2\Include\OpenNI.h" \
 		"..\..\..\Program Files\OpenNI2\Include\OniPlatform.h" \
 		"..\..\..\Program Files\OpenNI2\Include\Win32\OniPlatformWin32.h" \
@@ -11637,20 +11844,17 @@ release\mainwindow.obj: mainwindow.cpp mainwindow.h \
 		"..\..\..\Program Files\PCL 1.8.0\3rdParty\VTK\include\vtk-7.0\vtkRenderingLODModule.h" \
 		"..\..\..\Program Files\PCL 1.8.0\3rdParty\VTK\include\vtk-7.0\vtkFiltersModelingModule.h" \
 		"..\..\..\Program Files\PCL 1.8.0\3rdParty\VTK\include\vtk-7.0\vtkFiltersSourcesModule.h" \
-		"..\..\..\Program Files\PCL 1.8.0\3rdParty\VTK\include\vtk-7.0\vtkRenderingCoreModule.h" \
 		"..\..\..\Program Files\PCL 1.8.0\3rdParty\VTK\include\vtk-7.0\vtkActor.h" \
 		"..\..\..\Program Files\PCL 1.8.0\3rdParty\VTK\include\vtk-7.0\vtkProp3D.h" \
 		"..\..\..\Program Files\PCL 1.8.0\3rdParty\VTK\include\vtk-7.0\vtkProp.h" \
 		"..\..\..\Program Files\PCL 1.8.0\include\pcl-1.8\pcl\visualization\boost.h" \
 		"..\..\..\Program Files\PCL 1.8.0\include\pcl-1.8\pcl\visualization\point_picking_event.h" \
-		"..\..\..\Program Files\PCL 1.8.0\3rdParty\VTK\include\vtk-7.0\vtkCommand.h" \
 		"..\..\..\Program Files\PCL 1.8.0\include\pcl-1.8\pcl\visualization\area_picking_event.h" \
 		"..\..\..\Program Files\PCL 1.8.0\include\pcl-1.8\pcl\visualization\interactor_style.h" \
 		"..\..\..\Program Files\PCL 1.8.0\include\pcl-1.8\pcl\visualization\common\ren_win_interact_map.h" \
 		"..\..\..\Program Files\PCL 1.8.0\include\pcl-1.8\pcl\visualization\keyboard_event.h" \
 		"..\..\..\Program Files\PCL 1.8.0\include\pcl-1.8\pcl\visualization\mouse_event.h" \
 		"..\..\..\Program Files\PCL 1.8.0\3rdParty\VTK\include\vtk-7.0\vtkInteractorStyleRubberBandPick.h" \
-		"..\..\..\Program Files\PCL 1.8.0\3rdParty\VTK\include\vtk-7.0\vtkInteractionStyleModule.h" \
 		"..\..\..\Program Files\PCL 1.8.0\3rdParty\VTK\include\vtk-7.0\vtkInteractorStyleTrackballCamera.h" \
 		"..\..\..\Program Files\PCL 1.8.0\3rdParty\VTK\include\vtk-7.0\vtkInteractorStyle.h" \
 		"..\..\..\Program Files\PCL 1.8.0\3rdParty\VTK\include\vtk-7.0\vtkInteractorObserver.h" \
@@ -11697,7 +11901,6 @@ release\mainwindow.obj: mainwindow.cpp mainwindow.h \
 		"..\..\..\Program Files\PCL 1.8.0\3rdParty\VTK\include\vtk-7.0\vtkRenderWindow.h" \
 		"..\..\..\Program Files\PCL 1.8.0\3rdParty\VTK\include\vtk-7.0\vtkWindow.h" \
 		cvimagewidget.h \
-		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtWidgets\QWidget \
 		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtGui\QPainter \
 		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtGui\qpainter.h \
 		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtGui\qtextoption.h \
@@ -11792,10 +11995,6 @@ release\mainwindow.obj: mainwindow.cpp mainwindow.h \
 		..\..\..\opencv\build\include\opencv2\videostab\deblurring.hpp \
 		..\..\..\opencv\build\include\opencv2\videostab\wobble_suppression.hpp \
 		..\..\..\opencv\build\include\opencv2\videostab\ring_buffer.hpp \
-		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtWidgets\QMainWindow \
-		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtWidgets\qmainwindow.h \
-		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtWidgets\qtabwidget.h \
-		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtGui\qicon.h \
 		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtWidgets\QFileDialog \
 		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtWidgets\qfiledialog.h \
 		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtCore\qdir.h \
@@ -11804,8 +12003,9 @@ release\mainwindow.obj: mainwindow.cpp mainwindow.h \
 		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtWidgets\qmessagebox.h \
 		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtGui\QStandardItem \
 		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtGui\qstandarditemmodel.h \
-		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtCore\qabstractitemmodel.h \
-		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtGui\QStandardItemModel
+		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtGui\QStandardItemModel \
+		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtWidgets\QListWidgetItem \
+		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtWidgets\qlistwidget.h
 
 release\advanced_scanning.obj: advanced_scanning.cpp advanced_scanning.h \
 		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtWidgets\QDialog \
@@ -11927,7 +12127,46 @@ release\advanced_scanning.obj: advanced_scanning.cpp advanced_scanning.h \
 		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtCore\qfiledevice.h \
 		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtGui\qvector2d.h \
 		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtGui\qtouchdevice.h \
-		ui_advanced_scanning.h
+		ui_advanced_scanning.h \
+		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtCore\QVariant \
+		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtWidgets\QAction \
+		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtWidgets\qaction.h \
+		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtGui\qicon.h \
+		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtWidgets\qactiongroup.h \
+		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtWidgets\QApplication \
+		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtWidgets\qapplication.h \
+		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtCore\qcoreapplication.h \
+		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtCore\qeventloop.h \
+		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtWidgets\qdesktopwidget.h \
+		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtGui\qguiapplication.h \
+		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtGui\qinputmethod.h \
+		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtWidgets\QButtonGroup \
+		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtWidgets\qbuttongroup.h \
+		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtWidgets\QDoubleSpinBox \
+		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtWidgets\qspinbox.h \
+		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtWidgets\qabstractspinbox.h \
+		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtGui\qvalidator.h \
+		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtCore\qregularexpression.h \
+		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtWidgets\QHeaderView \
+		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtWidgets\qheaderview.h \
+		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtWidgets\qabstractitemview.h \
+		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtWidgets\qabstractscrollarea.h \
+		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtWidgets\qframe.h \
+		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtCore\qabstractitemmodel.h \
+		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtCore\qitemselectionmodel.h \
+		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtWidgets\qabstractitemdelegate.h \
+		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtWidgets\qstyleoption.h \
+		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtWidgets\qslider.h \
+		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtWidgets\qabstractslider.h \
+		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtWidgets\qstyle.h \
+		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtWidgets\qtabbar.h \
+		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtWidgets\qtabwidget.h \
+		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtWidgets\qrubberband.h \
+		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtWidgets\QLabel \
+		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtWidgets\qlabel.h \
+		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtWidgets\QPushButton \
+		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtWidgets\qpushbutton.h \
+		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtWidgets\qabstractbutton.h
 
 release\camerapreview.obj: camerapreview.cpp camerapreview.h \
 		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtCore\QThread \
@@ -14131,7 +14370,41 @@ release\kinect_preview.obj: kinect_preview.cpp kinect_preview.h \
 		..\..\..\opencv\build\include\opencv2\imgcodecs\imgcodecs_c.h \
 		..\..\..\opencv\build\include\opencv2\videoio\videoio_c.h \
 		"..\..\..\Program Files\Microsoft SDKs\Kinect\v2.0_1409\inc\Kinect.h" \
-		"..\..\..\Program Files\Microsoft SDKs\Kinect\v2.0_1409\inc\Kinect.INPC.h"
+		"..\..\..\Program Files\Microsoft SDKs\Kinect\v2.0_1409\inc\Kinect.INPC.h" \
+		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtWidgets\QMessageBox \
+		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtWidgets\qmessagebox.h \
+		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtWidgets\qdialog.h \
+		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtWidgets\qwidget.h \
+		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtGui\qpalette.h \
+		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtGui\qbrush.h \
+		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtGui\qpixmap.h \
+		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtCore\qsharedpointer.h \
+		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtCore\qshareddata.h \
+		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtCore\qhash.h \
+		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtCore\qsharedpointer_impl.h \
+		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtGui\qfont.h \
+		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtGui\qfontmetrics.h \
+		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtGui\qfontinfo.h \
+		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtWidgets\qsizepolicy.h \
+		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtGui\qcursor.h \
+		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtGui\qkeysequence.h \
+		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtGui\qevent.h \
+		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtCore\qvariant.h \
+		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtCore\qmap.h \
+		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtCore\qdebug.h \
+		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtCore\qtextstream.h \
+		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtCore\qlocale.h \
+		"..\..\..\Program Files (x86)\Windows Kits\10\Include\10.0.10240.0\ucrt\stdio.h" \
+		"..\..\..\Program Files (x86)\Windows Kits\10\Include\10.0.10240.0\ucrt\corecrt_wstdio.h" \
+		"..\..\..\Program Files (x86)\Windows Kits\10\Include\10.0.10240.0\ucrt\corecrt_stdio_config.h" \
+		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtCore\qset.h \
+		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtCore\qcontiguouscache.h \
+		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtCore\qurl.h \
+		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtCore\qurlquery.h \
+		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtCore\qfile.h \
+		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtCore\qfiledevice.h \
+		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtGui\qvector2d.h \
+		..\..\..\Qt\Qt5.6.2\5.6\msvc2015_64\include\QtGui\qtouchdevice.h
 
 release\read_mesh.obj: read_mesh.cpp read_mesh.h \
 		"..\..\..\Program Files\PCL 1.8.0\include\pcl-1.8\pcl\point_cloud.h" \
