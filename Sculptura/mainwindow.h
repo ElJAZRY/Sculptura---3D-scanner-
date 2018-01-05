@@ -83,6 +83,8 @@ private slots:
 
     void on_actionSave_as_triggered();
 
+    void on_actionNew_triggered();
+
 private:
     void showPointCloudFiles();
     void showSelectedPointCloud(int);

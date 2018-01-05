@@ -111,6 +111,20 @@ void MainWindow::saveDepthAndColorMat(std::vector<cv::Mat> depth, std::vector<cv
     this->colors = colors;
 }
 
+void MainWindow::on_actionNew_triggered()
+{
+    pointCloudFiles->clear();
+    showPointCloudFiles();
+    pointCloudSet.clear();
+    meshFiles->clear();
+    showMeshFiles();
+    meshSet.clear();
+    depth.clear();
+    colors.clear();
+    initVisualiser();
+}
+
+
 void MainWindow::on_actionOpen_PointClouds_triggered()
 {
     QStringList filenames = QFileDialog::getOpenFileNames(
@@ -121,9 +135,8 @@ void MainWindow::on_actionOpen_PointClouds_triggered()
 
     if( !filenames.isEmpty() )
     {
-        //TODO remove duplicates first
         pointCloudFiles->append(filenames);
-        readPointClouds->read(filenames);; //TODO what if thread is already running?
+        readPointClouds->read(filenames);
     }
 }
 
@@ -143,6 +156,16 @@ void MainWindow::on_actionOpen_Mesh_triggered()
     }
 }
 
+void MainWindow::on_actionSave_as_triggered()
+{
+    QString directoryName = QFileDialog::getExistingDirectory(this, QString("Export mesh"),QString(""), QFileDialog::ShowDirsOnly);
+    if(directoryName != ""){
+        QString filePath;
+        filePath = directoryName + "/" + "yourmesh" ".vtk";
+        pcl::io::savePolygonFileVTK(filePath.toStdString(), *(meshSet[0]));
+    }
+}
+
 void MainWindow::on_deletePointCloud_clicked()
 {
     QModelIndexList selection = ui->listPointClouds->selectionModel()->selectedIndexes();
@@ -159,7 +182,6 @@ void MainWindow::on_deletePointCloud_clicked()
             visualiser->updatePointCloud(pointCloud, "cloud");
             ui->vtkWindow->update ();
         }
-
     }
 }
 
@@ -187,7 +209,6 @@ void MainWindow::on_deleteMesh_clicked()
         else {
             initVisualiser();
         }
-
     }
 }
 
@@ -212,7 +233,6 @@ void MainWindow::showPointCloudFiles()
         QStandardItem* item = new QStandardItem(filenameParts.last());
         listModel->appendRow(item);
     }
-
     ui->listPointClouds->setModel(listModel);
 }
 
@@ -226,7 +246,6 @@ void MainWindow::showMeshFiles()
         QStandardItem* item = new QStandardItem(filenameParts.last());
         listModel->appendRow(item);
     }
-
     ui->listMeshes->setModel(listModel);
 }
 
@@ -289,20 +308,3 @@ void MainWindow::on_listMeshes_doubleClicked(const QModelIndex &index)
     showSelectedMesh(index.row());
 }
 
-
-
-
-
-void MainWindow::on_actionSave_as_triggered()
-{
-    QString directoryName = QFileDialog::getExistingDirectory(this, QString("Export mesh"),QString(""), QFileDialog::ShowDirsOnly);
-    if(directoryName != ""){
-        QString filePath;
-        //QListWidgetItem* item;
-
-            filePath = directoryName + "/" + "newmesh" ".vtk";
-
-            pcl::io::savePolygonFileVTK(filePath.toStdString(), *(meshSet[0]));
-
-    }
-}

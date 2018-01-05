@@ -66,6 +66,7 @@ public:
     QSpacerItem *horizontalSpacer_4;
     QPushButton *get_3D_model;
     QSpacerItem *horizontalSpacer_3;
+    QVBoxLayout *verticalLayout_5;
     QTabWidget *tabWidget;
     QWidget *tabPointClouds;
     QGroupBox *ListGroupBox;
@@ -85,6 +86,7 @@ public:
     QPushButton *deleteAllMeshes;
     QPushButton *deleteMesh;
     QSpacerItem *verticalSpacer_3;
+    QSpacerItem *verticalSpacer_4;
     QMenuBar *menuBar;
     QMenu *menuFile;
     QToolBar *mainToolBar;
@@ -94,7 +96,7 @@ public:
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QStringLiteral("MainWindow"));
-        MainWindow->resize(1043, 713);
+        MainWindow->resize(1174, 731);
         MainWindow->setStyleSheet(QLatin1String("QMainWindow\n"
 "{\n"
 "    background-color: #ecf0f5;\n"
@@ -134,16 +136,16 @@ public:
         horizontalLayout_3->setObjectName(QStringLiteral("horizontalLayout_3"));
         scanningGroupBox = new QGroupBox(centralWidget);
         scanningGroupBox->setObjectName(QStringLiteral("scanningGroupBox"));
-        scanningGroupBox->setMinimumSize(QSize(330, 0));
-        scanningGroupBox->setMaximumSize(QSize(350, 16777215));
+        scanningGroupBox->setMinimumSize(QSize(500, 0));
+        scanningGroupBox->setMaximumSize(QSize(500, 16777215));
         verticalLayout = new QVBoxLayout(scanningGroupBox);
         verticalLayout->setSpacing(6);
         verticalLayout->setContentsMargins(11, 11, 11, 11);
         verticalLayout->setObjectName(QStringLiteral("verticalLayout"));
         preview_window = new QLabel(scanningGroupBox);
         preview_window->setObjectName(QStringLiteral("preview_window"));
-        preview_window->setMinimumSize(QSize(320, 240));
-        preview_window->setMaximumSize(QSize(320, 240));
+        preview_window->setMinimumSize(QSize(480, 360));
+        preview_window->setMaximumSize(QSize(480, 360));
         preview_window->setStyleSheet(QLatin1String("QLabel {\n"
 "    border: 2px solid lightgray;\n"
 "    background-color: white;\n"
@@ -228,7 +230,7 @@ public:
 
         verticalLayout->addWidget(advanced_scanning);
 
-        verticalSpacer = new QSpacerItem(20, 243, QSizePolicy::Minimum, QSizePolicy::Expanding);
+        verticalSpacer = new QSpacerItem(20, 141, QSizePolicy::Minimum, QSizePolicy::MinimumExpanding);
 
         verticalLayout->addItem(verticalSpacer);
 
@@ -329,9 +331,13 @@ public:
 
         horizontalLayout_3->addWidget(reconstructionGroupBox);
 
+        verticalLayout_5 = new QVBoxLayout();
+        verticalLayout_5->setSpacing(6);
+        verticalLayout_5->setObjectName(QStringLiteral("verticalLayout_5"));
         tabWidget = new QTabWidget(centralWidget);
         tabWidget->setObjectName(QStringLiteral("tabWidget"));
-        tabWidget->setMaximumSize(QSize(180, 16777215));
+        tabWidget->setMinimumSize(QSize(0, 470));
+        tabWidget->setMaximumSize(QSize(180, 470));
         tabPointClouds = new QWidget();
         tabPointClouds->setObjectName(QStringLiteral("tabPointClouds"));
         tabPointClouds->setStyleSheet(QLatin1String("QWidget {\n"
@@ -339,7 +345,7 @@ public:
 "}"));
         ListGroupBox = new QGroupBox(tabPointClouds);
         ListGroupBox->setObjectName(QStringLiteral("ListGroupBox"));
-        ListGroupBox->setGeometry(QRect(0, 0, 180, 551));
+        ListGroupBox->setGeometry(QRect(0, 0, 180, 521));
         ListGroupBox->setMinimumSize(QSize(150, 400));
         ListGroupBox->setMaximumSize(QSize(180, 16777215));
         verticalLayout_4 = new QVBoxLayout(ListGroupBox);
@@ -409,7 +415,7 @@ public:
 
         verticalLayout_4->addLayout(horizontalLayout_2);
 
-        verticalSpacer_2 = new QSpacerItem(20, 98, QSizePolicy::Minimum, QSizePolicy::Expanding);
+        verticalSpacer_2 = new QSpacerItem(20, 68, QSizePolicy::Minimum, QSizePolicy::Expanding);
 
         verticalLayout_4->addItem(verticalSpacer_2);
 
@@ -494,12 +500,19 @@ public:
 
         tabWidget->addTab(tabMeshes, QString());
 
-        horizontalLayout_3->addWidget(tabWidget);
+        verticalLayout_5->addWidget(tabWidget);
+
+        verticalSpacer_4 = new QSpacerItem(20, 148, QSizePolicy::Minimum, QSizePolicy::Expanding);
+
+        verticalLayout_5->addItem(verticalSpacer_4);
+
+
+        horizontalLayout_3->addLayout(verticalLayout_5);
 
         MainWindow->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(MainWindow);
         menuBar->setObjectName(QStringLiteral("menuBar"));
-        menuBar->setGeometry(QRect(0, 0, 1043, 26));
+        menuBar->setGeometry(QRect(0, 0, 1174, 26));
         menuFile = new QMenu(menuBar);
         menuFile->setObjectName(QStringLiteral("menuFile"));
         MainWindow->setMenuBar(menuBar);
@@ -518,7 +531,7 @@ public:
 
         retranslateUi(MainWindow);
 
-        tabWidget->setCurrentIndex(1);
+        tabWidget->setCurrentIndex(0);
 
 
         QMetaObject::connectSlotsByName(MainWindow);
