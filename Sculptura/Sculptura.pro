@@ -228,7 +228,9 @@ SOURCES += main.cpp\
     kinect_preview.cpp \
     read_mesh.cpp \
     cloud_icp.cpp \
-    cloud_mesh.cpp
+    cloud_mesh.cpp \
+
+
 
 HEADERS  += mainwindow.h \
     advanced_scanning.h \
@@ -237,7 +239,8 @@ HEADERS  += mainwindow.h \
     kinect_preview.h \
     read_mesh.h \
     cloud_icp.h \
-    cloud_mesh.h
+    cloud_mesh.h \
+
 
 
 FORMS    += mainwindow.ui \

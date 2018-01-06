@@ -14,9 +14,9 @@
 #include <vector>
 #include <Eigen/Dense>
 
-//using namespace pcl;
-//using namespace pcl::io;
-//using namespace pcl::console;
+using namespace pcl;
+using namespace pcl::io;
+using namespace pcl::console;
 
 typedef pcl::PointXYZRGB PointT;
 typedef pcl::PointCloud<PointT> Cloud;

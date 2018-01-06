@@ -11,14 +11,14 @@ Cloud_Mesh::~Cloud_Mesh()
 
 }
 
-Cloud_Mesh::Run_Mesh(pcl::PointCloud<pcl::PointXYZRGB> &Cloud_input)
+void Cloud_Mesh::Run_Mesh(pcl::PointCloud<pcl::PointXYZRGB> &Cloud_input, pcl::PolygonMesh &inputmesh)
 
 {
 
     // Load .pcd file into Pointcloud XYZRGB
     pcl::PointCloud<pcl::PointXYZRGB>::Ptr cloud(new pcl::PointCloud<pcl::PointXYZRGB>());
 
-    cloud = Cloud_input;
+    *cloud = Cloud_input;
 
     // Apply PassThrough filter
     pcl::PointCloud<pcl::PointXYZRGB>::Ptr filtered(new pcl::PointCloud<pcl::PointXYZRGB>());
@@ -62,7 +62,7 @@ Cloud_Mesh::Run_Mesh(pcl::PointCloud<pcl::PointXYZRGB> &Cloud_input)
     pcl::fromPCLPointCloud2(mesh.cloud, cloud_color_mesh);
 
     pcl::KdTreeFLANN<pcl::PointXYZRGB> kdtree;
-    kdtree.setInputCloud (cloud);
+    kdtree.setInputCloud(cloud);
 
     // K nearest neighbor search
     int K = 3;
@@ -78,7 +78,7 @@ Cloud_Mesh::Run_Mesh(pcl::PointCloud<pcl::PointXYZRGB> &Cloud_input)
         int green = 0;
         int blue = 0;
 
-        if (pcl::kdtree.nearestKSearch (cloud_color_mesh.points[i], K, pointIdxNKNSearch, pointNKNSquaredDistance) > 0 )
+        if (kdtree.nearestKSearch (cloud_color_mesh.points[i], K, pointIdxNKNSearch, pointNKNSquaredDistance) > 0 )
         {
             for (int j = 0; j < pointIdxNKNSearch.size (); ++j)
             {
@@ -99,9 +99,8 @@ Cloud_Mesh::Run_Mesh(pcl::PointCloud<pcl::PointXYZRGB> &Cloud_input)
 
 
     }
-//    pcl::toPCLPointCloud2(cloud_color_mesh, mesh.cloud);
-//    pcl::io::saveVTKFile ("mesh_alb_polytrue.vtk", mesh);
+    pcl::toPCLPointCloud2(cloud_color_mesh, mesh.cloud);
+    pcl::io::saveVTKFile ("mesh_alb_polytrue.vtk", mesh);
 
-    return mesh;
-
+    inputmesh = mesh;
 }

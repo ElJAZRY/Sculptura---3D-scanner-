@@ -9,13 +9,14 @@
 #include <pcl/filters/passthrough.h>
 #include <pcl/surface/poisson.h>
 
+using namespace pcl;
 
 class Cloud_Mesh
 {
 public:
     Cloud_Mesh();
    ~Cloud_Mesh();
-   pcl::PolygonMesh Run_Mesh(pcl::PointCloud<pcl::PointXYZRGB> &Cloud_input);
+   void Run_Mesh(pcl::PointCloud<pcl::PointXYZRGB> &, pcl::PolygonMesh &);
 
 };
 

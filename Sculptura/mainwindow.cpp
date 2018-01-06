@@ -11,6 +11,8 @@ MainWindow::MainWindow(QWidget *parent) :
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+    setWindowIcon(QIcon(":/images/column.png"));
+    vtkObject::GlobalWarningDisplayOff();
 
     preview = new CameraPreview();
     QObject::connect(preview, SIGNAL(frameReady(QImage)), this, SLOT(renderFrame(QImage)));
@@ -317,3 +319,24 @@ void MainWindow::on_listMeshes_doubleClicked(const QModelIndex &index)
 }
 
 
+
+void MainWindow::on_get_3D_model_clicked()
+{
+    Cloud_Mesh mymesh;
+
+    mymesh.Run_Mesh(*pointCloudSet[0], tmpmesh);
+    visualiser->addPolygonMesh(tmpmesh, "polygon");
+    ui->vtkWindow->update ();
+
+    pcl::PolygonMesh::Ptr inp_ptr(&tmpmesh);
+    meshSet.push_back(inp_ptr);
+
+    QStandardItemModel* listModel = new QStandardItemModel();
+    std::stringstream ss;
+    ss << "New mesh.vtk";
+    std::string meshName = ss.str();
+    QStandardItem* item = new QStandardItem(QString::fromStdString(meshName));
+    listModel->appendRow(item);
+    ui->listMeshes->setModel(listModel);
+
+}

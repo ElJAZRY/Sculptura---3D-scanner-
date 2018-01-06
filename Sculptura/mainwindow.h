@@ -15,6 +15,7 @@
 #include "read_point_clouds.h"
 #include "read_mesh.h"
 #include "ui_mainwindow.h"
+#include "cloud_mesh.h"
 
 #include "opencv2/core/core.hpp"
 #include "opencv2/highgui/highgui.hpp"
@@ -28,6 +29,8 @@
 #include <pcl/io/vtk_lib_io.h>
 
 #include <iostream>
+#include <string>
+#include <sstream>
 #include <vector>
 #include <cvimagewidget.h>
 #include <boost/make_shared.hpp>
@@ -85,6 +88,8 @@ private slots:
 
     void on_actionNew_triggered();
 
+    void on_get_3D_model_clicked();
+
 private:
     void showPointCloudFiles();
     void showSelectedPointCloud(int);
@@ -111,6 +116,8 @@ private:
 
     pcl::PolygonMesh::Ptr selectedMesh;
     std::vector<pcl::PolygonMesh::Ptr> meshSet;
+
+    pcl::PolygonMesh tmpmesh;
 
     ReadPointClouds* readPointClouds;
     ReadMesh* readMeshes;
