@@ -28,6 +28,8 @@
 #include <pcl/io/vtk_lib_io.h>
 
 #include <iostream>
+#include <sstream>
+#include <string>
 #include <vector>
 #include <cvimagewidget.h>
 #include <boost/make_shared.hpp>
@@ -40,6 +42,7 @@
 #include <QStandardItem>
 #include <QStandardItemModel>
 #include <QListWidgetItem>
+
 
 using namespace openni;
 using namespace cv;
@@ -87,6 +90,8 @@ private slots:
 
 private:
     void showPointCloudFiles();
+    void showRegisteredPointCloudFiles();
+
     void showSelectedPointCloud(int);
     void showMeshFiles();
     void showSelectedMesh(int);

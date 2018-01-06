@@ -10,6 +10,7 @@ MainWindow::MainWindow(QWidget *parent) :
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+    vtkObject::GlobalWarningDisplayOff();
 
     preview = new CameraPreview();
     QObject::connect(preview, SIGNAL(frameReady(QImage)), this, SLOT(renderFrame(QImage)));
@@ -257,6 +258,7 @@ void MainWindow::initVisualiser()
     visualiser->setupInteractor(ui->vtkWindow->GetInteractor(), ui->vtkWindow->GetRenderWindow());
     visualiser->addCoordinateSystem(0.3,-0.5,-0.5,-0.5);
     ui->vtkWindow->update();
+
 }
 
 void MainWindow::savePointClouds(std::vector<PointCloudT::Ptr> pointClouds)
@@ -306,5 +308,23 @@ void MainWindow::showSelectedMesh(int indexMesh)
 void MainWindow::on_listMeshes_doubleClicked(const QModelIndex &index)
 {
     showSelectedMesh(index.row());
+}
+
+void MainWindow::showRegisteredPointCloudFiles()
+{
+    QStandardItemModel* listModel = new QStandardItemModel();
+    //pointCloudFiles->clear();
+    //Reconstruct list of pointclouds from the pointcloud vector
+    for (int i=1; i<=pointCloudSet.size(); i++){
+        stringstream ss;
+        ss << "Pointcloud " << i;
+        string pointcloudName = ss.str();
+        QStandardItem* items = new QStandardItem(QString::fromStdString(pointcloudName));
+        listModel->appendRow(items);
+    }
+    //Update list of Pointclouds (tab widget)
+    ui->listPointClouds->setModel(listModel);
+    //Show first Pointcloud from the list
+    showSelectedPointCloud(0);
 }
 
