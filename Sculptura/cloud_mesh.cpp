@@ -16,12 +16,12 @@ Cloud_Mesh::Run_Mesh(pcl::PointCloud<pcl::PointXYZRGB> &Cloud_input)
 {
 
     // Load .pcd file into Pointcloud XYZRGB
-    pcl::PointCloud<PointXYZRGB>::Ptr cloud(new pcl::PointCloud<PointXYZRGB>());
+    pcl::PointCloud<pcl::PointXYZRGB>::Ptr cloud(new pcl::PointCloud<pcl::PointXYZRGB>());
 
     cloud = Cloud_input;
 
     // Apply PassThrough filter
-    pcl::PointCloud<pcl::PointXYZRGB>::Ptr filtered(new pcl::PointCloud<PointXYZRGB>());
+    pcl::PointCloud<pcl::PointXYZRGB>::Ptr filtered(new pcl::PointCloud<pcl::PointXYZRGB>());
     pcl::PassThrough<pcl::PointXYZRGB> filter;
     filter.setInputCloud(cloud);
     filter.filter(*filtered);
@@ -38,7 +38,7 @@ Cloud_Mesh::Run_Mesh(pcl::PointCloud<pcl::PointXYZRGB> &Cloud_input)
     n.compute (*normals);
 
     // Concatenate pointcloud and normals
-    pcl::PointCloud<PointXYZRGBNormal>::Ptr cloud_normals(new pcl::PointCloud<PointXYZRGBNormal>());
+    pcl::PointCloud<pcl::PointXYZRGBNormal>::Ptr cloud_normals(new pcl::PointCloud<pcl::PointXYZRGBNormal>());
     pcl::concatenateFields(*filtered, *normals, *cloud_normals);
 
     // Poisson reconstruction
@@ -58,7 +58,7 @@ Cloud_Mesh::Run_Mesh(pcl::PointCloud<pcl::PointXYZRGB> &Cloud_input)
 
 
     // Color the mesh
-    pcl::PointCloud<PointXYZRGB> cloud_color_mesh;
+    pcl::PointCloud<pcl::PointXYZRGB> cloud_color_mesh;
     pcl::fromPCLPointCloud2(mesh.cloud, cloud_color_mesh);
 
     pcl::KdTreeFLANN<pcl::PointXYZRGB> kdtree;
@@ -78,7 +78,7 @@ Cloud_Mesh::Run_Mesh(pcl::PointCloud<pcl::PointXYZRGB> &Cloud_input)
         int green = 0;
         int blue = 0;
 
-        if (kdtree.nearestKSearch (cloud_color_mesh.points[i], K, pointIdxNKNSearch, pointNKNSquaredDistance) > 0 )
+        if (pcl::kdtree.nearestKSearch (cloud_color_mesh.points[i], K, pointIdxNKNSearch, pointNKNSquaredDistance) > 0 )
         {
             for (int j = 0; j < pointIdxNKNSearch.size (); ++j)
             {
