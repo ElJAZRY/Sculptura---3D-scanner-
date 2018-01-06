@@ -58,6 +58,9 @@ void KinectPreview::startPreview(QSize previewSize)
     }
 }
 
+
+
+
 void KinectPreview::initDepthSource()
 {
     IDepthFrameSource* depth_frame_source = nullptr;
@@ -150,6 +153,65 @@ void KinectPreview::convertAndSaveDepthMat(IDepthFrame* frame)
         depth.push_back(depthMat);
     }
 }
+
+
+void KinectPreview::Depth2meter(const float feat_x, const float feat_y, const float rawDisparity,
+                             float &X, float &Y, float &Z)
+{
+  // reject invalid points
+  if(rawDisparity <= 0)
+    {
+      X = 0; Y = 0; Z = 0; return;
+    }
+
+  float fx = 525.0; // focal length x
+  float fy = 525.0; // focal length y
+  float cx = 319.5; // optical center x
+  float cy = 239.5; // optical center y
+  float sclFactor = 5000.0;
+
+  // Recall the camera projective projection model
+  Z = rawDisparity / sclFactor;
+  X = (feat_x - cx) * Z / fx;
+  Y = (feat_y - cy) * Z / fy;
+}
+
+
+
+pcl::PointCloud<pcl::PointXYZRGB>::Ptr KinectPreview::rgbd2pcl(const cv::Mat &rgbImg, const cv::Mat &depthImg)
+{
+    pcl::PointCloud<pcl::PointXYZRGB>::Ptr cloud;
+    cloud.reset (new pcl::PointCloud<pcl::PointXYZRGB>);
+    cloud->points.resize (rgbImg.rows*rgbImg.cols);
+    int p_count = 0;
+    for(int i=0; i<rgbImg.rows; i++) // x
+      {
+        for(int j=0; j<rgbImg.cols; j++) // y
+          {
+            float X, Y, Z;
+            unsigned short depth = depthImg.at<unsigned short>(i, j);
+            // Render the 3D values
+            Depth2meter(i,j,depth, X, Y, Z);
+
+            // Remove features which are out of Kinect senser range
+            if(X>5 || Y > 5 || Z == 0.0){continue; }
+            // Write out the colored 3D point
+            cloud->points[p_count].x = X;
+            cloud->points[p_count].y = Y;
+            cloud->points[p_count].z = Z;
+
+
+            cloud->points[p_count].r = (float)rgbImg.at<cv::Vec3b>(i,j)[0];
+            cloud->points[p_count].g = (float)rgbImg.at<cv::Vec3b>(i,j)[1];
+            cloud->points[p_count].b = (float)rgbImg.at<cv::Vec3b>(i,j)[2];
+            p_count++;
+
+          }
+      }
+      return cloud;
+}
+
+
 
 void KinectPreview::convertAndSaveColorMat(IColorFrame* frame)
 {

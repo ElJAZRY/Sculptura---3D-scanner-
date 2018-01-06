@@ -6,7 +6,8 @@
 #include <pcl/point_types.h>
 #include <pcl/registration/icp.h>
 #include <pcl/registration/icp_nl.h>
-
+#include <pcl/filters/voxel_grid.h>
+#include <pcl/registration/correspondence_rejection_sample_consensus.h>
 #include <string>
 #include <iostream>
 #include <fstream>
@@ -17,23 +18,43 @@
 //using namespace pcl::io;
 //using namespace pcl::console;
 
-typedef pcl::PointXYZRGBA PointT;
+typedef pcl::PointXYZRGB PointT;
 typedef pcl::PointCloud<PointT> Cloud;
 typedef Cloud::ConstPtr CloudConstPtr;
 
 
 class Cloud_ICP
 {
+private:
+    double distance;
+    int n_iter;
+    bool non_linear;
+    double rans;
 public:
     Cloud_ICP();
     ~Cloud_ICP();
 
-    Eigen::Matrix4f
-    RunICP (pcl::PointCloud<PointT>& input1,
-            pcl::PointCloud<PointT>& input2
-            , pcl::PointCloud<PointT>& out, Eigen::Matrix4f & init_Transfrom,
+    Cloud::Ptr
+    RunICP (std::vector<Cloud> Point_clouds,
             double dist, double rans,
             int iter, bool nonLinear);
+
+
+
+
+    void sit_distance(double dist_value ){
+        distance = dist_value;
+    }
+    void sit_n_iter(int n_iter_value ){
+        n_iter = n_iter_value;
+    }
+    void sit_rans(double rans_value ){
+        rans = rans_value;
+    }
+
+    void sit_distance(bool non_linear_value ){
+        non_linear = non_linear_value;
+    }
 
 
 

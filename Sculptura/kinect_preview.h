@@ -10,6 +10,10 @@
 #include <opencv2/imgproc/imgproc.hpp>
 #include <opencv2/highgui/highgui.hpp>
 
+#include <pcl/point_cloud.h>
+#include <pcl/point_types.h>
+#include <pcl/PolygonMesh.h>
+
 #include <Kinect.h>
 
 template<class Interface>
@@ -50,6 +54,9 @@ private:
 
     void initDepthSource();
     void initColorSource();
+    void Depth2meter(const float feat_x, const float feat_y, const float rawDisparity,
+                     float &x, float &y, float &z);
+    pcl::PointCloud<pcl::PointXYZRGB>::Ptr rgbd2pcl(const cv::Mat &rgbImg, const cv::Mat &depthImg);
 
     void convertAndSaveDepthMat(IDepthFrame* depthFrame);
     void convertAndSaveColorMat(IColorFrame* colorFrame);
