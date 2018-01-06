@@ -41,9 +41,9 @@
 #include <QStandardItemModel>
 #include <QListWidgetItem>
 
-using namespace openni;
-using namespace cv;
-using namespace std;
+//using namespace openni;
+//using namespace cv;
+//using namespace std;
 
 namespace Ui {
 class MainWindow;

@@ -14,14 +14,14 @@ TARGET = Sculptura
 TEMPLATE = app
 
 #OPENCV AND OPENNI INCLUDE PATH
-INCLUDEPATH  += "C:\opencv\build\include"
+INCLUDEPATH  += "C:\Opencv3\opencv\build\include"
 INCLUDEPATH += "C:\Program Files\OpenNI2\Include"
 INCLUDEPATH += "C:\Program Files\OpenNI2\Tools"
 
 DLLDESTDIR += "C:\Program Files\OpenNI2\Tools\OpenNI2\Drivers"
 
 LIBS += "C:\Program Files\OpenNI2\Lib\*.lib"
-LIBS += "C:\opencv\build\x64\vc14\lib\*.lib"
+LIBS += "C:\Opencv3\opencv\build\x64\vc14\lib\*.lib"
 
 # PCL
 INCLUDEPATH += "C:\Program Files\PCL 1.8.0\include\pcl-1.8"
@@ -226,14 +226,16 @@ SOURCES += main.cpp\
     camerapreview.cpp \
     read_point_clouds.cpp \
     kinect_preview.cpp \
-    read_mesh.cpp
+    read_mesh.cpp \
+    cloud_icp.cpp
 
 HEADERS  += mainwindow.h \
     advanced_scanning.h \
     camerapreview.h \
     read_point_clouds.h \
     kinect_preview.h \
-    read_mesh.h
+    read_mesh.h \
+    cloud_icp.h
 
 
 FORMS    += mainwindow.ui \

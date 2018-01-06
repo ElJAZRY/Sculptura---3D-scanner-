@@ -1,9 +1,10 @@
 #include "mainwindow.h"
 
-using namespace openni;
-using namespace cv;
 
-using namespace std;
+//using namespace openni;
+//using namespace cv;
+
+//using namespace std;
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -23,6 +24,9 @@ MainWindow::MainWindow(QWidget *parent) :
 
     pointCloudFiles = new QStringList();
     pointCloud.reset(new PointCloudT);
+
+
+
 
     meshFiles = new QStringList();
     selectedMesh.reset(new pcl::PolygonMesh);
@@ -56,6 +60,7 @@ void MainWindow::on_advanced_scanning_clicked()
     advanced_parameters = new Advanced_scanning(this);
     advanced_parameters->show();
 }
+
 
 void MainWindow::on_start_preview_clicked()
 {   
@@ -139,6 +144,9 @@ void MainWindow::on_actionOpen_PointClouds_triggered()
         readPointClouds->read(filenames);
     }
 }
+
+
+
 
 void MainWindow::on_actionOpen_Mesh_triggered()
 {
@@ -307,4 +315,5 @@ void MainWindow::on_listMeshes_doubleClicked(const QModelIndex &index)
 {
     showSelectedMesh(index.row());
 }
+
 
