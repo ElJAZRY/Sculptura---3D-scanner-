@@ -2320,6 +2320,82 @@ release\moc_mainwindow.cpp: advanced_scanning.h \
 		"C:\Program Files\PCL 1.8.0\3rdParty\VTK\include\vtk-7.0\vtkVertexGlyphFilter.h" \
 		"C:\Program Files\PCL 1.8.0\3rdParty\VTK\include\vtk-7.0\vtkFiltersGeneralModule.h" \
 		ui_mainwindow.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\QVariant \
+		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\QAction \
+		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qaction.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtGui\qicon.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qactiongroup.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\QApplication \
+		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qapplication.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qcoreapplication.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qeventloop.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qdesktopwidget.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtGui\qguiapplication.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtGui\qinputmethod.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\QButtonGroup \
+		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qbuttongroup.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\QGridLayout \
+		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qgridlayout.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qlayout.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qlayoutitem.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qboxlayout.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\QGroupBox \
+		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qgroupbox.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qframe.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\QHBoxLayout \
+		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\QHeaderView \
+		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qheaderview.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qabstractitemview.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qabstractscrollarea.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qabstractitemmodel.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qitemselectionmodel.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qabstractitemdelegate.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qstyleoption.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qabstractspinbox.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtGui\qvalidator.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qregularexpression.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qslider.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qabstractslider.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qstyle.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qtabbar.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qtabwidget.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qrubberband.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\QLabel \
+		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qlabel.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\QListView \
+		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qlistview.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\QMainWindow \
+		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qmainwindow.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\QMenu \
+		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qmenu.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\QMenuBar \
+		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qmenubar.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\QProgressBar \
+		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qprogressbar.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\QPushButton \
+		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qpushbutton.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qabstractbutton.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\QSpacerItem \
+		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\QStatusBar \
+		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qstatusbar.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\QTabWidget \
+		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\QToolBar \
+		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qtoolbar.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\QVBoxLayout \
+		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\QWidget \
+		"C:\Program Files\PCL 1.8.0\3rdParty\VTK\include\vtk-7.0\QVTKWidget.h" \
+		"C:\Program Files\PCL 1.8.0\3rdParty\VTK\include\vtk-7.0\vtkGUISupportQtModule.h" \
+		"C:\Program Files\PCL 1.8.0\3rdParty\VTK\include\vtk-7.0\vtkInteractionStyleModule.h" \
+		"C:\Program Files\PCL 1.8.0\3rdParty\VTK\include\vtk-7.0\vtkRenderingCoreModule.h" \
+		"C:\Program Files\PCL 1.8.0\3rdParty\VTK\include\vtk-7.0\vtkRenderingOpenGL2Module.h" \
+		"C:\Program Files\PCL 1.8.0\3rdParty\VTK\include\vtk-7.0\vtkRenderingOpenGLConfigure.h" \
+		"C:\Program Files\PCL 1.8.0\3rdParty\VTK\include\vtk-7.0\QVTKInteractor.h" \
+		"C:\Program Files\PCL 1.8.0\3rdParty\VTK\include\vtk-7.0\QVTKWin32Header.h" \
+		"C:\Program Files\PCL 1.8.0\3rdParty\VTK\include\vtk-7.0\vtkRenderWindowInteractor.h" \
+		"C:\Program Files\PCL 1.8.0\3rdParty\VTK\include\vtk-7.0\vtkCommand.h" \
+		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\QObject \
+		"C:\Program Files\PCL 1.8.0\3rdParty\VTK\include\vtk-7.0\vtkTDxConfigure.h" \
+		"C:\Program Files\PCL 1.8.0\3rdParty\VTK\include\vtk-7.0\vtkToolkits.h" \
 		cloud_mesh.h \
 		"C:\Program Files\PCL 1.8.0\include\pcl-1.8\pcl\kdtree\kdtree_flann.h" \
 		"C:\Program Files\PCL 1.8.0\include\pcl-1.8\pcl\kdtree\kdtree.h" \
@@ -2864,20 +2940,17 @@ release\moc_mainwindow.cpp: advanced_scanning.h \
 		"C:\Program Files\PCL 1.8.0\3rdParty\VTK\include\vtk-7.0\vtkRenderingLODModule.h" \
 		"C:\Program Files\PCL 1.8.0\3rdParty\VTK\include\vtk-7.0\vtkFiltersModelingModule.h" \
 		"C:\Program Files\PCL 1.8.0\3rdParty\VTK\include\vtk-7.0\vtkFiltersSourcesModule.h" \
-		"C:\Program Files\PCL 1.8.0\3rdParty\VTK\include\vtk-7.0\vtkRenderingCoreModule.h" \
 		"C:\Program Files\PCL 1.8.0\3rdParty\VTK\include\vtk-7.0\vtkActor.h" \
 		"C:\Program Files\PCL 1.8.0\3rdParty\VTK\include\vtk-7.0\vtkProp3D.h" \
 		"C:\Program Files\PCL 1.8.0\3rdParty\VTK\include\vtk-7.0\vtkProp.h" \
 		"C:\Program Files\PCL 1.8.0\include\pcl-1.8\pcl\visualization\boost.h" \
 		"C:\Program Files\PCL 1.8.0\include\pcl-1.8\pcl\visualization\point_picking_event.h" \
-		"C:\Program Files\PCL 1.8.0\3rdParty\VTK\include\vtk-7.0\vtkCommand.h" \
 		"C:\Program Files\PCL 1.8.0\include\pcl-1.8\pcl\visualization\area_picking_event.h" \
 		"C:\Program Files\PCL 1.8.0\include\pcl-1.8\pcl\visualization\interactor_style.h" \
 		"C:\Program Files\PCL 1.8.0\include\pcl-1.8\pcl\visualization\common\ren_win_interact_map.h" \
 		"C:\Program Files\PCL 1.8.0\include\pcl-1.8\pcl\visualization\keyboard_event.h" \
 		"C:\Program Files\PCL 1.8.0\include\pcl-1.8\pcl\visualization\mouse_event.h" \
 		"C:\Program Files\PCL 1.8.0\3rdParty\VTK\include\vtk-7.0\vtkInteractorStyleRubberBandPick.h" \
-		"C:\Program Files\PCL 1.8.0\3rdParty\VTK\include\vtk-7.0\vtkInteractionStyleModule.h" \
 		"C:\Program Files\PCL 1.8.0\3rdParty\VTK\include\vtk-7.0\vtkInteractorStyleTrackballCamera.h" \
 		"C:\Program Files\PCL 1.8.0\3rdParty\VTK\include\vtk-7.0\vtkInteractorStyle.h" \
 		"C:\Program Files\PCL 1.8.0\3rdParty\VTK\include\vtk-7.0\vtkInteractorObserver.h" \
@@ -2924,7 +2997,6 @@ release\moc_mainwindow.cpp: advanced_scanning.h \
 		"C:\Program Files\PCL 1.8.0\3rdParty\VTK\include\vtk-7.0\vtkRenderWindow.h" \
 		"C:\Program Files\PCL 1.8.0\3rdParty\VTK\include\vtk-7.0\vtkWindow.h" \
 		cvimagewidget.h \
-		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\QWidget \
 		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtGui\QPainter \
 		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtGui\qpainter.h \
 		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtGui\qtextoption.h \
@@ -3008,10 +3080,6 @@ release\moc_mainwindow.cpp: advanced_scanning.h \
 		C:\Opencv3\opencv\build\include\opencv2\videostab\deblurring.hpp \
 		C:\Opencv3\opencv\build\include\opencv2\videostab\wobble_suppression.hpp \
 		C:\Opencv3\opencv\build\include\opencv2\videostab\ring_buffer.hpp \
-		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\QMainWindow \
-		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qmainwindow.h \
-		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qtabwidget.h \
-		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtGui\qicon.h \
 		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\QFileDialog \
 		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qfiledialog.h \
 		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qdir.h \
@@ -3020,25 +3088,9 @@ release\moc_mainwindow.cpp: advanced_scanning.h \
 		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qmessagebox.h \
 		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtGui\QStandardItem \
 		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtGui\qstandarditemmodel.h \
-		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qabstractitemmodel.h \
 		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtGui\QStandardItemModel \
 		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\QListWidgetItem \
 		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qlistwidget.h \
-		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qlistview.h \
-		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qabstractitemview.h \
-		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qabstractscrollarea.h \
-		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qframe.h \
-		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qitemselectionmodel.h \
-		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qabstractitemdelegate.h \
-		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qstyleoption.h \
-		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qabstractspinbox.h \
-		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtGui\qvalidator.h \
-		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qregularexpression.h \
-		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qslider.h \
-		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qabstractslider.h \
-		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qstyle.h \
-		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qtabbar.h \
-		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qrubberband.h \
 		mainwindow.h \
 		C:\Qt\Qt5.7.0\5.7\msvc2015_64\bin\moc.exe
 	C:\Qt\Qt5.7.0\5.7\msvc2015_64\bin\moc.exe $(DEFINES) -D_MSC_VER=1900 -D_WIN32 -D_WIN64 -IC:/Qt/Qt5.7.0/5.7/msvc2015_64/mkspecs/win32-msvc2015 -IC:/Users/Eljazri/Desktop/Sculptura_3D-scanner/Sculptura -IC:/Opencv3/opencv/build/include -I"C:/Program Files/OpenNI2/Include" -I"C:/Program Files/OpenNI2/Tools" -I"C:/Program Files/PCL 1.8.0/include/pcl-1.8" -I"C:/Program Files/PCL 1.8.0/3rdParty/VTK/include/vtk-7.0" -I"C:/Program Files/PCL 1.8.0/3rdParty/Boost/include/boost-1_61" -I"C:/Program Files/PCL 1.8.0/3rdParty/Qhull/include" -I"C:/Program Files/PCL 1.8.0/3rdParty/FLANN/include" -I"C:/Program Files/PCL 1.8.0/3rdParty/Eigen/eigen3" -I"C:/Program Files/Microsoft SDKs/Kinect/v2.0_1409/inc" -I"C:/Program Files/OpenNI2/Include" -I"C:/Program Files (x86)/Windows Kits/10/Include/10.0.10240.0/um" -I"C:/Program Files (x86)/Windows Kits/10/Include/10.0.10240.0/shared" -I"C:/Program Files (x86)/Windows Kits/10/Include/10.0.10240.0/ucrt" -I"C:/Program Files (x86)/Intel/RSSDK/include" -I"C:/Program Files (x86)/Intel/RSSDK/src/libpxc" -IC:/Qt/Qt5.7.0/5.7/msvc2015_64/include -IC:/Qt/Qt5.7.0/5.7/msvc2015_64/include/QtWidgets -IC:/Qt/Qt5.7.0/5.7/msvc2015_64/include/QtGui -IC:/Qt/Qt5.7.0/5.7/msvc2015_64/include/QtANGLE -IC:/Qt/Qt5.7.0/5.7/msvc2015_64/include/QtCore mainwindow.h -o release\moc_mainwindow.cpp
@@ -10557,6 +10609,82 @@ release\main.obj: main.cpp mainwindow.h \
 		"C:\Program Files\PCL 1.8.0\3rdParty\VTK\include\vtk-7.0\vtkVertexGlyphFilter.h" \
 		"C:\Program Files\PCL 1.8.0\3rdParty\VTK\include\vtk-7.0\vtkFiltersGeneralModule.h" \
 		ui_mainwindow.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\QVariant \
+		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\QAction \
+		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qaction.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtGui\qicon.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qactiongroup.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\QApplication \
+		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qapplication.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qcoreapplication.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qeventloop.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qdesktopwidget.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtGui\qguiapplication.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtGui\qinputmethod.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\QButtonGroup \
+		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qbuttongroup.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\QGridLayout \
+		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qgridlayout.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qlayout.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qlayoutitem.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qboxlayout.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\QGroupBox \
+		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qgroupbox.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qframe.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\QHBoxLayout \
+		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\QHeaderView \
+		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qheaderview.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qabstractitemview.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qabstractscrollarea.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qabstractitemmodel.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qitemselectionmodel.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qabstractitemdelegate.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qstyleoption.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qabstractspinbox.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtGui\qvalidator.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qregularexpression.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qslider.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qabstractslider.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qstyle.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qtabbar.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qtabwidget.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qrubberband.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\QLabel \
+		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qlabel.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\QListView \
+		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qlistview.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\QMainWindow \
+		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qmainwindow.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\QMenu \
+		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qmenu.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\QMenuBar \
+		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qmenubar.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\QProgressBar \
+		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qprogressbar.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\QPushButton \
+		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qpushbutton.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qabstractbutton.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\QSpacerItem \
+		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\QStatusBar \
+		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qstatusbar.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\QTabWidget \
+		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\QToolBar \
+		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qtoolbar.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\QVBoxLayout \
+		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\QWidget \
+		"C:\Program Files\PCL 1.8.0\3rdParty\VTK\include\vtk-7.0\QVTKWidget.h" \
+		"C:\Program Files\PCL 1.8.0\3rdParty\VTK\include\vtk-7.0\vtkGUISupportQtModule.h" \
+		"C:\Program Files\PCL 1.8.0\3rdParty\VTK\include\vtk-7.0\vtkInteractionStyleModule.h" \
+		"C:\Program Files\PCL 1.8.0\3rdParty\VTK\include\vtk-7.0\vtkRenderingCoreModule.h" \
+		"C:\Program Files\PCL 1.8.0\3rdParty\VTK\include\vtk-7.0\vtkRenderingOpenGL2Module.h" \
+		"C:\Program Files\PCL 1.8.0\3rdParty\VTK\include\vtk-7.0\vtkRenderingOpenGLConfigure.h" \
+		"C:\Program Files\PCL 1.8.0\3rdParty\VTK\include\vtk-7.0\QVTKInteractor.h" \
+		"C:\Program Files\PCL 1.8.0\3rdParty\VTK\include\vtk-7.0\QVTKWin32Header.h" \
+		"C:\Program Files\PCL 1.8.0\3rdParty\VTK\include\vtk-7.0\vtkRenderWindowInteractor.h" \
+		"C:\Program Files\PCL 1.8.0\3rdParty\VTK\include\vtk-7.0\vtkCommand.h" \
+		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\QObject \
+		"C:\Program Files\PCL 1.8.0\3rdParty\VTK\include\vtk-7.0\vtkTDxConfigure.h" \
+		"C:\Program Files\PCL 1.8.0\3rdParty\VTK\include\vtk-7.0\vtkToolkits.h" \
 		cloud_mesh.h \
 		"C:\Program Files\PCL 1.8.0\include\pcl-1.8\pcl\kdtree\kdtree_flann.h" \
 		"C:\Program Files\PCL 1.8.0\include\pcl-1.8\pcl\kdtree\kdtree.h" \
@@ -11101,20 +11229,17 @@ release\main.obj: main.cpp mainwindow.h \
 		"C:\Program Files\PCL 1.8.0\3rdParty\VTK\include\vtk-7.0\vtkRenderingLODModule.h" \
 		"C:\Program Files\PCL 1.8.0\3rdParty\VTK\include\vtk-7.0\vtkFiltersModelingModule.h" \
 		"C:\Program Files\PCL 1.8.0\3rdParty\VTK\include\vtk-7.0\vtkFiltersSourcesModule.h" \
-		"C:\Program Files\PCL 1.8.0\3rdParty\VTK\include\vtk-7.0\vtkRenderingCoreModule.h" \
 		"C:\Program Files\PCL 1.8.0\3rdParty\VTK\include\vtk-7.0\vtkActor.h" \
 		"C:\Program Files\PCL 1.8.0\3rdParty\VTK\include\vtk-7.0\vtkProp3D.h" \
 		"C:\Program Files\PCL 1.8.0\3rdParty\VTK\include\vtk-7.0\vtkProp.h" \
 		"C:\Program Files\PCL 1.8.0\include\pcl-1.8\pcl\visualization\boost.h" \
 		"C:\Program Files\PCL 1.8.0\include\pcl-1.8\pcl\visualization\point_picking_event.h" \
-		"C:\Program Files\PCL 1.8.0\3rdParty\VTK\include\vtk-7.0\vtkCommand.h" \
 		"C:\Program Files\PCL 1.8.0\include\pcl-1.8\pcl\visualization\area_picking_event.h" \
 		"C:\Program Files\PCL 1.8.0\include\pcl-1.8\pcl\visualization\interactor_style.h" \
 		"C:\Program Files\PCL 1.8.0\include\pcl-1.8\pcl\visualization\common\ren_win_interact_map.h" \
 		"C:\Program Files\PCL 1.8.0\include\pcl-1.8\pcl\visualization\keyboard_event.h" \
 		"C:\Program Files\PCL 1.8.0\include\pcl-1.8\pcl\visualization\mouse_event.h" \
 		"C:\Program Files\PCL 1.8.0\3rdParty\VTK\include\vtk-7.0\vtkInteractorStyleRubberBandPick.h" \
-		"C:\Program Files\PCL 1.8.0\3rdParty\VTK\include\vtk-7.0\vtkInteractionStyleModule.h" \
 		"C:\Program Files\PCL 1.8.0\3rdParty\VTK\include\vtk-7.0\vtkInteractorStyleTrackballCamera.h" \
 		"C:\Program Files\PCL 1.8.0\3rdParty\VTK\include\vtk-7.0\vtkInteractorStyle.h" \
 		"C:\Program Files\PCL 1.8.0\3rdParty\VTK\include\vtk-7.0\vtkInteractorObserver.h" \
@@ -11161,7 +11286,6 @@ release\main.obj: main.cpp mainwindow.h \
 		"C:\Program Files\PCL 1.8.0\3rdParty\VTK\include\vtk-7.0\vtkRenderWindow.h" \
 		"C:\Program Files\PCL 1.8.0\3rdParty\VTK\include\vtk-7.0\vtkWindow.h" \
 		cvimagewidget.h \
-		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\QWidget \
 		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtGui\QPainter \
 		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtGui\qpainter.h \
 		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtGui\qtextoption.h \
@@ -11245,10 +11369,6 @@ release\main.obj: main.cpp mainwindow.h \
 		C:\Opencv3\opencv\build\include\opencv2\videostab\deblurring.hpp \
 		C:\Opencv3\opencv\build\include\opencv2\videostab\wobble_suppression.hpp \
 		C:\Opencv3\opencv\build\include\opencv2\videostab\ring_buffer.hpp \
-		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\QMainWindow \
-		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qmainwindow.h \
-		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qtabwidget.h \
-		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtGui\qicon.h \
 		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\QFileDialog \
 		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qfiledialog.h \
 		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qdir.h \
@@ -11257,32 +11377,9 @@ release\main.obj: main.cpp mainwindow.h \
 		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qmessagebox.h \
 		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtGui\QStandardItem \
 		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtGui\qstandarditemmodel.h \
-		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qabstractitemmodel.h \
 		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtGui\QStandardItemModel \
 		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\QListWidgetItem \
-		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qlistwidget.h \
-		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qlistview.h \
-		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qabstractitemview.h \
-		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qabstractscrollarea.h \
-		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qframe.h \
-		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qitemselectionmodel.h \
-		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qabstractitemdelegate.h \
-		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qstyleoption.h \
-		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qabstractspinbox.h \
-		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtGui\qvalidator.h \
-		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qregularexpression.h \
-		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qslider.h \
-		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qabstractslider.h \
-		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qstyle.h \
-		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qtabbar.h \
-		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qrubberband.h \
-		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\QApplication \
-		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qapplication.h \
-		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qcoreapplication.h \
-		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qeventloop.h \
-		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qdesktopwidget.h \
-		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtGui\qguiapplication.h \
-		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtGui\qinputmethod.h
+		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qlistwidget.h
 
 release\mainwindow.obj: mainwindow.cpp mainwindow.h \
 		advanced_scanning.h \
@@ -13412,6 +13509,82 @@ release\mainwindow.obj: mainwindow.cpp mainwindow.h \
 		"C:\Program Files\PCL 1.8.0\3rdParty\VTK\include\vtk-7.0\vtkVertexGlyphFilter.h" \
 		"C:\Program Files\PCL 1.8.0\3rdParty\VTK\include\vtk-7.0\vtkFiltersGeneralModule.h" \
 		ui_mainwindow.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\QVariant \
+		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\QAction \
+		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qaction.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtGui\qicon.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qactiongroup.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\QApplication \
+		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qapplication.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qcoreapplication.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qeventloop.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qdesktopwidget.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtGui\qguiapplication.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtGui\qinputmethod.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\QButtonGroup \
+		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qbuttongroup.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\QGridLayout \
+		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qgridlayout.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qlayout.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qlayoutitem.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qboxlayout.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\QGroupBox \
+		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qgroupbox.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qframe.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\QHBoxLayout \
+		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\QHeaderView \
+		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qheaderview.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qabstractitemview.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qabstractscrollarea.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qabstractitemmodel.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qitemselectionmodel.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qabstractitemdelegate.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qstyleoption.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qabstractspinbox.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtGui\qvalidator.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qregularexpression.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qslider.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qabstractslider.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qstyle.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qtabbar.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qtabwidget.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qrubberband.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\QLabel \
+		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qlabel.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\QListView \
+		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qlistview.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\QMainWindow \
+		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qmainwindow.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\QMenu \
+		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qmenu.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\QMenuBar \
+		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qmenubar.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\QProgressBar \
+		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qprogressbar.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\QPushButton \
+		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qpushbutton.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qabstractbutton.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\QSpacerItem \
+		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\QStatusBar \
+		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qstatusbar.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\QTabWidget \
+		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\QToolBar \
+		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qtoolbar.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\QVBoxLayout \
+		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\QWidget \
+		"C:\Program Files\PCL 1.8.0\3rdParty\VTK\include\vtk-7.0\QVTKWidget.h" \
+		"C:\Program Files\PCL 1.8.0\3rdParty\VTK\include\vtk-7.0\vtkGUISupportQtModule.h" \
+		"C:\Program Files\PCL 1.8.0\3rdParty\VTK\include\vtk-7.0\vtkInteractionStyleModule.h" \
+		"C:\Program Files\PCL 1.8.0\3rdParty\VTK\include\vtk-7.0\vtkRenderingCoreModule.h" \
+		"C:\Program Files\PCL 1.8.0\3rdParty\VTK\include\vtk-7.0\vtkRenderingOpenGL2Module.h" \
+		"C:\Program Files\PCL 1.8.0\3rdParty\VTK\include\vtk-7.0\vtkRenderingOpenGLConfigure.h" \
+		"C:\Program Files\PCL 1.8.0\3rdParty\VTK\include\vtk-7.0\QVTKInteractor.h" \
+		"C:\Program Files\PCL 1.8.0\3rdParty\VTK\include\vtk-7.0\QVTKWin32Header.h" \
+		"C:\Program Files\PCL 1.8.0\3rdParty\VTK\include\vtk-7.0\vtkRenderWindowInteractor.h" \
+		"C:\Program Files\PCL 1.8.0\3rdParty\VTK\include\vtk-7.0\vtkCommand.h" \
+		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\QObject \
+		"C:\Program Files\PCL 1.8.0\3rdParty\VTK\include\vtk-7.0\vtkTDxConfigure.h" \
+		"C:\Program Files\PCL 1.8.0\3rdParty\VTK\include\vtk-7.0\vtkToolkits.h" \
 		cloud_mesh.h \
 		"C:\Program Files\PCL 1.8.0\include\pcl-1.8\pcl\kdtree\kdtree_flann.h" \
 		"C:\Program Files\PCL 1.8.0\include\pcl-1.8\pcl\kdtree\kdtree.h" \
@@ -13956,20 +14129,17 @@ release\mainwindow.obj: mainwindow.cpp mainwindow.h \
 		"C:\Program Files\PCL 1.8.0\3rdParty\VTK\include\vtk-7.0\vtkRenderingLODModule.h" \
 		"C:\Program Files\PCL 1.8.0\3rdParty\VTK\include\vtk-7.0\vtkFiltersModelingModule.h" \
 		"C:\Program Files\PCL 1.8.0\3rdParty\VTK\include\vtk-7.0\vtkFiltersSourcesModule.h" \
-		"C:\Program Files\PCL 1.8.0\3rdParty\VTK\include\vtk-7.0\vtkRenderingCoreModule.h" \
 		"C:\Program Files\PCL 1.8.0\3rdParty\VTK\include\vtk-7.0\vtkActor.h" \
 		"C:\Program Files\PCL 1.8.0\3rdParty\VTK\include\vtk-7.0\vtkProp3D.h" \
 		"C:\Program Files\PCL 1.8.0\3rdParty\VTK\include\vtk-7.0\vtkProp.h" \
 		"C:\Program Files\PCL 1.8.0\include\pcl-1.8\pcl\visualization\boost.h" \
 		"C:\Program Files\PCL 1.8.0\include\pcl-1.8\pcl\visualization\point_picking_event.h" \
-		"C:\Program Files\PCL 1.8.0\3rdParty\VTK\include\vtk-7.0\vtkCommand.h" \
 		"C:\Program Files\PCL 1.8.0\include\pcl-1.8\pcl\visualization\area_picking_event.h" \
 		"C:\Program Files\PCL 1.8.0\include\pcl-1.8\pcl\visualization\interactor_style.h" \
 		"C:\Program Files\PCL 1.8.0\include\pcl-1.8\pcl\visualization\common\ren_win_interact_map.h" \
 		"C:\Program Files\PCL 1.8.0\include\pcl-1.8\pcl\visualization\keyboard_event.h" \
 		"C:\Program Files\PCL 1.8.0\include\pcl-1.8\pcl\visualization\mouse_event.h" \
 		"C:\Program Files\PCL 1.8.0\3rdParty\VTK\include\vtk-7.0\vtkInteractorStyleRubberBandPick.h" \
-		"C:\Program Files\PCL 1.8.0\3rdParty\VTK\include\vtk-7.0\vtkInteractionStyleModule.h" \
 		"C:\Program Files\PCL 1.8.0\3rdParty\VTK\include\vtk-7.0\vtkInteractorStyleTrackballCamera.h" \
 		"C:\Program Files\PCL 1.8.0\3rdParty\VTK\include\vtk-7.0\vtkInteractorStyle.h" \
 		"C:\Program Files\PCL 1.8.0\3rdParty\VTK\include\vtk-7.0\vtkInteractorObserver.h" \
@@ -14016,7 +14186,6 @@ release\mainwindow.obj: mainwindow.cpp mainwindow.h \
 		"C:\Program Files\PCL 1.8.0\3rdParty\VTK\include\vtk-7.0\vtkRenderWindow.h" \
 		"C:\Program Files\PCL 1.8.0\3rdParty\VTK\include\vtk-7.0\vtkWindow.h" \
 		cvimagewidget.h \
-		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\QWidget \
 		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtGui\QPainter \
 		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtGui\qpainter.h \
 		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtGui\qtextoption.h \
@@ -14100,10 +14269,6 @@ release\mainwindow.obj: mainwindow.cpp mainwindow.h \
 		C:\Opencv3\opencv\build\include\opencv2\videostab\deblurring.hpp \
 		C:\Opencv3\opencv\build\include\opencv2\videostab\wobble_suppression.hpp \
 		C:\Opencv3\opencv\build\include\opencv2\videostab\ring_buffer.hpp \
-		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\QMainWindow \
-		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qmainwindow.h \
-		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qtabwidget.h \
-		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtGui\qicon.h \
 		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\QFileDialog \
 		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qfiledialog.h \
 		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qdir.h \
@@ -14112,25 +14277,9 @@ release\mainwindow.obj: mainwindow.cpp mainwindow.h \
 		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qmessagebox.h \
 		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtGui\QStandardItem \
 		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtGui\qstandarditemmodel.h \
-		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qabstractitemmodel.h \
 		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtGui\QStandardItemModel \
 		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\QListWidgetItem \
-		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qlistwidget.h \
-		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qlistview.h \
-		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qabstractitemview.h \
-		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qabstractscrollarea.h \
-		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qframe.h \
-		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qitemselectionmodel.h \
-		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qabstractitemdelegate.h \
-		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qstyleoption.h \
-		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qabstractspinbox.h \
-		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtGui\qvalidator.h \
-		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qregularexpression.h \
-		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qslider.h \
-		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qabstractslider.h \
-		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qstyle.h \
-		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qtabbar.h \
-		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qrubberband.h
+		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qlistwidget.h
 
 release\advanced_scanning.obj: advanced_scanning.cpp advanced_scanning.h \
 		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\QDialog \
@@ -14245,7 +14394,46 @@ release\advanced_scanning.obj: advanced_scanning.cpp advanced_scanning.h \
 		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qfiledevice.h \
 		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtGui\qvector2d.h \
 		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtGui\qtouchdevice.h \
-		ui_advanced_scanning.h
+		ui_advanced_scanning.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\QVariant \
+		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\QAction \
+		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qaction.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtGui\qicon.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qactiongroup.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\QApplication \
+		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qapplication.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qcoreapplication.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qeventloop.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qdesktopwidget.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtGui\qguiapplication.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtGui\qinputmethod.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\QButtonGroup \
+		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qbuttongroup.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\QDoubleSpinBox \
+		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qspinbox.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qabstractspinbox.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtGui\qvalidator.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qregularexpression.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\QHeaderView \
+		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qheaderview.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qabstractitemview.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qabstractscrollarea.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qframe.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qabstractitemmodel.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\qitemselectionmodel.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qabstractitemdelegate.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qstyleoption.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qslider.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qabstractslider.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qstyle.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qtabbar.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qtabwidget.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qrubberband.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\QLabel \
+		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qlabel.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\QPushButton \
+		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qpushbutton.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtWidgets\qabstractbutton.h
 
 release\camerapreview.obj: camerapreview.cpp camerapreview.h \
 		C:\Qt\Qt5.7.0\5.7\msvc2015_64\include\QtCore\QThread \

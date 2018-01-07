@@ -15,6 +15,9 @@
 #include <vector>
 #include <QString>
 
+//  ReadMesh class is designed to read and store meshes in the backend, not interfering with the
+//  processes in the main window interface.
+
 class ReadMesh : public QThread
 {
     Q_OBJECT
@@ -36,9 +39,6 @@ protected:
 private:
     QStringList meshfilenames;
     std::vector<pcl::PolygonMesh::Ptr> meshes;
-
-    //Object for loading a PLY file
-    //pcl::PLYReader plyReader;
 
     bool stopped;
     QMutex mutex;

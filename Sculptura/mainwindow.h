@@ -1,8 +1,3 @@
-//***********************************************************************
-//** © Copyright 2018, Karim Botros,Daria Zotova,Elizaveta Genke       **
-//** and Mohamed Ali All rights reserved.                              **
-//** you can modify and reuse only if you mention Authors              **
-//***********************************************************************
 
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
