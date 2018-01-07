@@ -9,8 +9,6 @@ ReadMesh::~ReadMesh()
 {
     mutex.lock();
     stopped = true;
-    //filenames.clear();
-    //delete filenames;
     condition.wakeOne();
     mutex.unlock();
     wait();
@@ -18,9 +16,10 @@ ReadMesh::~ReadMesh()
 
 void ReadMesh::read(QStringList files)
 {
+    //Saves input list of mesh filenames and clear vector of meshes
     meshfilenames = files;
     meshes.clear();
-
+    //Starts the thread execution
     if (!isRunning()) {
         if (isStopped()){
             stopped = false;
@@ -32,28 +31,23 @@ void ReadMesh::read(QStringList files)
 void ReadMesh::run()
 {
     if (stopped) return;
-
+    //Read checked mesh files from computer
     for(int i=0; i<meshfilenames.size(); i++) {
         QString filename = meshfilenames.at(i);
         pcl::PolygonMesh::Ptr tmpMesh(new pcl::PolygonMesh);
 
-        //Check if it's vtk file
+        //Check if it is in a vtk format
         if(filename.contains(".vtk"))
         {
             if (pcl::io::loadPolygonFileVTK(filename.toStdString(), *tmpMesh) == -1)
             {
-              PCL_ERROR ("Couldn't read vtk file \n"); //TODO don't show filename on screen
+              PCL_ERROR ("Couldn't read vtk file \n");
             }
         }
-        //TODO add STL format
-
-        //Remove undefined values in the pointcloud
-        //std::vector<int> indices;
-        //pcl::removeNaNFromPointCloud(*tmpCloud, *tmpCloud, indices); //TODO!!!!!!!
-
+        //Put current mesh into the vector of meshes
         meshes.push_back(tmpMesh);
     }
-
+   //Send signal that meshes are ready and stop running
     emit meshReady(meshes);
     stopped = true;
 }

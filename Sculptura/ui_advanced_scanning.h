@@ -30,8 +30,6 @@ public:
     QLabel *label_3;
     QDoubleSpinBox *doubleSpinBox_2;
     QPushButton *apply_pb;
-    QLabel *label_4;
-    QDoubleSpinBox *doubleSpinBox_3;
 
     void setupUi(QDialog *Advanced_scanning)
     {
@@ -93,16 +91,6 @@ public:
 "    background-color: #748896;\n"
 "    border-style: inset;\n"
 "}"));
-        label_4 = new QLabel(Advanced_scanning);
-        label_4->setObjectName(QStringLiteral("label_4"));
-        label_4->setGeometry(QRect(30, 170, 101, 51));
-        label_4->setFont(font1);
-        label_4->setAutoFillBackground(false);
-        label_4->setWordWrap(true);
-        doubleSpinBox_3 = new QDoubleSpinBox(Advanced_scanning);
-        doubleSpinBox_3->setObjectName(QStringLiteral("doubleSpinBox_3"));
-        doubleSpinBox_3->setGeometry(QRect(150, 180, 111, 31));
-        doubleSpinBox_3->setStyleSheet(QStringLiteral(""));
 
         retranslateUi(Advanced_scanning);
 
@@ -116,7 +104,6 @@ public:
         label_2->setText(QApplication::translate("Advanced_scanning", "Number of iterations", 0));
         label_3->setText(QApplication::translate("Advanced_scanning", "RANSAC", 0));
         apply_pb->setText(QApplication::translate("Advanced_scanning", "Apply", 0));
-        label_4->setText(QApplication::translate("Advanced_scanning", "RANSAC", 0));
     } // retranslateUi
 
 };

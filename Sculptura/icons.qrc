@@ -4,5 +4,6 @@
         <file>Folder.png</file>
         <file>sheet.png</file>
         <file>cloud.png</file>
+        <file>column.png</file>
     </qresource>
 </RCC>

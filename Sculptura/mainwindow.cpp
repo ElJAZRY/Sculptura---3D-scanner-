@@ -1,15 +1,12 @@
 #include "mainwindow.h"
 
-using namespace openni;
-using namespace cv;
-
-using namespace std;
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+    setWindowIcon(QIcon(":/images/column.png"));
     vtkObject::GlobalWarningDisplayOff();
 
     preview = new CameraPreview();
@@ -18,12 +15,15 @@ MainWindow::MainWindow(QWidget *parent) :
                      this, SLOT(saveDepthAndColorMat(std::vector<cv::Mat>, std::vector<cv::Mat>)));
 
     kinectPreview = new KinectPreview();
+    //Once color frame is ready - show it in preview window
+    //When depth and color frames are ready during the scanning - store it into the depth and color vectors of cv::Mat
     QObject::connect(kinectPreview, SIGNAL(frameReady(QImage)), this, SLOT(renderFrame(QImage)));
     QObject::connect(kinectPreview, SIGNAL(depthAndColorsReady(std::vector<cv::Mat>, std::vector<cv::Mat>)),
                      this, SLOT(saveDepthAndColorMat(std::vector<cv::Mat>, std::vector<cv::Mat>)));
 
     pointCloudFiles = new QStringList();
     pointCloud.reset(new PointCloudT);
+
 
     meshFiles = new QStringList();
     selectedMesh.reset(new pcl::PolygonMesh);
@@ -58,16 +58,10 @@ void MainWindow::on_advanced_scanning_clicked()
     advanced_parameters->show();
 }
 
-void MainWindow::on_start_preview_clicked()
-{   
-//    if (preview->isStopped()){
-//        preview->startPreview(ui->preview_window->size());
-//        ui->start_preview->setText(tr("Stop preview"));
-//    } else {
-//        preview->stopPreview();
-//        ui->start_preview->setText(tr("Start preview"));
-//    }
 
+void MainWindow::on_start_preview_clicked()
+{
+    //Execute the thread
     if (kinectPreview->isStopped()){
         kinectPreview->startPreview(ui->preview_window->size());
         ui->start_preview->setText(tr("Stop preview"));
@@ -79,14 +73,7 @@ void MainWindow::on_start_preview_clicked()
 
 void MainWindow::on_start_scanning_clicked()
 {
-//    if (preview->isRecording()){
-//        preview->stopRecording();
-//        ui->start_scanning->setText(tr("Start scanning"));
-//    } else {
-//        preview->startRecording();
-//        ui->start_scanning->setText(tr("Stop scanning"));
-//    }
-
+    //Retrieve and save color and depth frames while scanning
     if (kinectPreview->isRecording()){
         kinectPreview->stopRecording();
         ui->start_scanning->setText(tr("Start scanning"));
@@ -98,10 +85,10 @@ void MainWindow::on_start_scanning_clicked()
 
 void MainWindow::renderFrame(QImage frame)
 {
+    //Shows color frame in a dedicated window
     if (!frame.isNull())
     {
         ui->preview_window->setAlignment(Qt::AlignCenter);
-        //frame = frame.scaled(ui->preview_window->size(), Qt::KeepAspectRatio);
         ui->preview_window->setPixmap(QPixmap::fromImage(frame));
     }
 }
@@ -128,6 +115,7 @@ void MainWindow::on_actionNew_triggered()
 
 void MainWindow::on_actionOpen_PointClouds_triggered()
 {
+    //Asks user to chose pointclouds,
     QStringList filenames = QFileDialog::getOpenFileNames(
                 this,
                 tr("Choose Point Clouds"),
@@ -136,13 +124,17 @@ void MainWindow::on_actionOpen_PointClouds_triggered()
 
     if( !filenames.isEmpty() )
     {
+        //Stores files in the list of pointclouds
         pointCloudFiles->append(filenames);
+        //Read and save pointclouds in a vector of pointclouds
         readPointClouds->read(filenames);
     }
 }
 
+
 void MainWindow::on_actionOpen_Mesh_triggered()
 {
+   //Asks user to chose meshes,
    QStringList filenames = QFileDialog::getOpenFileNames(
                 this,
                 tr("Choose Mesh"),
@@ -152,13 +144,16 @@ void MainWindow::on_actionOpen_Mesh_triggered()
 
     if( !filenames.isEmpty() )
     {
+        //Stores files in the list of meshes
         meshFiles->append(filenames);
+        //Read and save meshes in a vector of poimeshesntclouds
         readMeshes->read(filenames);
     }
 }
 
 void MainWindow::on_actionSave_as_triggered()
 {
+    //Asks user to chose folder where a mesh will be saved in vtk format
     QString directoryName = QFileDialog::getExistingDirectory(this, QString("Export mesh"),QString(""), QFileDialog::ShowDirsOnly);
     if(directoryName != ""){
         QString filePath;
@@ -252,19 +247,18 @@ void MainWindow::showMeshFiles()
 
 void MainWindow::initVisualiser()
 {
-    // Set up the QvtkWindow widget
+    //Set up the QvtkWindow widget
     visualiser.reset(new pcl::visualization::PCLVisualizer("visualiser", false));
     ui->vtkWindow->SetRenderWindow(visualiser->getRenderWindow());
     visualiser->setupInteractor(ui->vtkWindow->GetInteractor(), ui->vtkWindow->GetRenderWindow());
     visualiser->addCoordinateSystem(0.3,-0.5,-0.5,-0.5);
     ui->vtkWindow->update();
-
 }
 
 void MainWindow::savePointClouds(std::vector<PointCloudT::Ptr> pointClouds)
 {
     pointCloudSet.insert(std::end(pointCloudSet), std::begin(pointClouds), std::end(pointClouds));
-    pointCloud = pointCloudSet.at(0); //TODO if not empty
+    pointCloud = pointCloudSet.at(0);
     showPointCloudFiles();
     showSelectedPointCloud(0);
 }
@@ -272,7 +266,7 @@ void MainWindow::savePointClouds(std::vector<PointCloudT::Ptr> pointClouds)
 void MainWindow::saveMeshes(std::vector<pcl::PolygonMesh::Ptr> meshes)
 {
     meshSet.insert(std::end(meshSet), std::begin(meshes), std::end(meshes));
-    selectedMesh = meshSet.at(0); //TODO if not empty
+    selectedMesh = meshSet.at(0);
     showMeshFiles();
     showSelectedMesh(0);
 }
@@ -310,21 +304,25 @@ void MainWindow::on_listMeshes_doubleClicked(const QModelIndex &index)
     showSelectedMesh(index.row());
 }
 
-void MainWindow::showRegisteredPointCloudFiles()
-{
-    QStandardItemModel* listModel = new QStandardItemModel();
-    //pointCloudFiles->clear();
-    //Reconstruct list of pointclouds from the pointcloud vector
-    for (int i=1; i<=pointCloudSet.size(); i++){
-        stringstream ss;
-        ss << "Pointcloud " << i;
-        string pointcloudName = ss.str();
-        QStandardItem* items = new QStandardItem(QString::fromStdString(pointcloudName));
-        listModel->appendRow(items);
-    }
-    //Update list of Pointclouds (tab widget)
-    ui->listPointClouds->setModel(listModel);
-    //Show first Pointcloud from the list
-    showSelectedPointCloud(0);
-}
 
+
+void MainWindow::on_get_3D_model_clicked()
+{
+    Cloud_Mesh mymesh;
+
+    mymesh.Run_Mesh(*pointCloudSet[0], tmpmesh);
+    visualiser->addPolygonMesh(tmpmesh, "polygon");
+    ui->vtkWindow->update ();
+
+    pcl::PolygonMesh::Ptr inp_ptr(&tmpmesh);
+    meshSet.push_back(inp_ptr);
+
+    QStandardItemModel* listModel = new QStandardItemModel();
+    std::stringstream ss;
+    ss << "New mesh.vtk";
+    std::string meshName = ss.str();
+    QStandardItem* item = new QStandardItem(QString::fromStdString(meshName));
+    listModel->appendRow(item);
+    ui->listMeshes->setModel(listModel);
+
+}

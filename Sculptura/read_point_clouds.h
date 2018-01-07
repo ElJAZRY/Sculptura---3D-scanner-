@@ -12,10 +12,13 @@
 #include <vector>
 #include <QString>
 
+//  ReadPointClouds class is designed to read and store point clouds in the backend, not interfering with the
+//  processes in the main window interface.
+
 class ReadPointClouds : public QThread
 {
     Q_OBJECT
-
+    //Redefine the type of the point of a pointcloud and type of pointcloud for easyness to use
     typedef pcl::PointXYZRGB PointType;
     typedef pcl::PointCloud<PointType> PointCloudT;
 

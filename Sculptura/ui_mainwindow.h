@@ -43,6 +43,7 @@ public:
     QAction *actionOpen_PointClouds;
     QAction *actionOpen_Mesh;
     QWidget *centralWidget;
+    QHBoxLayout *horizontalLayout_3;
     QGroupBox *scanningGroupBox;
     QVBoxLayout *verticalLayout;
     QLabel *preview_window;
@@ -65,7 +66,6 @@ public:
     QSpacerItem *horizontalSpacer_4;
     QPushButton *get_3D_model;
     QSpacerItem *horizontalSpacer_3;
-    QWidget *layoutWidget;
     QVBoxLayout *verticalLayout_5;
     QTabWidget *tabWidget;
     QWidget *tabPointClouds;
@@ -130,9 +130,12 @@ public:
 "{\n"
 "    background-color: #ecf0f5;\n"
 "}"));
+        horizontalLayout_3 = new QHBoxLayout(centralWidget);
+        horizontalLayout_3->setSpacing(6);
+        horizontalLayout_3->setContentsMargins(11, 11, 11, 11);
+        horizontalLayout_3->setObjectName(QStringLiteral("horizontalLayout_3"));
         scanningGroupBox = new QGroupBox(centralWidget);
         scanningGroupBox->setObjectName(QStringLiteral("scanningGroupBox"));
-        scanningGroupBox->setGeometry(QRect(11, 11, 500, 644));
         scanningGroupBox->setMinimumSize(QSize(500, 0));
         scanningGroupBox->setMaximumSize(QSize(500, 16777215));
         verticalLayout = new QVBoxLayout(scanningGroupBox);
@@ -231,9 +234,11 @@ public:
 
         verticalLayout->addItem(verticalSpacer);
 
+
+        horizontalLayout_3->addWidget(scanningGroupBox);
+
         reconstructionGroupBox = new QGroupBox(centralWidget);
         reconstructionGroupBox->setObjectName(QStringLiteral("reconstructionGroupBox"));
-        reconstructionGroupBox->setGeometry(QRect(518, 11, 454, 531));
         verticalLayout_2 = new QVBoxLayout(reconstructionGroupBox);
         verticalLayout_2->setSpacing(6);
         verticalLayout_2->setContentsMargins(11, 11, 11, 11);
@@ -323,15 +328,13 @@ public:
 
         verticalLayout_2->addLayout(horizontalLayout_6);
 
-        layoutWidget = new QWidget(centralWidget);
-        layoutWidget->setObjectName(QStringLiteral("layoutWidget"));
-        layoutWidget->setGeometry(QRect(980, 10, 181, 627));
-        verticalLayout_5 = new QVBoxLayout(layoutWidget);
+
+        horizontalLayout_3->addWidget(reconstructionGroupBox);
+
+        verticalLayout_5 = new QVBoxLayout();
         verticalLayout_5->setSpacing(6);
-        verticalLayout_5->setContentsMargins(11, 11, 11, 11);
         verticalLayout_5->setObjectName(QStringLiteral("verticalLayout_5"));
-        verticalLayout_5->setContentsMargins(0, 0, 0, 0);
-        tabWidget = new QTabWidget(layoutWidget);
+        tabWidget = new QTabWidget(centralWidget);
         tabWidget->setObjectName(QStringLiteral("tabWidget"));
         tabWidget->setMinimumSize(QSize(0, 470));
         tabWidget->setMaximumSize(QSize(180, 470));
@@ -502,6 +505,9 @@ public:
         verticalSpacer_4 = new QSpacerItem(20, 148, QSizePolicy::Minimum, QSizePolicy::Expanding);
 
         verticalLayout_5->addItem(verticalSpacer_4);
+
+
+        horizontalLayout_3->addLayout(verticalLayout_5);
 
         MainWindow->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(MainWindow);
