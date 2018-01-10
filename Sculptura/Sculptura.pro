@@ -232,6 +232,7 @@ SOURCES += main.cpp\
 
 
 
+
 HEADERS  += mainwindow.h \
     advanced_scanning.h \
     camerapreview.h \
@@ -240,6 +241,7 @@ HEADERS  += mainwindow.h \
     read_mesh.h \
     cloud_icp.h \
     cloud_mesh.h \
+
 
 
 

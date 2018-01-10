@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'advanced_scanning.ui'
 **
-** Created by: Qt User Interface Compiler version 5.6.2
+** Created by: Qt User Interface Compiler version 5.9.3
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
@@ -99,11 +99,11 @@ public:
 
     void retranslateUi(QDialog *Advanced_scanning)
     {
-        Advanced_scanning->setWindowTitle(QApplication::translate("Advanced_scanning", "Advanced scanning", 0));
-        set_parameters->setText(QApplication::translate("Advanced_scanning", "Set parameters", 0));
-        label_2->setText(QApplication::translate("Advanced_scanning", "Number of iterations", 0));
-        label_3->setText(QApplication::translate("Advanced_scanning", "RANSAC", 0));
-        apply_pb->setText(QApplication::translate("Advanced_scanning", "Apply", 0));
+        Advanced_scanning->setWindowTitle(QApplication::translate("Advanced_scanning", "Advanced scanning", Q_NULLPTR));
+        set_parameters->setText(QApplication::translate("Advanced_scanning", "Set parameters", Q_NULLPTR));
+        label_2->setText(QApplication::translate("Advanced_scanning", "Number of iterations", Q_NULLPTR));
+        label_3->setText(QApplication::translate("Advanced_scanning", "RANSAC", Q_NULLPTR));
+        apply_pb->setText(QApplication::translate("Advanced_scanning", "Apply", Q_NULLPTR));
     } // retranslateUi
 
 };

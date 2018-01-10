@@ -43,14 +43,14 @@ void Cloud_Mesh::Run_Mesh(pcl::PointCloud<pcl::PointXYZRGB> &Cloud_input, pcl::P
 
     // Poisson reconstruction
     pcl::Poisson<pcl::PointXYZRGBNormal> poisson;
-    poisson.setDegree(2);
+    poisson.setDegree(2);//trying degree
     poisson.setDepth(10);
     poisson.setSolverDivide (6);
     poisson.setIsoDivide (6);
 
-    poisson.setConfidence(true);
+    poisson.setConfidence(false);
     poisson.setManifold(false); // perhaps, for our final pointcloud should be set to true
-    poisson.setOutputPolygons(true);
+    poisson.setOutputPolygons(false);
 
     poisson.setInputCloud(cloud_normals);
     pcl::PolygonMesh mesh;

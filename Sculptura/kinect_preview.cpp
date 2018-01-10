@@ -45,6 +45,7 @@ void KinectPreview::startPreview(QSize previewSize)
     if (sensor){
         initDepthSource();
         initColorSource();
+        InitMapper();
     }
 
     if (!sensor || FAILED(hr)){
@@ -80,6 +81,11 @@ void KinectPreview::initDepthSource()
     //Releases the pointer depth_frame_source and sets it equal to NULL.
     SafeRelease(depth_frame_source);
     depth_frame_source = nullptr;
+}
+
+void KinectPreview::InitMapper(){
+
+     int hr = sensor->get_CoordinateMapper(&mapper);
 }
 
 void KinectPreview::initColorSource()
@@ -155,64 +161,6 @@ void KinectPreview::convertAndSaveDepthMat(IDepthFrame* frame)
 }
 
 
-void KinectPreview::Depth2meter(const float feat_x, const float feat_y, const float rawDisparity,
-                             float &X, float &Y, float &Z)
-{
-  //reject invalid points
-  if(rawDisparity <= 0)
-    {
-      X = 0; Y = 0; Z = 0; return;
-    }
-
-  float fx = 525.0; // focal length x
-  float fy = 525.0; // focal length y
-  float cx = 319.5; // optical center x
-  float cy = 239.5; // optical center y
-  float sclFactor = 5000.0;
-
-  //Recall the camera projective projection model
-  Z = rawDisparity / sclFactor;
-  X = (feat_x - cx) * Z / fx;
-  Y = (feat_y - cy) * Z / fy;
-}
-
-
-
-pcl::PointCloud<pcl::PointXYZRGB>::Ptr KinectPreview::rgbd2pcl(const cv::Mat &rgbImg, const cv::Mat &depthImg)
-{
-    pcl::PointCloud<pcl::PointXYZRGB>::Ptr cloud;
-    cloud.reset (new pcl::PointCloud<pcl::PointXYZRGB>);
-    cloud->points.resize (rgbImg.rows*rgbImg.cols);
-    int p_count = 0;
-    for(int i=0; i<rgbImg.rows; i++) // x
-      {
-        for(int j=0; j<rgbImg.cols; j++) // y
-          {
-            float X, Y, Z;
-            unsigned short depth = depthImg.at<unsigned short>(i, j);
-            //Render the 3D values
-            Depth2meter(i,j,depth, X, Y, Z);
-
-            //Remove features which are out of Kinect senser range
-            if(X>5 || Y > 5 || Z == 0.0){continue;}
-            //Write out the colored 3D point
-            cloud->points[p_count].x = X;
-            cloud->points[p_count].y = Y;
-            cloud->points[p_count].z = Z;
-
-
-            cloud->points[p_count].r = (float)rgbImg.at<cv::Vec3b>(i,j)[0];
-            cloud->points[p_count].g = (float)rgbImg.at<cv::Vec3b>(i,j)[1];
-            cloud->points[p_count].b = (float)rgbImg.at<cv::Vec3b>(i,j)[2];
-            p_count++;
-
-          }
-      }
-      return cloud;
-}
-
-
-
 void KinectPreview::convertAndSaveColorMat(IColorFrame* frame)
 {
     ColorImageFormat imageFormat = ColorImageFormat_None;
@@ -261,8 +209,83 @@ void KinectPreview::stopRecording()
     box.setText(QString::fromStdString(sb.str()));
     box.exec();
 
-    cv::imshow("color frame", colors[0]);
+    //cv::imshow("color frame", colors[0]);
+
+
+
+
+    std::string folder = "capturedimages";
+
+    cv::Mat output;
+    cv::Mat depthimg, colorimg ,   depth_thr;
+
+
+
+    std::vector<cv::KeyPoint> keyPts;keyPts.clear();
+    int delay = 1000;
+    for(int i =0;i<colors.size() && i<depth.size();i+=30){ // we loop over the depth and the color vectors , and "taking every 30 frames,,, one frame "
+        // so we can have real time aquisation with no delay , since the kinect speed is 30 frame per second, by using this loop we can trick it and have our data as real time.
+
+        colorimg = colors.at(i);   // accessing color vecter
+        depthimg = depth.at(i);  //    accesssing depth vector
+
+       // improc.threshold_depth(depthimg, depth_thr, 1 , 100); // need more about the parameter
+     // improc.border_outlier_removal(depth_thr,depth_thr,  10 );
+
+        cv::Mat mapped = map_depth_to_color(depthimg,colorimg);
+
+        cv::cvtColor(colorimg,output,CV_BGRA2BGR);//output is the rgb image ,, but we don't need to add it again
+
+      cv::imwrite("./"+folder+"/depthimage_"+std::to_string(i)+".png", depthimg);
+       cv::cvtColor(mapped,mapped,CV_BGRA2RGB);
+      cv::imwrite("./"+folder+"/Cmap_"+std::to_string(i)+".png", mapped);
+
+
+// we can push back to different vector here but we choose to show the user the captured data.
+
+
+
+    }
 }
+
+
+
+cv::Mat KinectPreview::map_depth_to_color(cv::Mat& depth_im, cv::Mat& rgb_im, int colorBytesPerPixel  ){
+
+    // Retrieve Mapper , mapping depth to color frame
+    std::vector<ColorSpacePoint> colorSpacePoints(depth_w_ * depth_h_ );
+    mapper->MapDepthFrameToColorSpace(depth_w_ * depth_h_, (UINT16*)depth_im.data, colorSpacePoints.size(), &colorSpacePoints[0] );
+
+    //after mapping
+    std::vector<BYTE> buffer( depth_w_ * depth_h_ * colorBytesPerPixel );
+
+    // Mapping Color 2 depth in hight and width
+    for( int depthY = 0; depthY < depth_h_; depthY++ ){
+        for( int depthX = 0; depthX < depth_w_; depthX++ ){
+            const unsigned int depthIndex = depthY * depth_w_ + depthX;
+            const int colorX = static_cast<int>( colorSpacePoints[depthIndex].X + 0.5f );
+            const int colorY = static_cast<int>( colorSpacePoints[depthIndex].Y + 0.5f );
+            if( ( 0 <= colorX ) && ( colorX < color_w_ ) && ( 0 <= colorY ) && ( colorY < color_h_ ) ){
+                const unsigned int colorIndex = colorY * color_w_ + colorX;
+                  buffer[depthIndex * colorBytesPerPixel + 0] = rgb_im.data[colorIndex * colorBytesPerPixel + 0];
+                   buffer[depthIndex * colorBytesPerPixel + 1] = rgb_im.data[colorIndex * colorBytesPerPixel + 1];
+                  buffer[depthIndex * colorBytesPerPixel + 2] = rgb_im.data[colorIndex * colorBytesPerPixel + 2];
+                  buffer[depthIndex * colorBytesPerPixel + 3] = rgb_im.data[colorIndex * colorBytesPerPixel + 3];
+            }
+         }
+       }
+
+
+    // e.g. Mapped Color Buffer to cv::Mat
+    cv::Mat colorMat = cv::Mat( depth_h_, depth_w_, CV_8UC4, &buffer[0] ).clone();
+    return colorMat;
+
+}
+
+
+
+
+
 
 bool KinectPreview::isRecording() const
 {

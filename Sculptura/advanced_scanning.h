@@ -15,6 +15,9 @@ public:
     explicit Advanced_scanning(QWidget *parent = 0);
     ~Advanced_scanning();
 
+private slots:
+    void on_apply_pb_clicked();
+
 private:
     Ui::Advanced_scanning *ui;
 };

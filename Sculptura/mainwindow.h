@@ -1,8 +1,3 @@
-//***********************************************************************
-//** © Copyright 2018, Karim Botros,Daria Zotova,Elizaveta Genke       **
-//** and Mohamed Ali All rights reserved.                              **
-//** you can modify and reuse only if you mention Authors              **
-//***********************************************************************
 
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
@@ -16,13 +11,15 @@
 #include "read_mesh.h"
 #include "ui_mainwindow.h"
 #include "cloud_mesh.h"
-
+#include<QStringList>
 #include "opencv2/core/core.hpp"
 #include "opencv2/highgui/highgui.hpp"
 #include "opencv2/imgproc/imgproc.hpp"
 #include <OpenNI.h>
 #include <opencv/cv.h>
 #include <opencv/highgui.h>
+#include"commonfunc.h"
+#include "cloud_icp.h"
 
 #include <pcl/visualization/pcl_visualizer.h>
 #include <vtkRenderWindow.h>
@@ -63,6 +60,11 @@ public:
     explicit MainWindow(QWidget *parent = 0);
     ~MainWindow();
 
+
+
+    void Depth2meter(const float feat_x, const float feat_y, const float rawDisparity,
+                     float &X, float &Y, float &Z);
+     pcl::PointCloud<pcl::PointXYZRGB>::Ptr rgbd2pcl(const cv::Mat &rgbImg, const cv::Mat &depthImg);
 private slots:
     void renderFrame(QImage frame);
     void savePointClouds(std::vector<PointCloudT::Ptr> pointClouds);
@@ -90,13 +92,18 @@ private slots:
 
     void on_get_3D_model_clicked();
 
+    void on_getPointCloud_clicked();
+
+
+
 private:
     void showPointCloudFiles();
     void showSelectedPointCloud(int);
     void showMeshFiles();
     void showSelectedMesh(int);
     void initVisualiser();
-
+    void closeEvent (QCloseEvent *event);
+    QString dirname;
     Ui::MainWindow *ui;
     Advanced_scanning *advanced_parameters;
     CameraPreview* preview;
@@ -121,6 +128,9 @@ private:
 
     ReadPointClouds* readPointClouds;
     ReadMesh* readMeshes;
+    QStringList ImagesFromDir;
+    std::vector<cv::Mat> depthimage;
+    std::vector<cv::Mat> cmapimage;
 
 };
 #endif // MAINWINDOW_H
