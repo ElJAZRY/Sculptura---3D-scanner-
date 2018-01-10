@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'mainwindow.ui'
 **
-** Created by: Qt User Interface Compiler version 5.6.2
+** Created by: Qt User Interface Compiler version 5.7.0
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
@@ -43,7 +43,7 @@ public:
     QAction *actionOpen_PointClouds;
     QAction *actionOpen_Mesh;
     QWidget *centralWidget;
-    QHBoxLayout *horizontalLayout_3;
+    QHBoxLayout *horizontalLayout_6;
     QGroupBox *scanningGroupBox;
     QVBoxLayout *verticalLayout;
     QLabel *preview_window;
@@ -62,10 +62,12 @@ public:
     QSpacerItem *horizontalSpacer;
     QProgressBar *progressBar;
     QSpacerItem *horizontalSpacer_2;
-    QHBoxLayout *horizontalLayout_6;
+    QHBoxLayout *horizontalLayout_3;
     QSpacerItem *horizontalSpacer_4;
-    QPushButton *get_3D_model;
+    QPushButton *getPointCloud;
     QSpacerItem *horizontalSpacer_3;
+    QPushButton *get_3D_model;
+    QSpacerItem *horizontalSpacer_5;
     QVBoxLayout *verticalLayout_5;
     QTabWidget *tabWidget;
     QWidget *tabPointClouds;
@@ -130,10 +132,10 @@ public:
 "{\n"
 "    background-color: #ecf0f5;\n"
 "}"));
-        horizontalLayout_3 = new QHBoxLayout(centralWidget);
-        horizontalLayout_3->setSpacing(6);
-        horizontalLayout_3->setContentsMargins(11, 11, 11, 11);
-        horizontalLayout_3->setObjectName(QStringLiteral("horizontalLayout_3"));
+        horizontalLayout_6 = new QHBoxLayout(centralWidget);
+        horizontalLayout_6->setSpacing(6);
+        horizontalLayout_6->setContentsMargins(11, 11, 11, 11);
+        horizontalLayout_6->setObjectName(QStringLiteral("horizontalLayout_6"));
         scanningGroupBox = new QGroupBox(centralWidget);
         scanningGroupBox->setObjectName(QStringLiteral("scanningGroupBox"));
         scanningGroupBox->setMinimumSize(QSize(500, 0));
@@ -235,7 +237,7 @@ public:
         verticalLayout->addItem(verticalSpacer);
 
 
-        horizontalLayout_3->addWidget(scanningGroupBox);
+        horizontalLayout_6->addWidget(scanningGroupBox);
 
         reconstructionGroupBox = new QGroupBox(centralWidget);
         reconstructionGroupBox->setObjectName(QStringLiteral("reconstructionGroupBox"));
@@ -294,12 +296,37 @@ public:
 
         verticalLayout_2->addLayout(horizontalLayout_4);
 
-        horizontalLayout_6 = new QHBoxLayout();
-        horizontalLayout_6->setSpacing(6);
-        horizontalLayout_6->setObjectName(QStringLiteral("horizontalLayout_6"));
+        horizontalLayout_3 = new QHBoxLayout();
+        horizontalLayout_3->setSpacing(6);
+        horizontalLayout_3->setObjectName(QStringLiteral("horizontalLayout_3"));
         horizontalSpacer_4 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
 
-        horizontalLayout_6->addItem(horizontalSpacer_4);
+        horizontalLayout_3->addItem(horizontalSpacer_4);
+
+        getPointCloud = new QPushButton(reconstructionGroupBox);
+        getPointCloud->setObjectName(QStringLiteral("getPointCloud"));
+        getPointCloud->setEnabled(true);
+        getPointCloud->setCursor(QCursor(Qt::PointingHandCursor));
+        getPointCloud->setStyleSheet(QLatin1String("QPushButton {\n"
+"    background-color: #c0cbd3;\n"
+"    border-style: outset;\n"
+"    border-width: 2px;\n"
+"    border-radius: 10px;\n"
+"    border-color: #748896;\n"
+"    font: bold 14px;\n"
+"    padding: 6px;\n"
+"}\n"
+"QPushButton:pressed {\n"
+"    background-color: #748896;\n"
+"    border-style: inset;\n"
+"}"));
+        getPointCloud->setCheckable(true);
+
+        horizontalLayout_3->addWidget(getPointCloud);
+
+        horizontalSpacer_3 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        horizontalLayout_3->addItem(horizontalSpacer_3);
 
         get_3D_model = new QPushButton(reconstructionGroupBox);
         get_3D_model->setObjectName(QStringLiteral("get_3D_model"));
@@ -319,17 +346,17 @@ public:
 "    border-style: inset;\n"
 "}"));
 
-        horizontalLayout_6->addWidget(get_3D_model);
+        horizontalLayout_3->addWidget(get_3D_model);
 
-        horizontalSpacer_3 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+        horizontalSpacer_5 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
 
-        horizontalLayout_6->addItem(horizontalSpacer_3);
-
-
-        verticalLayout_2->addLayout(horizontalLayout_6);
+        horizontalLayout_3->addItem(horizontalSpacer_5);
 
 
-        horizontalLayout_3->addWidget(reconstructionGroupBox);
+        verticalLayout_2->addLayout(horizontalLayout_3);
+
+
+        horizontalLayout_6->addWidget(reconstructionGroupBox);
 
         verticalLayout_5 = new QVBoxLayout();
         verticalLayout_5->setSpacing(6);
@@ -507,12 +534,12 @@ public:
         verticalLayout_5->addItem(verticalSpacer_4);
 
 
-        horizontalLayout_3->addLayout(verticalLayout_5);
+        horizontalLayout_6->addLayout(verticalLayout_5);
 
         MainWindow->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(MainWindow);
         menuBar->setObjectName(QStringLiteral("menuBar"));
-        menuBar->setGeometry(QRect(0, 0, 1174, 26));
+        menuBar->setGeometry(QRect(0, 0, 1174, 21));
         menuFile = new QMenu(menuBar);
         menuFile->setObjectName(QStringLiteral("menuFile"));
         MainWindow->setMenuBar(menuBar);
@@ -552,6 +579,7 @@ public:
         start_scanning->setText(QApplication::translate("MainWindow", "Start scanning", 0));
         advanced_scanning->setText(QApplication::translate("MainWindow", "Advanced scanning", 0));
         reconstructionGroupBox->setTitle(QString());
+        getPointCloud->setText(QApplication::translate("MainWindow", "GET POINT CLOUD", 0));
         get_3D_model->setText(QApplication::translate("MainWindow", "Get 3D model", 0));
         ListGroupBox->setTitle(QString());
         list_pc->setText(QApplication::translate("MainWindow", "List of Point Clouds", 0));
