@@ -5,7 +5,7 @@
 #include <QMutex>
 #include <QWaitCondition>
 #include <QImage>
-
+#include <Windows.h>
 #include <opencv2/core/core.hpp>
 #include <opencv2/imgproc/imgproc.hpp>
 #include <opencv2/highgui/highgui.hpp>
@@ -15,6 +15,19 @@
 #include <pcl/PolygonMesh.h>
 
 #include <Kinect.h>
+
+#include <Kinect.h>
+#include <stdexcept>
+#include <iostream>
+#include <thread>
+#include <chrono>
+
+#include <opencv2/opencv.hpp>
+#include <opencv2/opencv_modules.hpp>
+#include <opencv2/core/core.hpp>
+#include <opencv2/core.hpp>
+#include"commonfunc.h"
+//#include <opencv/sources/include/opencv2/opencv.hpp>
 
 //  KinectPreview class is designed to retrieve data from Kinect (depth and color images)
 //  in the backend, not interfering with the processes in the main window interface.
@@ -43,6 +56,9 @@ private:
     IKinectSensor* sensor;
     IDepthFrameReader* depthReader;
     IColorFrameReader* colorReader;
+    ICoordinateMapper* mapper;
+
+
 
     std::vector<cv::Mat> depth;
     std::vector<cv::Mat> colors;
@@ -57,9 +73,8 @@ private:
 
     void initDepthSource();
     void initColorSource();
-    //void Depth2meter(const float feat_x, const float feat_y, const float rawDisparity,
-    //                float &x, float &y, float &z);
-    //pcl::PointCloud<pcl::PointXYZRGB>::Ptr rgbd2pcl(const cv::Mat &rgbImg, const cv::Mat &depthImg);
+    void Depth2meter(const float feat_x, const float feat_y, const float rawDisparity,   // author Roger Pi modified AND USED
+                 float &x, float &y, float &z);
 
     void convertAndSaveDepthMat(IDepthFrame* depthFrame);
     void convertAndSaveColorMat(IColorFrame* colorFrame);
@@ -74,10 +89,12 @@ protected:
 public:
     KinectPreview(QObject *parent = 0);
     ~KinectPreview();
-
+    cv::Mat map_depth_to_color(cv::Mat& depth_im, cv::Mat& rgb_im, int colorBytesPerPixel=4 );  // Author is Roger PI .. modified and used
+    void InitMapper();
     void startPreview(QSize previewSize);
     void stopPreview();
     bool isStopped() const;
+    //commonFunc improc;
 
     void startRecording();
     void stopRecording();

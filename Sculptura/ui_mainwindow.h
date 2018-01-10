@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'mainwindow.ui'
 **
-** Created by: Qt User Interface Compiler version 5.7.0
+** Created by: Qt User Interface Compiler version 5.9.3
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
@@ -22,7 +22,6 @@
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenu>
 #include <QtWidgets/QMenuBar>
-#include <QtWidgets/QProgressBar>
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QSpacerItem>
 #include <QtWidgets/QStatusBar>
@@ -43,7 +42,9 @@ public:
     QAction *actionOpen_PointClouds;
     QAction *actionOpen_Mesh;
     QWidget *centralWidget;
-    QHBoxLayout *horizontalLayout_6;
+    QHBoxLayout *horizontalLayout_7;
+    QVBoxLayout *verticalLayout_4;
+    QVBoxLayout *verticalLayout_5;
     QGroupBox *scanningGroupBox;
     QVBoxLayout *verticalLayout;
     QLabel *preview_window;
@@ -60,7 +61,6 @@ public:
     QVTKWidget *vtkWindow;
     QHBoxLayout *horizontalLayout_4;
     QSpacerItem *horizontalSpacer;
-    QProgressBar *progressBar;
     QSpacerItem *horizontalSpacer_2;
     QHBoxLayout *horizontalLayout_3;
     QSpacerItem *horizontalSpacer_4;
@@ -68,17 +68,18 @@ public:
     QSpacerItem *horizontalSpacer_3;
     QPushButton *get_3D_model;
     QSpacerItem *horizontalSpacer_5;
-    QVBoxLayout *verticalLayout_5;
+    QVBoxLayout *verticalLayout_6;
     QTabWidget *tabWidget;
     QWidget *tabPointClouds;
     QGroupBox *ListGroupBox;
-    QVBoxLayout *verticalLayout_4;
     QLabel *list_pc;
-    QListView *listPointClouds;
+    QWidget *widget1;
     QHBoxLayout *horizontalLayout_2;
+    QListView *listPointClouds;
+    QWidget *widget2;
+    QHBoxLayout *horizontalLayout_6;
     QPushButton *deleteAllPointClouds;
     QPushButton *deletePointCloud;
-    QSpacerItem *verticalSpacer_2;
     QWidget *tabMeshes;
     QGroupBox *ListGroupBox_2;
     QVBoxLayout *verticalLayout_3;
@@ -98,7 +99,7 @@ public:
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QStringLiteral("MainWindow"));
-        MainWindow->resize(1174, 731);
+        MainWindow->resize(1190, 731);
         MainWindow->setStyleSheet(QLatin1String("QMainWindow\n"
 "{\n"
 "    background-color: #ecf0f5;\n"
@@ -132,10 +133,22 @@ public:
 "{\n"
 "    background-color: #ecf0f5;\n"
 "}"));
-        horizontalLayout_6 = new QHBoxLayout(centralWidget);
-        horizontalLayout_6->setSpacing(6);
-        horizontalLayout_6->setContentsMargins(11, 11, 11, 11);
-        horizontalLayout_6->setObjectName(QStringLiteral("horizontalLayout_6"));
+        horizontalLayout_7 = new QHBoxLayout(centralWidget);
+        horizontalLayout_7->setSpacing(6);
+        horizontalLayout_7->setContentsMargins(11, 11, 11, 11);
+        horizontalLayout_7->setObjectName(QStringLiteral("horizontalLayout_7"));
+        verticalLayout_4 = new QVBoxLayout();
+        verticalLayout_4->setSpacing(6);
+        verticalLayout_4->setObjectName(QStringLiteral("verticalLayout_4"));
+
+        horizontalLayout_7->addLayout(verticalLayout_4);
+
+        verticalLayout_5 = new QVBoxLayout();
+        verticalLayout_5->setSpacing(6);
+        verticalLayout_5->setObjectName(QStringLiteral("verticalLayout_5"));
+
+        horizontalLayout_7->addLayout(verticalLayout_5);
+
         scanningGroupBox = new QGroupBox(centralWidget);
         scanningGroupBox->setObjectName(QStringLiteral("scanningGroupBox"));
         scanningGroupBox->setMinimumSize(QSize(500, 0));
@@ -237,7 +250,7 @@ public:
         verticalLayout->addItem(verticalSpacer);
 
 
-        horizontalLayout_6->addWidget(scanningGroupBox);
+        horizontalLayout_7->addWidget(scanningGroupBox);
 
         reconstructionGroupBox = new QGroupBox(centralWidget);
         reconstructionGroupBox->setObjectName(QStringLiteral("reconstructionGroupBox"));
@@ -272,22 +285,6 @@ public:
         horizontalSpacer = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
 
         horizontalLayout_4->addItem(horizontalSpacer);
-
-        progressBar = new QProgressBar(reconstructionGroupBox);
-        progressBar->setObjectName(QStringLiteral("progressBar"));
-        progressBar->setEnabled(true);
-        QFont font1;
-        font1.setFamily(QStringLiteral("Open Sans"));
-        font1.setBold(true);
-        font1.setWeight(75);
-        progressBar->setFont(font1);
-        progressBar->setStyleSheet(QLatin1String("QProgressBar::chunk {\n"
-"    background-color: #05B8CC;\n"
-"    width: 20px;\n"
-"}"));
-        progressBar->setValue(0);
-
-        horizontalLayout_4->addWidget(progressBar);
 
         horizontalSpacer_2 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
 
@@ -356,11 +353,11 @@ public:
         verticalLayout_2->addLayout(horizontalLayout_3);
 
 
-        horizontalLayout_6->addWidget(reconstructionGroupBox);
+        horizontalLayout_7->addWidget(reconstructionGroupBox);
 
-        verticalLayout_5 = new QVBoxLayout();
-        verticalLayout_5->setSpacing(6);
-        verticalLayout_5->setObjectName(QStringLiteral("verticalLayout_5"));
+        verticalLayout_6 = new QVBoxLayout();
+        verticalLayout_6->setSpacing(6);
+        verticalLayout_6->setObjectName(QStringLiteral("verticalLayout_6"));
         tabWidget = new QTabWidget(centralWidget);
         tabWidget->setObjectName(QStringLiteral("tabWidget"));
         tabWidget->setMinimumSize(QSize(0, 470));
@@ -375,17 +372,18 @@ public:
         ListGroupBox->setGeometry(QRect(0, 0, 180, 521));
         ListGroupBox->setMinimumSize(QSize(150, 400));
         ListGroupBox->setMaximumSize(QSize(180, 16777215));
-        verticalLayout_4 = new QVBoxLayout(ListGroupBox);
-        verticalLayout_4->setSpacing(6);
-        verticalLayout_4->setContentsMargins(11, 11, 11, 11);
-        verticalLayout_4->setObjectName(QStringLiteral("verticalLayout_4"));
         list_pc = new QLabel(ListGroupBox);
         list_pc->setObjectName(QStringLiteral("list_pc"));
+        list_pc->setGeometry(QRect(10, 10, 110, 17));
         list_pc->setFont(font);
-
-        verticalLayout_4->addWidget(list_pc);
-
-        listPointClouds = new QListView(ListGroupBox);
+        widget1 = new QWidget(ListGroupBox);
+        widget1->setObjectName(QStringLiteral("widget1"));
+        horizontalLayout_2 = new QHBoxLayout(widget1);
+        horizontalLayout_2->setSpacing(6);
+        horizontalLayout_2->setContentsMargins(11, 11, 11, 11);
+        horizontalLayout_2->setObjectName(QStringLiteral("horizontalLayout_2"));
+        horizontalLayout_2->setContentsMargins(0, 0, 0, 0);
+        listPointClouds = new QListView(widget1);
         listPointClouds->setObjectName(QStringLiteral("listPointClouds"));
         listPointClouds->setMinimumSize(QSize(150, 350));
         listPointClouds->setMaximumSize(QSize(170, 16777215));
@@ -394,12 +392,17 @@ public:
         listPointClouds->setUniformItemSizes(false);
         listPointClouds->setWordWrap(false);
 
-        verticalLayout_4->addWidget(listPointClouds);
+        horizontalLayout_2->addWidget(listPointClouds);
 
-        horizontalLayout_2 = new QHBoxLayout();
-        horizontalLayout_2->setSpacing(6);
-        horizontalLayout_2->setObjectName(QStringLiteral("horizontalLayout_2"));
-        deleteAllPointClouds = new QPushButton(ListGroupBox);
+        widget2 = new QWidget(ListGroupBox);
+        widget2->setObjectName(QStringLiteral("widget2"));
+        widget2->setGeometry(QRect(10, 390, 144, 35));
+        horizontalLayout_6 = new QHBoxLayout(widget2);
+        horizontalLayout_6->setSpacing(6);
+        horizontalLayout_6->setContentsMargins(11, 11, 11, 11);
+        horizontalLayout_6->setObjectName(QStringLiteral("horizontalLayout_6"));
+        horizontalLayout_6->setContentsMargins(0, 0, 0, 0);
+        deleteAllPointClouds = new QPushButton(widget2);
         deleteAllPointClouds->setObjectName(QStringLiteral("deleteAllPointClouds"));
         deleteAllPointClouds->setEnabled(true);
         deleteAllPointClouds->setCursor(QCursor(Qt::PointingHandCursor));
@@ -417,9 +420,9 @@ public:
 "    border-style: inset;\n"
 "}"));
 
-        horizontalLayout_2->addWidget(deleteAllPointClouds);
+        horizontalLayout_6->addWidget(deleteAllPointClouds);
 
-        deletePointCloud = new QPushButton(ListGroupBox);
+        deletePointCloud = new QPushButton(widget2);
         deletePointCloud->setObjectName(QStringLiteral("deletePointCloud"));
         deletePointCloud->setEnabled(true);
         deletePointCloud->setCursor(QCursor(Qt::PointingHandCursor));
@@ -437,14 +440,7 @@ public:
 "    border-style: inset;\n"
 "}"));
 
-        horizontalLayout_2->addWidget(deletePointCloud);
-
-
-        verticalLayout_4->addLayout(horizontalLayout_2);
-
-        verticalSpacer_2 = new QSpacerItem(20, 68, QSizePolicy::Minimum, QSizePolicy::Expanding);
-
-        verticalLayout_4->addItem(verticalSpacer_2);
+        horizontalLayout_6->addWidget(deletePointCloud);
 
         tabWidget->addTab(tabPointClouds, QString());
         tabMeshes = new QWidget();
@@ -527,19 +523,19 @@ public:
 
         tabWidget->addTab(tabMeshes, QString());
 
-        verticalLayout_5->addWidget(tabWidget);
+        verticalLayout_6->addWidget(tabWidget);
 
         verticalSpacer_4 = new QSpacerItem(20, 148, QSizePolicy::Minimum, QSizePolicy::Expanding);
 
-        verticalLayout_5->addItem(verticalSpacer_4);
+        verticalLayout_6->addItem(verticalSpacer_4);
 
 
-        horizontalLayout_6->addLayout(verticalLayout_5);
+        horizontalLayout_7->addLayout(verticalLayout_6);
 
         MainWindow->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(MainWindow);
         menuBar->setObjectName(QStringLiteral("menuBar"));
-        menuBar->setGeometry(QRect(0, 0, 1174, 21));
+        menuBar->setGeometry(QRect(0, 0, 1190, 21));
         menuFile = new QMenu(menuBar);
         menuFile->setObjectName(QStringLiteral("menuFile"));
         MainWindow->setMenuBar(menuBar);
@@ -566,32 +562,32 @@ public:
 
     void retranslateUi(QMainWindow *MainWindow)
     {
-        MainWindow->setWindowTitle(QApplication::translate("MainWindow", "Sculptura", 0));
-        actionNew->setText(QApplication::translate("MainWindow", "New", 0));
-        actionOpen->setText(QApplication::translate("MainWindow", "Open", 0));
-        actionSave_as->setText(QApplication::translate("MainWindow", "Save Mesh as", 0));
-        actionOpen_PointClouds->setText(QApplication::translate("MainWindow", "Open PointClouds", 0));
-        actionOpen_Mesh->setText(QApplication::translate("MainWindow", "Open Mesh", 0));
+        MainWindow->setWindowTitle(QApplication::translate("MainWindow", "Sculptura", Q_NULLPTR));
+        actionNew->setText(QApplication::translate("MainWindow", "New", Q_NULLPTR));
+        actionOpen->setText(QApplication::translate("MainWindow", "Open", Q_NULLPTR));
+        actionSave_as->setText(QApplication::translate("MainWindow", "Save Mesh as", Q_NULLPTR));
+        actionOpen_PointClouds->setText(QApplication::translate("MainWindow", "Open PointClouds", Q_NULLPTR));
+        actionOpen_Mesh->setText(QApplication::translate("MainWindow", "Open Mesh", Q_NULLPTR));
         scanningGroupBox->setTitle(QString());
         preview_window->setText(QString());
-        label_simple_scanning->setText(QApplication::translate("MainWindow", "Simple scanning", 0));
-        start_preview->setText(QApplication::translate("MainWindow", "Start preview", 0));
-        start_scanning->setText(QApplication::translate("MainWindow", "Start scanning", 0));
-        advanced_scanning->setText(QApplication::translate("MainWindow", "Advanced scanning", 0));
+        label_simple_scanning->setText(QApplication::translate("MainWindow", "Simple scanning", Q_NULLPTR));
+        start_preview->setText(QApplication::translate("MainWindow", "Start preview", Q_NULLPTR));
+        start_scanning->setText(QApplication::translate("MainWindow", "Start scanning", Q_NULLPTR));
+        advanced_scanning->setText(QApplication::translate("MainWindow", "Advanced scanning", Q_NULLPTR));
         reconstructionGroupBox->setTitle(QString());
-        getPointCloud->setText(QApplication::translate("MainWindow", "GET POINT CLOUD", 0));
-        get_3D_model->setText(QApplication::translate("MainWindow", "Get 3D model", 0));
+        getPointCloud->setText(QApplication::translate("MainWindow", "GET POINT CLOUD", Q_NULLPTR));
+        get_3D_model->setText(QApplication::translate("MainWindow", "Get 3D model", Q_NULLPTR));
         ListGroupBox->setTitle(QString());
-        list_pc->setText(QApplication::translate("MainWindow", "List of Point Clouds", 0));
-        deleteAllPointClouds->setText(QApplication::translate("MainWindow", "Delete all", 0));
-        deletePointCloud->setText(QApplication::translate("MainWindow", "Delete", 0));
-        tabWidget->setTabText(tabWidget->indexOf(tabPointClouds), QApplication::translate("MainWindow", "PC", 0));
+        list_pc->setText(QApplication::translate("MainWindow", "List of Point Clouds", Q_NULLPTR));
+        deleteAllPointClouds->setText(QApplication::translate("MainWindow", "Delete all", Q_NULLPTR));
+        deletePointCloud->setText(QApplication::translate("MainWindow", "Delete", Q_NULLPTR));
+        tabWidget->setTabText(tabWidget->indexOf(tabPointClouds), QApplication::translate("MainWindow", "PC", Q_NULLPTR));
         ListGroupBox_2->setTitle(QString());
-        list_mesh->setText(QApplication::translate("MainWindow", "List of Meshes", 0));
-        deleteAllMeshes->setText(QApplication::translate("MainWindow", "Delete all", 0));
-        deleteMesh->setText(QApplication::translate("MainWindow", "Delete", 0));
-        tabWidget->setTabText(tabWidget->indexOf(tabMeshes), QApplication::translate("MainWindow", "MESH", 0));
-        menuFile->setTitle(QApplication::translate("MainWindow", "File", 0));
+        list_mesh->setText(QApplication::translate("MainWindow", "List of Meshes", Q_NULLPTR));
+        deleteAllMeshes->setText(QApplication::translate("MainWindow", "Delete all", Q_NULLPTR));
+        deleteMesh->setText(QApplication::translate("MainWindow", "Delete", Q_NULLPTR));
+        tabWidget->setTabText(tabWidget->indexOf(tabMeshes), QApplication::translate("MainWindow", "MESH", Q_NULLPTR));
+        menuFile->setTitle(QApplication::translate("MainWindow", "File", Q_NULLPTR));
     } // retranslateUi
 
 };

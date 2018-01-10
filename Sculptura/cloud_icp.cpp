@@ -13,25 +13,22 @@ Cloud_ICP::~Cloud_ICP()
 
 
 
-Cloud::Ptr Cloud_ICP::RunICP(
-                                  std::vector<Cloud> Point_clouds,
-                                  double dist = 0.05, double rans = 0.05, int iter = 50, bool nonLinear =
-        false)
+Cloud::Ptr Cloud_ICP::RunICP(std::vector<Cloud::Ptr> Point_clouds , double dist , double rans , int iter , bool nonLinear)
 
 {
     Cloud::Ptr intial_model(new Cloud);
     Cloud::Ptr cloud_target(new Cloud); // target
     Cloud::Ptr cloud_source(new Cloud); //source
 
-    *intial_model = Point_clouds[0];
+    intial_model = Point_clouds[0];
 
 
     for (int i = 1; i < Point_clouds.size () ; i++)
     {
 
-        *cloud_source = *intial_model;
+        cloud_source = intial_model;
 
-        *cloud_target = Point_clouds[i];
+        cloud_target = Point_clouds[i];
 
         //        //Downsampling voxel grid
 

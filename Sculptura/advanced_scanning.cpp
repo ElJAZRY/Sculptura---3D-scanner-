@@ -12,3 +12,8 @@ Advanced_scanning::~Advanced_scanning()
 {
     delete ui;
 }
+
+void Advanced_scanning::on_apply_pb_clicked()
+{
+
+}

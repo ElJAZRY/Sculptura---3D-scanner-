@@ -1,23 +1,25 @@
 /****************************************************************************
 ** Meta object code from reading C++ file 'kinect_preview.h'
 **
-** Created by: The Qt Meta Object Compiler version 67 (Qt 5.7.0)
+** Created by: The Qt Meta Object Compiler version 67 (Qt 5.9.3)
 **
 ** WARNING! All changes made in this file will be lost!
 *****************************************************************************/
 
-#include "../../../Sculptura/kinect_preview.h"
+#include "../kinect_preview.h"
 #include <QtCore/qbytearray.h>
 #include <QtCore/qmetatype.h>
 #if !defined(Q_MOC_OUTPUT_REVISION)
 #error "The header file 'kinect_preview.h' doesn't include <QObject>."
 #elif Q_MOC_OUTPUT_REVISION != 67
-#error "This file was generated using the moc from 5.7.0. It"
+#error "This file was generated using the moc from 5.9.3. It"
 #error "cannot be used with the include files from this version of Qt."
 #error "(The moc has changed too much.)"
 #endif
 
 QT_BEGIN_MOC_NAMESPACE
+QT_WARNING_PUSH
+QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_KinectPreview_t {
     QByteArrayData data[8];
     char stringdata0[86];
@@ -81,17 +83,16 @@ void KinectPreview::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _i
         }
     } else if (_c == QMetaObject::IndexOfMethod) {
         int *result = reinterpret_cast<int *>(_a[0]);
-        void **func = reinterpret_cast<void **>(_a[1]);
         {
             typedef void (KinectPreview::*_t)(const QImage & );
-            if (*reinterpret_cast<_t *>(func) == static_cast<_t>(&KinectPreview::frameReady)) {
+            if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&KinectPreview::frameReady)) {
                 *result = 0;
                 return;
             }
         }
         {
             typedef void (KinectPreview::*_t)(std::vector<cv::Mat> , std::vector<cv::Mat> );
-            if (*reinterpret_cast<_t *>(func) == static_cast<_t>(&KinectPreview::depthAndColorsReady)) {
+            if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&KinectPreview::depthAndColorsReady)) {
                 *result = 1;
                 return;
             }
@@ -101,7 +102,7 @@ void KinectPreview::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _i
 
 const QMetaObject KinectPreview::staticMetaObject = {
     { &QThread::staticMetaObject, qt_meta_stringdata_KinectPreview.data,
-      qt_meta_data_KinectPreview,  qt_static_metacall, Q_NULLPTR, Q_NULLPTR}
+      qt_meta_data_KinectPreview,  qt_static_metacall, nullptr, nullptr}
 };
 
 
@@ -112,9 +113,9 @@ const QMetaObject *KinectPreview::metaObject() const
 
 void *KinectPreview::qt_metacast(const char *_clname)
 {
-    if (!_clname) return Q_NULLPTR;
+    if (!_clname) return nullptr;
     if (!strcmp(_clname, qt_meta_stringdata_KinectPreview.stringdata0))
-        return static_cast<void*>(const_cast< KinectPreview*>(this));
+        return static_cast<void*>(this);
     return QThread::qt_metacast(_clname);
 }
 
@@ -138,14 +139,15 @@ int KinectPreview::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
 // SIGNAL 0
 void KinectPreview::frameReady(const QImage & _t1)
 {
-    void *_a[] = { Q_NULLPTR, const_cast<void*>(reinterpret_cast<const void*>(&_t1)) };
+    void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(&_t1)) };
     QMetaObject::activate(this, &staticMetaObject, 0, _a);
 }
 
 // SIGNAL 1
 void KinectPreview::depthAndColorsReady(std::vector<cv::Mat> _t1, std::vector<cv::Mat> _t2)
 {
-    void *_a[] = { Q_NULLPTR, const_cast<void*>(reinterpret_cast<const void*>(&_t1)), const_cast<void*>(reinterpret_cast<const void*>(&_t2)) };
+    void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(&_t1)), const_cast<void*>(reinterpret_cast<const void*>(&_t2)) };
     QMetaObject::activate(this, &staticMetaObject, 1, _a);
 }
+QT_WARNING_POP
 QT_END_MOC_NAMESPACE

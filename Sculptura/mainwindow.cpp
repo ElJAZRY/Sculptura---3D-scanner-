@@ -1,5 +1,5 @@
 #include "mainwindow.h"
-
+#include <QCloseEvent>
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -52,6 +52,8 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
+
+
 void MainWindow::on_advanced_scanning_clicked()
 {
     advanced_parameters = new Advanced_scanning(this);
@@ -61,6 +63,8 @@ void MainWindow::on_advanced_scanning_clicked()
 
 void MainWindow::on_start_preview_clicked()
 {
+    ui->statusBar->showMessage("Kinect Ready");
+
     //Execute the thread
     if (kinectPreview->isStopped()){
         kinectPreview->startPreview(ui->preview_window->size());
@@ -73,9 +77,13 @@ void MainWindow::on_start_preview_clicked()
 
 void MainWindow::on_start_scanning_clicked()
 {
+
+
+    ui->statusBar->showMessage("Scanning now");
     //Retrieve and save color and depth frames while scanning
     if (kinectPreview->isRecording()){
         kinectPreview->stopRecording();
+        ui->statusBar->showMessage("Scanned");
         ui->start_scanning->setText(tr("Start scanning"));
     } else {
         kinectPreview->startRecording();
@@ -113,6 +121,27 @@ void MainWindow::on_actionNew_triggered()
 }
 
 
+void MainWindow::closeEvent (QCloseEvent *event)
+{
+    //Generate a confirmation message
+    QMessageBox::StandardButton resBtn = QMessageBox::question( this, "Sculptura",
+                                                                tr("Are you sure?, you will lose scanned data"),
+                                                                QMessageBox::Cancel | QMessageBox::No | QMessageBox::Yes,
+                                                                QMessageBox::Yes);
+
+    //Ignore or accept the action according to user's election
+    if (resBtn != QMessageBox::Yes) {
+        event->ignore();
+    } else {
+
+        event->accept();
+    }
+}
+
+
+
+
+
 void MainWindow::on_actionOpen_PointClouds_triggered()
 {
     //Asks user to chose pointclouds,
@@ -134,8 +163,8 @@ void MainWindow::on_actionOpen_PointClouds_triggered()
 
 void MainWindow::on_actionOpen_Mesh_triggered()
 {
-   //Asks user to chose meshes,
-   QStringList filenames = QFileDialog::getOpenFileNames(
+    //Asks user to chose meshes,
+    QStringList filenames = QFileDialog::getOpenFileNames(
                 this,
                 tr("Choose Mesh"),
                 "C://",
@@ -298,6 +327,72 @@ void MainWindow::showSelectedMesh(int indexMesh)
     ui->vtkWindow->update ();
 }
 
+void MainWindow::Depth2meter(const float feat_x, const float feat_y, const float rawDisparity,
+                             float &X, float &Y, float &Z)
+{
+    // reject invalid points
+    if(rawDisparity <= 0)
+    {
+        X = 0; Y = 0; Z = 0; return;
+    }
+
+    float fx = 525.0; // focal length x
+    float fy = 525.0; // focal length y
+    float cx = 319.5; // optical center x
+    float cy = 239.5; // optical center y
+    float sclFactor = 1000.0;
+
+    // Recall the camera projective projection model
+    Z = rawDisparity / sclFactor;
+    X = (feat_x - cx) * Z / fx;
+    Y = (feat_y - cy) * Z / fy;
+}
+
+
+
+
+
+
+
+pcl::PointCloud<pcl::PointXYZRGB>::Ptr MainWindow::rgbd2pcl(const cv::Mat &rgbImg, const cv::Mat &depthImg)
+{
+    pcl::PointCloud<pcl::PointXYZRGB>::Ptr cloud;
+    cloud.reset (new pcl::PointCloud<pcl::PointXYZRGB>);
+    cloud->points.resize (rgbImg.rows*rgbImg.cols);
+    int p_count = 0;
+    for(int i=0; i<rgbImg.rows; i++) // x
+    {
+        for(int j=0; j<rgbImg.cols; j++) // y
+        {
+            float X, Y, Z;
+            unsigned short depth = depthImg.at<unsigned short>(i, j);
+            // Render the 3D values
+            Depth2meter(i,j,depth, X, Y, Z);
+
+            // Remove features which are out of Kinect senser range
+            if(X>5 || Y > 5 || Z == 0.0){continue; }
+            // Write out the colored 3D point
+            cloud->points[p_count].x = X;
+            cloud->points[p_count].y = Y;
+            cloud->points[p_count].z = Z;
+
+
+            cloud->points[p_count].r = (float)rgbImg.at<cv::Vec3b>(i,j)[0];
+            cloud->points[p_count].g = (float)rgbImg.at<cv::Vec3b>(i,j)[1];
+            cloud->points[p_count].b = (float)rgbImg.at<cv::Vec3b>(i,j)[2];
+            p_count++;
+
+        }
+    }
+    return cloud;
+}
+
+
+
+
+
+
+
 
 void MainWindow::on_listMeshes_doubleClicked(const QModelIndex &index)
 {
@@ -307,7 +402,7 @@ void MainWindow::on_listMeshes_doubleClicked(const QModelIndex &index)
 
 
 void MainWindow::on_get_3D_model_clicked()
-{
+{      ui->statusBar->showMessage("generating mesh");
     Cloud_Mesh mymesh;
 
     mymesh.Run_Mesh(*pointCloudSet[0], tmpmesh);
@@ -324,5 +419,71 @@ void MainWindow::on_get_3D_model_clicked()
     QStandardItem* item = new QStandardItem(QString::fromStdString(meshName));
     listModel->appendRow(item);
     ui->listMeshes->setModel(listModel);
+       ui->statusBar->showMessage("Mesh Generated");
 
 }
+
+
+
+void MainWindow::on_getPointCloud_clicked()
+{
+
+
+    std::string folder = "capturedimages";
+    pcl::PointCloud<pcl::PointXYZRGB>::Ptr cloud (new  pcl::PointCloud<pcl::PointXYZRGB>);
+    cv::Mat fdepthimage,fcmapimage;
+    QStandardItemModel* listModel = new QStandardItemModel();
+    int counter = 0;
+
+
+
+    ImagesFromDir = QFileDialog::getOpenFileNames(
+                    this,tr("Open File"),"",tr("JPEG (*.jpg *.jpeg);;PNG (*.png)" ));
+
+
+
+             ui->statusBar->showMessage("Reading images from directory");
+        for(int i=0 ; i<=(ImagesFromDir.size()/2)-1;i++ ){
+
+        // cv::Mat *tmp = new cv::Mat;
+         fdepthimage  = cv::imread("./"+folder+"/depthimage_"+std::to_string(counter)+".png", CV_LOAD_IMAGE_ANYDEPTH | CV_LOAD_IMAGE_ANYCOLOR);
+         fcmapimage = cv::imread("./"+folder+"/Cmap_"+std::to_string(counter)+".png", CV_LOAD_IMAGE_ANYDEPTH | CV_LOAD_IMAGE_ANYCOLOR);
+         depthimage.push_back(fdepthimage);
+         cmapimage.push_back(fcmapimage);  // add the images from dir to vector to use as element of drawing the new image
+        counter+=30;
+
+        }
+
+        ui->statusBar->showMessage("images successfully read");
+
+        std::cout<<depthimage.size()<<"  "<<cmapimage.size()<<std::endl;
+//        //IMAGES LOADED
+
+
+    for(int i=0;i<cmapimage.size();i++){
+
+        ui->statusBar->showMessage("generating Point cloud");
+
+
+        cloud = rgbd2pcl(cmapimage[i], depthimage[i]);
+        std::cout<<"crash2"<<std::endl;
+
+
+        pointCloudSet.push_back(cloud);
+        std::cout<<"crash3"<<std::endl;
+
+        std::stringstream ss;
+        ss << "New Point Cloud" << i+1;
+        std::string pcName = ss.str();
+        QStandardItem* item = new QStandardItem(QString::fromStdString(pcName));
+        listModel->appendRow(item);
+        ui->listPointClouds->setModel(listModel);
+    }
+
+    ui->statusBar->showMessage("Point Cloud Ready");
+
+
+
+
+}
+
